@@ -1,0 +1,21 @@
+//
+// BODY SCSS
+//
+
+// 表示を司る
+@include tabpc {
+	.pc{
+		display: block;
+	}
+	.sp{
+		display: none;
+	}
+}
+@include sp {
+	.pc{
+		display: none;
+	}
+	.sp{
+		display: block;
+	}
+}

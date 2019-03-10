@@ -1,0 +1,51 @@
+// =========================================================
+// FOOTER SCSS
+// =========================================================
+
+footer {
+	@include content_centering;
+	background: $dark_color;
+	color: $light_font_color;
+	* {
+		color: $light_font_color;
+	}
+	 @include tabpc {
+    margin-top: $footer_vertical_margin_pc;
+	 	max-width: $inner_pc;
+    padding-top: $padding_pc;
+	 	padding-left: $padding_pc;
+	 	padding-right: $padding_pc;
+	 	padding-bottom: $vertical_padding_pc;
+    text-align: center;
+	 }
+	 @include sp {
+    margin-top: $footer_vertical_margin_sp;
+	 	width: 100%;
+    padding-top: $padding_sp;
+	 	padding-left: $padding_sp;
+	 	padding-right: $padding_sp;
+	 	padding-bottom: $vertical_padding_sp;
+    text-align: center;
+	 }
+
+	 position: relative;
+	 &::before {
+	 	content: "";
+	 	display: block;
+	 	position: absolute;
+	 	left: 0;
+
+	 	background: transparent;
+	 	background-image: url(../images/line.png);
+	 	background-repeat-y: no-repeat;
+	 	background-size: contain;
+
+	 	@include tabpc {}
+	 	@include sp {
+		 	height: 3vw;
+		 	top: -.5vw;
+	 		width: 100%;
+	 	}
+	 }
+
+}

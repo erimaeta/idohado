@@ -1,0 +1,63 @@
+// =========================================================
+// common
+// =========================================================
+
+//
+// site logo
+//
+.site_logo {
+   @include tabpc {
+   }
+    @include sp {
+      width: 100%;
+    }
+}
+
+//
+// page title
+//
+.page_ttl {
+  @include tabpc {
+    margin-top: $page_ttl_margin_top_pc;
+    font-size: $page_ttl_font_size_pc;
+  }
+  @include sp {
+    margin-top: $page_ttl_margin_top_sp;
+    font-size: $page_ttl_font_size_sp;
+    line-height: $page_ttl_line_height_sp;
+  }
+}
+
+//
+// section title
+//
+.sec_ttl {
+  @include tabpc {
+    font-size: $sec_ttl_font_size_pc;
+  }
+  @include sp {
+    font-size: $sec_ttl_font_size_sp;
+  }
+
+  line-height: $sec_ttl_line_height;
+  &::after {
+    content: "";
+    display: block;
+    @include content_centering;
+    height: .2em;
+    width: 5em;
+    background: $dark_color;
+  }
+}
+
+//
+// section contents
+//
+.sec_cnt {
+  @include tabpc {
+    margin-top: $cnt_vertical_margin_pc;
+  }
+  @include sp {
+    margin-top: $cnt_vertical_margin_pc;
+  }
+}

@@ -1,0 +1,38 @@
+// =========================================================
+// HEADER SCSS
+// =========================================================
+
+header {
+	@include content_centering;
+	background: $soft_color2;
+	 @include tabpc {
+	 	max-width: $inner_pc;
+	 	padding: $vertical_padding_pc $header_padding_pc;
+    text-align: center;
+	 }
+	 @include sp {
+	 	width: 100%;
+	 	padding: $vertical_padding_sp $header_padding_sp;
+	 	text-align: center;
+	 }
+
+	 position: relative;
+	 &::after {
+	 	content: "";
+	 	display: block;
+	 	position: absolute;
+	 	left: 0;
+
+	 	background: transparent;
+	 	background-image: url(../images/line.png);
+	 	background-repeat-y: no-repeat;
+	 	background-size: contain;
+
+	 	@include tabpc {}
+	 	@include sp {
+		 	height: 3vw;
+		 	bottom: -1.7vw;
+	 		width: 100%;
+	 	}
+	 }
+}

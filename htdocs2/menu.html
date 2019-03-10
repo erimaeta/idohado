@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>いどはど取り置き注文 - メニューページ</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&amp;subset=japanese" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<header>
+		<h1>メニューのページ</h1>
+	</header>
+	<nav>
+		<details>
+			<summary>メニューリストを見る</summary>
+			<h3>おから系</h3>
+			<ul>
+				<li><img src="img/donuts/illust/test1.jpg" style="height: 1rem;"><a href="#okara1">おからプレーン</a>150円</li>
+				<li>抹茶 170円</li>
+			</ul>
+			<h3>バター系</h3>
+			<ul>
+				<li>あバター</li>
+				<li>ギャラクシー</li>
+				<li>白い誘惑</li>
+				<li>…</li>
+				<li>以下、すべてのメニューを掲載する</li>
+			</ul>
+		</details>
+	</nav>
+	<main>
+		<section class="menu">
+			<h2>おから系</h2>
+			<ul class="menu__list">
+				<li class="menu__item" id="okara1">
+					<div class="menuItem">
+						<div class="menuItem__img"><img src="img/donuts/test1.jpg"></div>
+						<div class="menuItem__texts --okara">
+							<h3 class="menuItem__name">おからプレーン</h3>
+							<p class="menuItem__price">150円</p>
+							<p class="menuItem__description">いどはどドーナッツは、ここから始まりました。</p>
+							<details class="menuItem__material">
+								<summary>原材料</summary>小麦・卵・おから・豆乳・きび砂糖・米油・ベーキングパウダー
+							</details>
+						</div>
+					</div>
+				</li>
+				<li class="menu__item">
+					<div class="menuItem">
+						<div class="menuItem__img"><img src="img/donuts/test2.jpg"></div>
+						<div class="menuItem__texts --okara">
+							<h3 class="menuItem__name">抹茶</h3>
+							<p class="menuItem__price">170円</p>
+							<p class="menuItem__description">おからプレーンに抹茶入り</p>
+							<details class="menuItem__material">
+								<summary>原材料</summary>小麦・卵・おから・豆乳・きび砂糖・米油・ベーキングパウダー
+							</details>
+						</div>
+					</div>
+				</li>		
+			</ul>
+		</section>
+		<section class="menu">
+			<h2>バター系</h2>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<div class="menuItem">
+						<div class="menuItem__img"><img src="img/donuts/test1.jpg"></div>
+						<div class="menuItem__texts --butter">
+							<h3 class="menuItem__name">あバター</h3>
+							<p class="menuItem__price">180円</p>
+							<p class="menuItem__description">あっ！バター、という親父ギャグだけではなくインド神話ではアバターは神の化身。デジタル用語では、仮想空間での自分の分身となるキャラクター。いろいろイメージしていただけたらうれしいです。</p>
+							<details class="menuItem__material">
+								<summary>原材料</summary>バター・アーモンドパウダー・きび砂糖・牛乳・小麦・卵・ベーキングパウダー
+							</details>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</section>
+	</main>
+
+<div id="app">{{ message }}</div>
+
+<script type="text/javascript">
+	var app = new Vue({
+		el: '#app',
+		date: {
+			message: 'Hello Vue!'
+		}
+	});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,215 @@
+@charset "UTF-8";
+.Flow__list {
+  text-align: left;
+  counter-reset: list_item_count;
+  line-height: 1.2;
+}
+
+.Flow__list dt {
+  font-weight: normal;
+}
+
+@media screen and (min-width: 641px) {
+  .Flow__list dt {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .Flow__list dt {
+    font-size: 3.6rem;
+  }
+}
+
+.Flow__list dt:not(:first-of-type) {
+  margin-top: 0.6em;
+}
+
+.Flow__list dt::before {
+  counter-increment: list_item_count;
+  content: counter(list_item_count) ".";
+}
+
+@media screen and (min-width: 641px) {
+  .Flow__list dd {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .Flow__list dd {
+    font-size: 3.6rem;
+  }
+}
+
+.Flow__list dd::before {
+  display: inline-block;
+  content: "";
+  font-size: 1.05em;
+  width: 1em;
+}
+
+.Flow__list dd small {
+  display: inline-block;
+  margin-right: .1em;
+}
+
+@media screen and (min-width: 641px) {
+  .Flow__list dd small {
+    font-size: 1.26rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .Flow__list dd small {
+    font-size: 2.52rem;
+  }
+}
+
+@media screen and (min-width: 641px) {
+  .Order__list {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .Order__list {
+    margin-top: 40px;
+  }
+}
+
+.Order__item {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 641px) {
+  .Order__item {
+    width: 35%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .Order__item {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 641px) {
+  .Order__item:not(:first-child) {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .Order__item:not(:first-child) {
+    margin-top: 7.5vw;
+  }
+}
+
+.Order__item a {
+  display: block;
+  width: 100%;
+  border: 2px solid rgba(141, 100, 73, 0.8);
+  color: rgba(141, 100, 73, 0.8);
+  border-radius: .5em;
+  font-weight: bold;
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+@media screen and (min-width: 641px) {
+  .Order__item a {
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+    font-size: 1.25em;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .Order__item a {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 1.25em;
+  }
+}
+
+.Order__item a:hover {
+  background: rgba(141, 100, 73, 0.8);
+  color: rgba(255, 238, 206, 0.8);
+  text-decoration: none;
+}
+
+.Eigyo__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: left;
+  line-height: 1.5;
+}
+
+@media screen and (min-width: 641px) {
+  .Eigyo__list {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .Eigyo__list {
+    font-size: 3.6rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .Eigyo__list:not(:first-child) {
+    margin-top: 1em;
+  }
+}
+
+.Eigyo__list dt {
+  margin-right: .5em;
+  padding: 0 .5em;
+  background: rgba(141, 100, 73, 0.2);
+  font-weight: normal;
+}
+
+.Eigyo__list dt.is-event {
+  background: transparent;
+  padding: 0;
+}
+
+.Eigyo__list dt:not(:first-of-type) {
+  margin-top: 0.6em;
+}
+
+.Eigyo__list dd {
+  font-size: 0.8em;
+}
+
+@media screen and (max-width: 640px) {
+  .Eigyo__list dd {
+    width: 60%;
+  }
+}
+
+.Eigyo__list dd.is-event {
+  margin-top: 0.6em;
+  width: 100%;
+  text-indent: -1em;
+  padding-left: 1em;
+  font-size: 0.7em;
+}
+
+.Eigyo__list dd.is-event::before {
+  content: "・";
+}
+
+.Eigyo__list dd:not(:first-of-type) {
+  margin-top: 0.6em;
+}

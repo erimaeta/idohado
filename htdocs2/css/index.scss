@@ -1,0 +1,213 @@
+@import "base/_values";
+@import "base/_mixin";
+
+// =========================================================
+// top
+// =========================================================
+
+//
+//ご注文の流れ
+//
+.Flow {
+  &__list {
+    text-align: left;
+    counter-reset: list_item_count;
+    line-height: 1.2;
+
+    dt {
+      @include tabpc {
+        font-size: $Flow_list_fontsize_pc;
+      }
+      @include sp {
+        font-size: $Flow_list_fontsize_sp;
+      }
+      font-weight: normal;
+
+      &:not(:first-of-type) {
+        margin-top: $Flow_ttl_margin_top;
+        @include tabpc {
+        }
+        @include sp {
+        }
+      }
+
+      &::before {
+        counter-increment: list_item_count;
+        content: counter(list_item_count) ".";
+      }
+    }
+
+    dd {
+      @include tabpc {
+        font-size: $Flow_list_fontsize_pc;
+      }
+      @include sp {
+        font-size: $Flow_list_fontsize_sp;
+      }
+      //dtの数字と同じ幅の余白を入れるためのスタイル
+      &::before {
+        display: inline-block;
+        content: "";
+        font-size: 1.05em;
+        width: 1em;
+      }
+
+      small {
+        display: inline-block;
+        margin-right: .1em;
+        @include tabpc {
+          font-size: $Flow_list_fontsize_pc * 0.7;
+        }
+        @include sp {
+          font-size: $Flow_list_fontsize_sp * 0.7;
+        }
+      }
+    }
+  }
+}
+
+//
+//注文する
+//
+.Order {
+  &__list {
+    @include tabpc {
+      margin-top: $cnt_vertical_margin_pc;
+    }
+    @include sp {
+      margin-top: $cnt_vertical_margin_pc;
+    }
+  }
+  &__item {
+    @include content_centering;
+    @include tabpc {
+      width: 35%;
+    }
+    @include sp {
+      width: 100%;
+    }
+    &:not(:first-child) {
+      @include tabpc {
+        margin-top: $parts_vertical_margin_pc;
+      }
+      @include sp {
+        margin-top: $parts_vertical_margin_sp;
+      }
+    }
+
+    a {
+      $_link_color: rgba($dark_color, .8);
+      $_link_text_color: rgba($light_font_color, .8);
+
+      display: block;
+      width: 100%;
+      @include tabpc {
+        padding:{
+          top: $Order_item_vertical_padding_pc;
+          bottom: $Order_item_vertical_padding_pc;
+        }
+        font-size: $Order_item_font_size_pc;
+      }
+      @include sp {
+        padding:{
+          top: $Order_item_vertical_padding_sp;
+          bottom: $Order_item_vertical_padding_sp;
+        }
+        font-size: $Order_item_font_size_sp;
+      }
+      border: 2px solid $_link_color;
+      color: $_link_color;
+      border-radius: .5em;
+      font-weight: bold;
+      transition: all .5s ease;
+      &:hover {
+        background: $_link_color;
+        color: $_link_text_color;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+//
+//営業日
+//
+.Eigyo {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    text-align: left;
+    line-height: 1.5;
+    @include tabpc {
+      font-size: $Flow_list_fontsize_pc;
+    }
+    @include sp {
+      font-size: $Flow_list_fontsize_sp;
+    }
+
+    &:not(:first-child) {
+      @include tabpc {
+        //margin-top: 後で決める;
+      }
+      @include sp {
+        margin-top: $Eigyo_list_margin_top; //見た目で決めたよ
+      }
+    }
+
+    dt {
+      margin-right: .5em;
+      padding: 0 .5em;
+      background: rgba($dark_color, .2);
+      font-weight: normal;
+
+      &.is-event {
+        background: transparent;
+        padding: 0;
+        //font-weight: bold;
+      }
+
+      &:not(:first-of-type) {
+        margin-top: $Eigyo_ttl_margin_top;
+        @include tabpc {
+        }
+        @include sp {
+        }
+      }
+    }
+    dd {
+      font-size: 0.8em;
+      @include tabpc {
+        //width: 後で決める;
+      }
+      @include sp {
+        width: 60%;
+      }
+      &.is-event {
+        margin-top: $Eigyo_cnt_margin_top;
+        width: 100%;
+        text-indent: -1em;
+        padding-left: 1em;
+        &::before {
+          content: "・";
+        }
+        font-size: 0.7em;
+      }
+      &:not(:first-of-type) {
+        margin-top: $Eigyo_cnt_margin_top;
+        @include tabpc {
+        }
+        @include sp {
+        }
+      }
+    }
+  }
+}
+
+//
+//いどはどについて
+//
+.About {
+
+}

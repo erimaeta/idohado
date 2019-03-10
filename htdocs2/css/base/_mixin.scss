@@ -1,0 +1,176 @@
+// =========================================================
+// MIXIN
+// =========================================================
+
+// ブレークポイント設定のmixin
+// sp, tab, pcではcssの上書きはなるべくしないようにする（それぞれのmixinで中身を書き分ける）
+// 例外としてwideのpc幅の時は最後に設定し、上書きをする
+@mixin sp {
+  @media screen and (max-width: $sp + px){
+    @content;
+  }
+}
+@mixin sptab {
+  @media screen and (max-width: $tab + px){
+    @content;
+  }
+}
+@mixin tab {
+  @media screen and (min-width: ($sp + 1) + px) and (max-width: $tab + px){
+    @content;
+  }
+}
+@mixin tabpc {
+  @media screen and (min-width: ($sp + 1) + px){
+    @content;
+  }
+}
+@mixin tabwide {
+  @media screen and (min-width: ($sp + 1) + px) and (max-width: $pc + px){
+    @content;
+  }
+}
+@mixin pc {
+  @media screen and (min-width: ($tab + 1) + px){
+    @content;
+  }
+}
+@mixin pc2 {
+  @media screen and (min-width: ($tab + 1) + px) and (max-width: $pc + px){
+    @content;
+  }
+}
+@mixin wide {
+  @media screen and (min-width: ($pc + 1) + px){
+    @content;
+  }
+}
+
+//---
+
+@mixin content_centering {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+//---
+
+@mixin dd_style {
+  dd{
+    font-size: $dd_style_font_size;
+    line-height: $dt_style_line_height;
+  }
+}
+@mixin dt_style {
+  dt{
+    font-size: $dt_style_font_size;
+    line-height: $dd_style_line_height;
+    &:not(:first-of-type){
+      @include tabpc {
+        margin-top: $dt_style_margin_top;
+      }
+      @include sp {
+        margin-top: $dt_style_margin_top;
+      }
+    }
+    font-weight: normal;
+//    &::before{
+//      content: "[";
+//    }
+//    &::after{
+//      content: "]";
+//    }
+  }
+}
+
+//---
+
+$_character_height_pc: 150px;
+$_character_height_sp: 35vw;
+$_tall_character_height_pc: 200px;
+$_tall_character_height_sp: 50vw;
+$_character_padding_top_sp: 5vw; //見た目に必要そうなら入れる->空きすぎなのでやめ3.10
+
+@mixin character_background_style {
+  @include tabpc {
+    padding-bottom: $_character_height_pc;
+    background-size: auto $_character_height_pc;
+  }
+  @include sp {
+    padding-bottom: $_character_height_sp;
+    background-size: auto $_character_height_sp;
+  }
+}
+@mixin tall_character_background_style {
+  @include tabpc {
+    padding-bottom: $_tall_character_height_pc;
+    background-size: auto $_tall_character_height_pc;
+  }
+  @include sp {
+    padding-bottom: $_tall_character_height_sp;
+    background-size: auto $_tall_character_height_sp;
+  }
+}
+
+//---
+
+//今のとこ使っていないけど、使えます…が微妙
+$dt_style_font_size: 1.25em;
+$dd_style_font_size: 1em;
+@mixin arrows {
+ //矢印 ここから
+  $_arrow_width: 2em;
+  $_arrow_height: 1em;
+  $_arrow_margin_top: $dd_style_font_size * $dd_style_line_height;
+  $_arrow_top: $_arrow_margin_top + $dt_style_margin_top;
+  $_dt_margin_top: $_arrow_height * 2 + $dt_style_margin_top; //多分ちゃんとする必要ある
+
+  dt {
+    &:not(:first-of-type){
+      margin-top: $_dt_margin_top;
+    }
+  }
+
+  dd {
+    position: relative;
+    &:not(:last-of-type){
+      &::before {
+        content: "";
+        position: absolute;
+        top: $_arrow_top;
+        left: 50%;
+        z-index: -1;
+
+        display: block;
+        width: $_arrow_width;
+        height: $_arrow_height;
+
+        background: $dark_color;
+
+        transform: translateX(-50%);
+        opacity: .2;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: calc(#{$_arrow_top} + #{$_arrow_height});
+        left: 50%;
+        z-index: -1;
+
+        display: block;
+        width: 0;
+        height: 0;
+
+        border-left: $_arrow_width solid transparent;
+        border-right: $_arrow_width solid transparent;
+        border-top: $_arrow_height solid $dark_color;
+        border-bottom: $_arrow_height solid transparent;
+
+        transform: translate(-50%);
+        opacity: .2;
+      }//after
+    }
+  }
+  //矢印 ここまで
+}
