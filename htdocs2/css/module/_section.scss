@@ -1,0 +1,63 @@
+// =========================================================
+// section SCSS
+// =========================================================
+
+.section {
+  @include tabpc {
+    margin-top: $section_y-margin_pc;
+  }
+  @include sp {
+    margin-top: $section_y-margin_sp;
+  }
+
+  &__ttl {
+
+    //PCは左揃え
+    //SPは中央揃え
+
+    @include tabpc {
+      font-size: $sec_ttl_font-size_pc;
+      text-align: left;
+      position: relative;
+    }
+    @include sp {
+      font-size: $sec_ttl_font-size_sp;
+    }
+
+    line-height: $sec_ttl_line-height;
+
+    //アクセントの棒（縦）
+    &::before {
+      @include tabpc {
+        content: "";
+        position: absolute;
+        left: $section_ttl_before_x-margin_pc;
+        font-size: 1em;
+        top: calc(1em / 2);
+        display: inline-block;
+        height: 1em;
+        width: $section_ttl_before_width_pc;
+        background: $dark_color;
+      }
+    }
+    //アクセントの棒（横）
+    &::after {
+      @include content_centering;
+        content: "";
+        display: block;
+        @include sp {
+        height: $section_ttl_after_height_sp;
+        width: $section_ttl_after_width_sp;
+        background: $dark_color;
+      }
+    }
+  }
+  &__cnt {
+    @include tabpc {
+      margin-top: $section_cnt_y-margin_pc;
+    }
+    @include sp {
+      margin-top: $section_cnt_y-margin_sp;
+    }
+  }
+}

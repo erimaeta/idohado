@@ -1,0 +1,162 @@
+// =========================================================
+// About
+// =========================================================
+
+.About {
+
+	//
+	// タイトル
+	//
+	&__ttl {
+		@include tabpc {
+			font-size: $sec_ttl_font-size_pc;
+			line-height: $About_ttl_line-height_pc;
+		}
+		@include sp {
+			font-size: $sec_ttl_font-size_sp;
+			line-height: $About_ttl_line-height_sp;
+		}
+		text-align: left;
+	}
+
+	//
+	// テーブル
+	//
+	&__tbl {
+		width: 100%;
+		@include tabpc {
+			@include tegakiBorder($soft_color, 10px, 2px);
+			$_my_border_style_pc: 1px solid rgba($soft_color, .1);
+			tr {
+				&:not(:first-child){
+					border-top: $_my_border_style_pc;
+				}
+			}
+			td {
+				&:nth-child(odd){
+					border-right: $_my_border_style_pc;
+				}
+			}
+		}
+	}
+	&__cnt {
+		@include tabpc {
+			background: linear-gradient(
+				to right,
+				rgba($soft_color, .1),
+				transparent 20%
+				);
+		}
+		@include sp {
+		}
+
+		//アイコンとテキストを包括してるアンカーっす
+		>a {
+			position: relative;
+			z-index: 2;
+			display: block;
+			width: 100%;
+			&:hover{
+				text-decoration: none;//htmlで改行の分がスペースで反応すんねん
+			}
+			.cnt__data {
+				text-decoration: underline;
+				&:hover{
+					color: $soft_color;
+					text-decoration: none;
+				}
+			}
+		}
+
+		.cnt__icon{
+			display: inline-block;
+			width: 20%;
+			text-align: center;
+
+			@include tabpc {
+				font-size: $About_tbl_font-size_pc;
+				line-height: $About_tbl_lineheight_pc;
+			}
+		}
+
+		.cnt__data{
+			display: inline-block;
+			width: calc(80% - .5em);
+			text-align: left;
+
+			@include tabpc {
+				font-size: $About_tbl_font-size_pc;
+				line-height: $About_tbl_lineheight_pc;
+			}
+			letter-spacing: .1rem;
+		}
+	}
+
+	//
+	// マップ
+	//
+	&__map {
+		width: 100%;
+		@include tabpc {
+			margin-top: $item_between_y-margin_pc;
+		}
+		@include sp {
+			margin-top: $item_between_y-margin_sp;
+		}
+
+		.map__link {
+			display: block;
+			@include tabpc {
+				font-size: $About_tbl_font-size_pc;
+				line-height: $About_tbl_lineheight_pc;
+			}
+			@include tabpc {
+				font-size: $About_tbl_font-size_pc;
+				line-height: $About_tbl_lineheight_pc;
+			}
+			text-align: left;
+			text-decoration: underline;
+			&:hover{
+				color: $soft_color;
+				text-decoration: none;
+			}
+
+			i {
+				display: inline-block;
+				margin-right: .5em;
+			}
+		}
+		.map__txt {
+			background: rgba($soft_color, .6);
+			color: $default_font_color;
+			@include tabpc {
+				line-height: $About_map-txt_line-height_pc;
+			}
+			@include sp {
+				line-height: $About_map-txt_line-height_sp;
+			}
+		}
+
+		.map__map {
+			width: 100%;
+			@include tabpc {
+				height: 300px;
+			}
+			@include sp {
+			}
+		}
+	}
+
+	//
+	// 著作権
+	//
+	&__auth {
+		@include tabpc {
+			margin-top: $item_y-margin_pc;
+		}
+		@include sp {
+			margin-top: $item_y-margin_sp;
+		}
+	}
+
+}

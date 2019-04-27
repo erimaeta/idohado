@@ -2,21 +2,32 @@
 // VALUES
 // =========================================================
 
+// 単語の定義メモ
+// page
+// -header
+// -section
+//  -ttl
+//  -cnt
+//   -item（どうでしょう）
+// -footer
+//  -ttl
+//  -cnt
+
 // Base Color
 $black: #000;
 $white: #fff;
 
-$dark_color: #8d6449;//枯茶
-$dark_color2: #cd8c5c;//小麦色
+$dark_color: #8d6449; //枯茶
+$dark_color2: #cd8c5c; //小麦色
 
-$deep_color: #a8bf93;//山葵
-$light_color: #f7b977;//杏
+$deep_color: #a8bf93; //山葵
+$light_color: #f7b977; //杏
 
-$soft_color: #FFEECE;//掻練・皆練
-$soft_color2: #fddea5;//蜂蜜色
+$soft_color: #FFEECE; //掻練・皆練
+$soft_color2: #fddea5; //蜂蜜色
 
-$default_font_color: #664032;//茶褐色
-$light_font_color: #FFEECE;//掻練・皆練
+$default_font_color: #664032; //茶褐色
+$light_font_color: #FFEECE; //掻練・皆練
 
 $default_link_color: $default_font_color;
 $default_link_color_hover: $default_font_color;
@@ -31,92 +42,134 @@ $pc: 1399;
 // Inner point
 $inner_pc: 1024px;
 
-// 単語の定義メモ
-// page
-// -header
-// -section
-//  -ttl
-//  -cnt
-//   -parts
-// -footer
-//  -ttl
-//  -cnt
+// ページ自体
+$y-padding_pc: 60px; //後で修正
+$x-padding_pc: 60px; //後で修正
+$y-padding_sp: 15%;
+$x-padding_sp: 5%;
 
+// header
+$header_x-padding_pc: 20px; //後で修正
+$header_x-padding_sp: 15%;
+$header_y-padding_pc: $y-padding_pc / 2;
+$header_y-padding_sp: $y-padding_sp / 2;
 
-// ページのpadding - 縦
-$vertical_padding_pc: 20px;//後で修正
-$vertical_padding_sp: 15%;
+// footer
+$footer_y-margin_pc: $y-padding_pc / 2;
+$footer_vertical_margin_sp: $y-padding_sp / 2;
+$footer_y-padding_pc: $y-padding_pc / 2;
+$footer_y-padding_sp: $y-padding_sp / 2;
 
-// ページのpadding - 横
-$padding_pc: 20px;
-$padding_sp: 5%;
+// section
+$section_y-margin_pc: 120px;
+$section_y-margin_sp: 15vw;
+$section_padding_top_pc: $y-padding_pc / 2;
+$section_padding_top_sp: $y-padding_sp / 2;
 
-// headerのpadding - 横
-$header_padding_pc: 20px;//後で修正
-$header_padding_sp: 15%;
+// section__ttl
+$section_ttl_before_x-margin_pc: -.6em;
+$section_ttl_before_width_pc: .4em;
+$section_ttl_after_height_sp: .2em;
+$section_ttl_after_width_sp: 2em;
+
+// leadText
+$leadText_outline_width_pc: $section_ttl_before_width_pc;
+$leadText_outline_offset_pc: -$section_ttl_before_x-margin_pc;
+$leadText_padding_pc: 1em;
+$leadText_padding_sp: 1em;//後で修正
+
+// section__cnt
+$section_cnt_y-margin_pc: $section_y-margin_pc / 2.5;
+$section_cnt_y-margin_sp: $section_y-margin_sp / 2;
 
 // page_ttlのmargin-top
-$page_ttl_margin_top_pc: 20px;
-$page_ttl_margin_top_sp: 20px;
+$header_ttl_margin_top_pc: $y-padding_pc / 2;
+$header_ttl_margin_top_sp: $y-padding_pc / 2;
 
-// sectionのmargin-縦
-$sec_vertical_margin_pc: 40px;
-$sec_vertical_margin_sp: 15vw;
+// content内 item
+$item_y-margin_pc: $section_cnt_y-margin_pc / 4 * 3;
+$item_y-margin_sp: $section_cnt_y-margin_sp / 4 * 3;
 
-// sectionのpadding-top
-$sec_padding_top_pc: $vertical_padding_pc / 2;
-$sec_padding_top_sp: $vertical_padding_sp / 2;
+// content内 item内
+$item_between_y-margin_pc: $item_y-margin_pc / 2;
+$item_between_y-margin_sp: $item_y-margin_sp / 2;
 
-// section内 contentのmargin-縦
-$cnt_vertical_margin_pc: $sec_vertical_margin_pc;
-$cnt_vertical_margin_sp: $sec_vertical_margin_sp;
+// dl
+$dl_x_x-padding: .6em;
+$dl_x_y-padding: .2em;
 
-// content内 partsのmargin-縦
-$parts_vertical_margin_pc: $cnt_vertical_margin_pc / 2;
-$parts_vertical_margin_sp: $cnt_vertical_margin_sp / 2;
+// Eigyo
+$Eigyo_border_style_pc: 2px dashed $default_font_color;
+$Eigyo_border_style_sp: 2px dashed $default_font_color; //後で変更
 
-// content内 partsのスタイル（Flow）
-$Flow_list_margin_top: 1em;
-$Flow_ttl_margin_top: .6em;
-$Flow_cnt_margin_top: $Flow_ttl_margin_top;
+// conten内 itemのスタイル（Order）
+$Order_item_y-padding_pc: 1.2em;
+$Order_item_y-padding_sp: 1em;
 
-// content内 partsのスタイル（Eigyo）
-$Eigyo_list_margin_top: 1em;
-$Eigyo_ttl_margin_top: .6em;
-$Eigyo_cnt_margin_top: $Eigyo_ttl_margin_top;
-
-// conten内 partsのスタイル（Order）
-$Order_item_vertical_padding_pc: 1.2em;
-$Order_item_vertical_padding_sp: 1em;
-
-// headerのpadding-縦
-$header_vertical_padding_pc: $sec_padding_top_pc;
-$header_vertical_padding_sp: $sec_padding_top_sp;
-
-// footerのmargin-縦
-$footer_vertical_margin_pc: $sec_vertical_margin_pc;
-$footer_vertical_margin_sp: $sec_vertical_margin_sp;
-
+//
 // Reboot
+//
 $font-size-sp: 3rem;
-$font-size-pc: 1.5rem;
-$font-family: 'Kosugi Maru', Roboto, "Droid Sans", YuGothic, "游ゴシック", Meiryo, "メイリオ", Verdana, "MS Pゴシック", sans-serif;
+$font-size-pc: 2rem;
+$font-family: 'Kosugi Maru',
+Roboto,
+"Droid Sans",
+YuGothic,
+"游ゴシック",
+Meiryo,
+"メイリオ",
+Verdana,
+"MS Pゴシック",
+sans-serif;
 
-// font-size
-$page_ttl_font_size_pc: 1.5em;//後で修正
-$page_ttl_font_size_sp: 1.5em;
+//
+// font-size !!!
+//
+//  bodyのfont-sizeに対してemで指定する
+//
+$header_ttl_font-size_pc: 2em; //後で調整
+$header_ttl_font-size_sp: 1.5em;
 
-$sec_ttl_font_size_pc: 1.25em;//後で修正
-$sec_ttl_font_size_sp: 1.25em;
+$sec_ttl_font-size_pc: 1.5em; //後で調整
+$sec_ttl_font-size_sp: 1.25em;
 
-$Order_item_font_size_pc: 1.25em;
-$Order_item_font_size_sp: 1.25em;
+$item_ttl_font-size_pc: 1.25em;
+$item_ttl_font-size_sp: 1.15em;
 
-$Flow_list_fontsize_pc: $font-size-pc * 1.2;//諸事情につきrem指定
-$Flow_list_fontsize_sp: $font-size-sp * 1.2;//〃
+$About_tbl_font-size_pc: 1.25em;
+$About_tbl_font-size_sp: 1.12em;
+
+$LeadTxt_font-size_pc: 1.05em; //大きくても変だったねん
+$LeadTxt_font-size_sp: 1.05em;
+
+
+//dl用
+$dl_ttl_font-size_pc: 1.2em;
+$dl_ttl_font-size_sp: 1.2em;
+
+$Order_item_font-size_pc: 1.25em;
+$Order_item_font-size_sp: 1.25em;
+
 
 // その他スタイル
-$dt_style_line_height: 2.5;
-$dd_style_line_height: 1.5;
-$sec_ttl_line_height: 2;
-$page_ttl_line_height_sp: 1.3;
+$sec_ttl_line-height: 2;
+$item_ttl_line-height: 2;
+
+$dl_line-height: 1.5;
+$dl_y_dt_line-height: 2;
+
+$LeadTxt_line-height_pc: 2;
+$LeadTxt_line-height_sp: 2;//後で調整
+
+$About_ttl_line-height_pc: 2.5;
+$About_ttl_line-height_sp: 2.5;//後で調整
+
+$About_tbl_lineheight_pc: 2.5;
+$About_tbl_lineheight_sp: 2.5;//後で調整
+
+$About_map-txt_line-height_pc: 2;
+$About_map-txt_line-height_sp: 2;//後で調整
+
+//dl_x用
+$dl_x_dt_width_pc: 30%;
+$dl_x_dt_width_sp: 40%;

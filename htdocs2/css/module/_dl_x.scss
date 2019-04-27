@@ -1,0 +1,33 @@
+// =========================================================
+// dtとddを横に並べる dl
+// =========================================================
+
+@import "_dl";
+
+.dl_x {
+	@include flex_set(wrap, start, center);
+
+	dt {
+		@include tabpc {
+			width: $dl_x_dt_width_pc;
+		}
+		@include sp {
+			width: $dl_x_dt_width_sp;
+		}
+	}
+	dd {
+		@include tabpc {
+			width: calc(100% - #{$dl_x_dt_width_pc});
+		}
+		@include sp {
+			width: calc(100% - #{$dl_x_dt_width_sp});
+		}
+	}
+
+	dt,dd {
+    padding: $dl_x_y-padding $dl_x_x-padding;
+    &:not(:first-of-type) {
+      //margin-top: $second_dl_margin_top;
+    }
+	}
+}

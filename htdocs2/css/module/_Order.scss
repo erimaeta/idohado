@@ -1,0 +1,104 @@
+// =========================================================
+// 注文する
+// =========================================================
+
+.Order {
+  &__list {
+  }
+  &__item {
+    @include content_centering;
+    @include tabpc {
+      //display: inline-block;縦に積むことにした
+      width: 70%;
+    }
+    @include sp {
+      width: 100%;
+    }
+    &:not(:first-child) {
+      @include tabpc {
+        margin-top: $item_between_y-margin_pc;
+      }
+      @include sp {
+        margin-top: $item_between_y-margin_sp;
+      }
+    }
+
+    a {
+      $_link_color: rgba($dark_color, .8);
+      $_link_text_color: rgba($light_font_color, .8);
+      $_border_width_pc: .1em;
+      $_border_width_sp: .1em;//後で変更
+
+      display: block;
+      width: 100%;
+      @include tabpc {
+        padding:{
+          top: $Order_item_y-padding_pc;
+          bottom: $Order_item_y-padding_pc;
+        }
+        font-size: $Order_item_font-size_pc;
+      }
+      @include sp {
+        padding:{
+          top: $Order_item_y-padding_sp;
+          bottom: $Order_item_y-padding_sp;
+        }
+        font-size: $Order_item_font-size_sp;
+      }
+
+      color: $_link_color;
+      font-weight: bold;
+      transition: color .5s ease;
+
+      /////////////////////////////////////////////////////////////////////////////////////
+      //以下、hover時の色反転を transition するためのハック
+
+      position: relative;
+      @mixin my_before_after_style {
+        display: block;
+        position: absolute; top: 0; left: 0; z-index: -1;
+        width: 100%;
+        height: 100%;
+        @include tabpc {
+          border: $_border_width_pc solid $_link_color;
+        }
+        @include sp {
+          border: $_border_width_sp solid $_link_color;
+        }
+        border-radius: 1rem; //remにしとこ
+        transition: opacity .5s ease;
+      }
+
+      &::before {
+        content: "";
+        @include my_before_after_style;
+        background: linear-gradient(
+          rgba($_link_color, .1),
+          rgba($_link_color, .2)
+        );
+      }
+      &::after {
+        content: "";
+        @include my_before_after_style;
+        background: linear-gradient(
+          rgba($_link_color, .7),
+          rgba($_link_color, .8)
+        );
+        opacity: 0;
+      }
+      ////////////////////////////////////////////////////////////////////////////////////
+
+      //hover時
+      &:hover {
+        text-decoration: none;
+        color: rgba($light_font_color, .7);
+        &::before{
+          opacity: 0;
+        }
+        &::after{
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

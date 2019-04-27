@@ -1,0 +1,88 @@
+// =========================================================
+// _dl_with_arrows
+// =========================================================
+// ddの下に矢印が付いてるdl
+// 消すのが勿体ないのでとっておく
+//
+
+$dt_style_font_size: 1.25em;
+$dd_style_font_size: 1em;
+$dt_style_line_height: 2.5;
+$dd_style_line_height: 1.5;
+
+@mixin dd_style {
+  dd{
+    font-size: $dd_style_font_size;
+    line-height: $dt_style_line_height;
+  }
+}
+@mixin dt_style {
+  dt{
+    font-size: $dt_style_font_size;
+    line-height: $dd_style_line_height;
+    &:not(:first-of-type){
+      @include tabpc {
+        margin-top: $dt_style_margin_top;
+      }
+      @include sp {
+        margin-top: $dt_style_margin_top;
+      }
+    }
+    font-weight: normal;
+  }
+}
+
+@mixin arrows {
+  $_arrow_width: 2em;
+  $_arrow_height: 1em;
+  $_arrow_margin_top: $dd_style_font_size * $dd_style_line_height;
+  $_arrow_top: $_arrow_margin_top + $dt_style_margin_top;
+  $_dt_margin_top: $_arrow_height * 2 + $dt_style_margin_top; //多分ちゃんとする必要ある
+
+  dt {
+    &:not(:first-of-type){
+      margin-top: $_dt_margin_top;
+    }
+  }
+
+  dd {
+    position: relative;
+    &:not(:last-of-type){
+      &::before {
+        content: "";
+        position: absolute;
+        top: $_arrow_top;
+        left: 50%;
+        z-index: -1;
+
+        display: block;
+        width: $_arrow_width;
+        height: $_arrow_height;
+
+        background: $dark_color;
+
+        transform: translateX(-50%);
+        opacity: .2;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: calc(#{$_arrow_top} + #{$_arrow_height});
+        left: 50%;
+        z-index: -1;
+
+        display: block;
+        width: 0;
+        height: 0;
+
+        border-left: $_arrow_width solid transparent;
+        border-right: $_arrow_width solid transparent;
+        border-top: $_arrow_height solid $dark_color;
+        border-bottom: $_arrow_height solid transparent;
+
+        transform: translate(-50%);
+        opacity: .2;
+      }//after
+    }
+  }
+}

@@ -42,7 +42,7 @@ body {
 
 @media screen and (min-width: 641px) {
   body, body * {
-    font-size: 1.5rem; } }
+    font-size: 2rem; } }
 
 [tabindex="-1"]:focus {
   outline: 0 !important; }
@@ -258,22 +258,22 @@ template {
 /* ========================================================= */
 /* LAYOUT SCSS                                               */
 /* ========================================================= */
-header {
+.header {
   margin-left: auto;
   margin-right: auto;
   background: #fddea5;
   position: relative; }
   @media screen and (min-width: 641px) {
-    header {
-      max-width: 1024px;
-      padding: 20px 20px;
+    .header {
+      width: 100%;
+      padding: 60px 0;
       text-align: center; } }
   @media screen and (max-width: 640px) {
-    header {
+    .header {
       width: 100%;
       padding: 15% 15%;
       text-align: center; } }
-  header::after {
+  .header::after {
     content: "";
     display: block;
     position: absolute;
@@ -282,37 +282,48 @@ header {
     background-image: url(../images/line.png);
     background-repeat-y: no-repeat;
     background-size: contain; }
-    @media screen and (max-width: 640px) {
-      header::after {
-        height: 3vw;
-        bottom: -1.7vw;
+    @media screen and (min-width: 641px) {
+      .header::after {
+        height: 9px;
+        bottom: -2px;
         width: 100%; } }
+    @media screen and (max-width: 640px) {
+      .header::after {
+        height: 3vw;
+        bottom: -1.8vw;
+        width: 100%; } }
+  @media screen and (max-width: 640px) {
+    .header__logo {
+      width: 100%; } }
+  @media screen and (min-width: 641px) {
+    .header__ttl {
+      margin-top: 30px;
+      font-size: 2em; } }
+  @media screen and (max-width: 640px) {
+    .header__ttl {
+      margin-top: 30px;
+      font-size: 1.5em; } }
 
 footer {
   margin-left: auto;
   margin-right: auto;
   background: #8d6449;
   color: #FFEECE;
+  position: relative;
   position: relative; }
   footer * {
     color: #FFEECE; }
   @media screen and (min-width: 641px) {
     footer {
-      margin-top: 40px;
-      max-width: 1024px;
-      padding-top: 20px;
-      padding-left: 20px;
-      padding-right: 20px;
-      padding-bottom: 20px;
+      margin-top: 30px;
+      width: 100%;
+      padding: 30px calc(((100% - 1024px) / 2) + 60px);
       text-align: center; } }
   @media screen and (max-width: 640px) {
     footer {
-      margin-top: 15vw;
+      margin-top: 7.5%;
       width: 100%;
-      padding-top: 5%;
-      padding-left: 5%;
-      padding-right: 5%;
-      padding-bottom: 15%;
+      padding: 7.5% 5%;
       text-align: center; } }
   footer::before {
     content: "";
@@ -327,6 +338,25 @@ footer {
       footer::before {
         height: 3vw;
         top: -.5vw;
+        width: 100%; } }
+  footer::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    background: transparent;
+    background-image: url(../images/line.png);
+    background-repeat-y: no-repeat;
+    background-size: contain; }
+    @media screen and (min-width: 641px) {
+      footer::before {
+        height: 9px;
+        top: -2px;
+        width: 100%; } }
+    @media screen and (max-width: 640px) {
+      footer::before {
+        height: 3vw;
+        top: -1.8vw;
         width: 100%; } }
 
 @media screen and (min-width: 641px) {
@@ -346,10 +376,10 @@ main {
   margin-right: auto; }
   @media screen and (min-width: 641px) {
     main {
-      margin-top: 40px;
+      margin-top: 120px;
       max-width: 1024px;
-      padding-left: 20px;
-      padding-right: 20px;
+      padding-left: 60px;
+      padding-right: 60px;
       text-align: center; } }
   @media screen and (max-width: 640px) {
     main {
@@ -358,89 +388,58 @@ main {
       padding-left: 5%;
       padding-right: 5%;
       text-align: center; } }
-  main section {
-    background: transparent;
-    background-repeat: no-repeat; }
-    @media screen and (min-width: 641px) {
-      main section {
-        margin-top: 40px; } }
-    @media screen and (max-width: 640px) {
-      main section {
-        margin-top: 15vw; } }
-    main section.is-Order {
-      background-position: left bottom;
-      background-image: url(../images/character/izumon.png); }
-      @media screen and (min-width: 641px) {
-        main section.is-Order {
-          padding-bottom: 150px;
-          background-size: auto 150px; } }
-      @media screen and (max-width: 640px) {
-        main section.is-Order {
-          padding-bottom: 35vw;
-          background-size: auto 35vw; } }
-    main section.is-Flow {
-      background-position: right bottom;
-      background-image: url(../images/character/shigera.png); }
-      @media screen and (min-width: 641px) {
-        main section.is-Flow {
-          padding-bottom: 150px;
-          background-size: auto 150px; } }
-      @media screen and (max-width: 640px) {
-        main section.is-Flow {
-          padding-bottom: 35vw;
-          background-size: auto 35vw; } }
-    main section.is-Eigyo {
-      background-position: left bottom;
-      background-image: url(../images/character/yaocho.png); }
-      @media screen and (min-width: 641px) {
-        main section.is-Eigyo {
-          padding-bottom: 200px;
-          background-size: auto 200px; } }
-      @media screen and (max-width: 640px) {
-        main section.is-Eigyo {
-          padding-bottom: 50vw;
-          background-size: auto 50vw; } }
-
-@media screen and (max-width: 640px) {
-  .site_logo {
-    width: 100%; } }
-
-@media screen and (min-width: 641px) {
-  .page_ttl {
-    margin-top: 20px;
-    font-size: 1.5em; } }
-
-@media screen and (max-width: 640px) {
-  .page_ttl {
-    margin-top: 20px;
-    font-size: 1.5em;
-    line-height: 1.3; } }
-
-.sec_ttl {
-  line-height: 2; }
-  @media screen and (min-width: 641px) {
-    .sec_ttl {
-      font-size: 1.25em; } }
-  @media screen and (max-width: 640px) {
-    .sec_ttl {
-      font-size: 1.25em; } }
-  .sec_ttl::after {
-    content: "";
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: .2em;
-    width: 5em;
-    background: #8d6449; }
-
-@media screen and (min-width: 641px) {
-  .sec_cnt {
-    margin-top: 40px; } }
-
-@media screen and (max-width: 640px) {
-  .sec_cnt {
-    margin-top: 40px; } }
 
 /* ========================================================= */
 /* MODULE SCSS                                               */
 /* ========================================================= */
+@media screen and (min-width: 641px) {
+  .section {
+    margin-top: 120px; } }
+
+@media screen and (max-width: 640px) {
+  .section {
+    margin-top: 15vw; } }
+
+.section__ttl {
+  line-height: 2; }
+  @media screen and (min-width: 641px) {
+    .section__ttl {
+      font-size: 1.5em;
+      text-align: left;
+      position: relative; } }
+  @media screen and (max-width: 640px) {
+    .section__ttl {
+      font-size: 1.25em; } }
+  @media screen and (min-width: 641px) {
+    .section__ttl::before {
+      content: "";
+      position: absolute;
+      left: -0.6em;
+      font-size: 1em;
+      top: calc(1em / 2);
+      display: inline-block;
+      height: 1em;
+      width: 0.4em;
+      background: #8d6449; } }
+  .section__ttl::after {
+    margin-left: auto;
+    margin-right: auto;
+    content: "";
+    display: block; }
+    @media screen and (max-width: 640px) {
+      .section__ttl::after {
+        height: 0.2em;
+        width: 2em;
+        background: #8d6449; } }
+
+@media screen and (min-width: 641px) {
+  .section__cnt {
+    margin-top: 48px; } }
+
+@media screen and (max-width: 640px) {
+  .section__cnt {
+    margin-top: 7.5vw; } }
+
+.item__ttl {
+  text-align: left;
+  line-height: 2; }

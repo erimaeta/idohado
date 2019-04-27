@@ -1,0 +1,25 @@
+// =========================================================
+// リード文
+// =========================================================
+
+.LeadTxt {
+	@include tabpc {
+		padding: $leadText_padding_pc;
+    font-size: $LeadTxt_font-size_pc;
+    line-height: $LeadTxt_line-height_pc;
+	}
+	@include sp {
+		padding: $leadText_padding_sp;
+    font-size: $LeadTxt_font-size_sp;
+    line-height: $LeadTxt_line-height_sp;
+	}
+  outline: dotted rgba($dark_color,.2) $leadText_outline_width_pc;
+  outline-offset: $leadText_outline_offset_pc;
+  text-align: left;
+
+  &__by {
+  	margin-top: 1em;
+  	display: block;
+  	text-align: right;
+  }
+}

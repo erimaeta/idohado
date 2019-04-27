@@ -5,45 +5,17 @@
 main {
   @include content_centering;
    @include tabpc {
-    margin-top: $sec_vertical_margin_pc;
+    margin-top: $section_y-margin_pc;
     max-width: $inner_pc;
-    padding-left: $padding_pc;
-    padding-right: $padding_pc;
+    padding-left: $x-padding_pc;
+    padding-right: $x-padding_pc;
     text-align: center;
    }
    @include sp {
-    margin-top: $sec_vertical_margin_sp;
+    margin-top: $section_y-margin_sp;
     width: 100%;
-    padding-left: $padding_sp;
-    padding-right: $padding_sp;
+    padding-left: $x-padding_sp;
+    padding-right: $x-padding_sp;
     text-align: center;
    }
-
-   section {
-    @include tabpc {
-      margin-top: $sec_vertical_margin_pc;
-    }
-    @include sp {
-      margin-top: $sec_vertical_margin_sp;
-    }
-
-    //背景のキャラクターを設定する
-    background: transparent;
-    background-repeat: no-repeat;
-    &.is-Order{
-      @include character_background_style;
-      background-position: left bottom;
-      background-image: url(../images/character/izumon.png);
-    }
-    &.is-Flow{
-      @include character_background_style;
-      background-position: right bottom;
-      background-image: url(../images/character/shigera.png);
-    }
-    &.is-Eigyo{
-      @include tall_character_background_style;
-      background-position: left bottom;
-      background-image: url(../images/character/yaocho.png);
-    }
-   }
- }
+}

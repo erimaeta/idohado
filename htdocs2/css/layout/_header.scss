@@ -2,37 +2,43 @@
 // HEADER SCSS
 // =========================================================
 
-header {
+.header {
 	@include content_centering;
 	background: $soft_color2;
 	 @include tabpc {
-	 	max-width: $inner_pc;
-	 	padding: $vertical_padding_pc $header_padding_pc;
+	 	width: 100%;
+	 	//max-width: $inner_pc;
+	 	padding: $y-padding_pc 0;//$header_x-padding_pc;
     text-align: center;
 	 }
 	 @include sp {
 	 	width: 100%;
-	 	padding: $vertical_padding_sp $header_padding_sp;
+	 	padding: $y-padding_sp $header_x-padding_sp;
 	 	text-align: center;
 	 }
 
+	 //headerとmainの境界線を手書き風の線にする
 	 position: relative;
 	 &::after {
 	 	content: "";
-	 	display: block;
-	 	position: absolute;
-	 	left: 0;
-
-	 	background: transparent;
-	 	background-image: url(../images/line.png);
-	 	background-repeat-y: no-repeat;
-	 	background-size: contain;
-
-	 	@include tabpc {}
-	 	@include sp {
-		 	height: 3vw;
-		 	bottom: -1.7vw;
-	 		width: 100%;
-	 	}
+	 	@include tegaki_line(false, true);
 	 }
+
+	 &__logo {
+	  @include tabpc {
+	  }
+	  @include sp {
+	    width: 100%;
+	  }
+	}
+	&__ttl {
+	  @include tabpc {
+	    margin-top: $header_ttl_margin_top_pc;
+	    font-size: $header_ttl_font-size_pc;
+	  }
+	  @include sp {
+	    margin-top: $header_ttl_margin_top_sp;
+	    font-size: $header_ttl_font-size_sp;
+	  }
+	}
 }
