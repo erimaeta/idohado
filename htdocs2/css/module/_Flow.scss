@@ -7,6 +7,9 @@
 .Flow {
   &__list {
     counter-reset: list_item_count;
+    @include tabpc {
+      padding-bottom: $Flow_list_padding-bottom_pc;
+    }
   }
   &__ttl {
     &::before {

@@ -94,7 +94,7 @@
   @include sp {
     height: 3vw;
     @if $before==true {
-      top: -1.8vw;
+      top: -.5vw;
     }
     @if $after==true {
       bottom: -1.8vw;
@@ -107,6 +107,8 @@
 // cssの力で手書きborderにする
 //
 @mixin tegakiBorder($color, $radius, $width:1px) {
+  border: $width solid $color;
+  border-radius: $radius;
   position: relative;
   &::before {
     content: "";
@@ -118,7 +120,7 @@
     height: 100%;
     border: $width solid $color;
     border-radius: $radius;
-    transform: rotate(-0.1deg);
+    transform: rotate(-0.5deg);
   }
   &::after {
     content: "";
@@ -130,6 +132,6 @@
     height: 100%;
     border: $width solid $color;
     border-radius: $radius;
-    transform: rotate(0.1deg);
+    transform: rotate(0.5deg);
   }
 }

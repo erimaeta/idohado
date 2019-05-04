@@ -16,17 +16,21 @@
     <h1 class="header__ttl">取り置き注文ページ</h1>
   </header>
   <main>
-    <section>
+    <div class="PageTop is-none" id="pagetop" onclick="pagetop()">
+      <p class="PageTop__txt">Let's GO<br>Page Top</p>
+      <img class="PageTop__img" src="images/character/boy.png">
+    </div>
+    <section class="section is-Lead">
       <p class="LeadTxt">
-        こんにちは。いどはどドーナッツです。<br>
-        みなさんが食べたいと思ったドーナッツを確実にお届けしたいと思って、<br>
-        取り置き注文のためのページを作成いたしました。<br>
+        こんにちは。<br class="sp">いどはどドーナッツです。<br>
+        みなさんに確実にドーナッツをお届けしたいと思って、<br>
+        この度は取り置き注文のためのページを作成いたしました。<br>
         <br>
-        どうぞよろしくお願いいたします。
+        今後ともいどはどドーナッツをよろしくお願いいたします m(__)m
         <span class="LeadTxt__by">いずみ＆ハマー</span>
       </p>
     </section>
-    <section class="section is-Flow">
+    <section class="section">
       <h2 class="section__ttl">取り置き注文の流れ</h2>
       <div class="section__cnt Flow">
         <dl class="Flow__list dl_y">
@@ -39,22 +43,35 @@
           <dt class="Flow__ttl">いどはど</dt>
           <dd class="Flow__cnt">ドーナッツをお渡しします</dd>
         </dl>
+        <div class="CharImg is-sigera">
+          <p class="CharImg__txt">お気軽にーー</p>
+          <div class="CharImg__img">
+            <img src="images/character/shigera.png">
+          </div>
+        </div>
       </div>
     </section>
-    <section class="section is-Order">
+    <section class="section">
       <h2 class="section__ttl">ご注文</h2>
       <div class="section__cnt Order">
-        <!-- p class="Order__msg">「メニュー」でメニューの確認、「注文の入力」で注文の入力が出来ます。</p -->
         <ul class="Order__list">
           <li class="Order__item"><a href="#">メニューを見る</a></li>
           <li class="Order__item"><a href="#">注文する</a></li>
         </ul>
       </div>
+      <div class="CharImg is-izumon">
+        <div class="CharImg__img">
+          <img src="images/character/izumon.png">
+        </div>
+        <p class="CharImg__txt">色々あるよ～</p>
+      </div>
     </section>
-    <section class="section is-Eigyo">
-      <h2 class="section__ttl">1月の営業日時</h2>
+    <section class="section">
+      <h2 class="section__ttl">５月の営業日時</h2>
       <div class="section__cnt">
-	      <div class="Eigyo">
+        <div class="EigyoCalendar" id="calendar"></div>
+        <p class="EigyoCalendar__txt"><span class="eigyo">〇</span>が営業日、<span class="oyasumi">●</span>が休業日です。</p>
+	      <!-- div class="Eigyo">
 	        <dl class="Eigyo__list dl_x">
 	          <dt class="Eigyo__ttl">営業日</dt>
 	          <dd class="Eigyo__cnt">月,火,金,土</dd>
@@ -67,7 +84,8 @@
 	          <dt class="Eigyo__ttl">休業日</dt>
 	          <dd class="Eigyo__cnt">10(日),19(火)</dd>
 	        </dl>
-	      </div>
+	      </div -->
+
 	      <div class="Event">
 	      	<h3 class="item__ttl">イベント参加予定&ensp;<i class="far fa-flag" style="margin-left:.2em;"></i></h3>
 	        <dl class="Event__list dl_y">
@@ -78,16 +96,20 @@
 	          <dd class="Event__day">24(木)</dd>
 	          <dd class="Event__txt">三浦商店街フェスティバルに参加いたします。</dd>
 	        </dl>
+          <dl class="Event__list dl_y">
+            <dd class="Event__day">23(水),24(木)</dd>
+            <dd class="Event__txt">函館フードフェスタ「ライダーキック＆茶結」さんのブースにドーナッツを置かせてもらいます。</dd>
+          </dl>
+          <dl class="Event__list dl_y">
+            <dd class="Event__day">24(木)</dd>
+            <dd class="Event__txt">三浦商店街フェスティバルに参加いたします。</dd>
+          </dl>
 	      </div>
       </div>
-      <!-- p class="Eigyo__msg">足元に気をつけてお越しくださいね。<br>お待ちしてまーす！</p -->
-      </div>
-    </section>
-    <section class="section">
     </section>
   </main>
-  <footer>
-    <div class="section__cnt About">
+  <footer class="footer">
+    <div class="footer__cnt About">
       <h3 class="About__ttl">いどはどドーナッツin函館</h3>
       <table class="About__tbl">
         <tr>
@@ -121,11 +143,14 @@
       </table>
       <div class="About__map">
         <a href="https://goo.gl/maps/mk16N9E4hM82" class="map__link"><i class="fas fa-fw fa-map-marker-alt"></i>函館市弥生町19-20</a></p>
-        <p class="map__txt">大町電停から弥生坂を登り、一つ目の信号を過ぎ、すぐ右横の路地奥左です。</p>
         <iframe class="map__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2975.7585924703308!2d140.70510381583554!3d41.76886237923105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f9ef3a6528629c7%3A0x8c30405a640324b3!2z44GE44Gp44Gv44Gp44OJ44O844OK44OD44OE!5e0!3m2!1sja!2sjp!4v1546501874143" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <p class="map__txt">大町電停から弥生坂を登り、一つ目の信号を過ぎ、すぐ右横の路地奥左です。</p>
       </div>
     </div>
-    <p class="About__auth">© 2018 いどはど〜移動して波動を送る〜</p>
+    <p class="footer__auth">© 2018 いどはど〜移動して波動を送る〜</p>
   </footer>
+
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/calendar.js"></script>
 </body>
 </html>

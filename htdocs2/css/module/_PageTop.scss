@@ -1,0 +1,72 @@
+// =========================================================
+// PageTop
+// =========================================================
+
+.PageTop {
+	position: fixed;
+	bottom: 5%;
+	right: 2.5%;
+	z-index: 99;
+	cursor: pointer;
+
+	transition: opacity 1.5s ease;
+	&.is-none {
+		opacity: 0;
+	}
+	&.is-show {
+		opacity: 1;
+	}
+
+	@include tabpc {
+		width: $PageTop_width_pc;
+
+		&:hover{
+			animation: buruburu .1s infinite;
+		}
+	}
+	@include sp {
+		width: $PageTop_width_sp;
+	}
+
+	&__txt {
+		font-weight: bold;
+		letter-spacing: $PageTop_txt_letter-spacing;
+		line-height: $PageTop_txt_line-height;
+		background: transparent;
+		color: lighten($default_font_color, 45%);
+		text-shadow:
+			lighten($default_font_color, 45%) -1px 0 0px,
+			//lighten($default_font_color, 45%) 1px 0 0px,
+			lighten($default_font_color, 15%) 1px 0px 0px,
+			lighten($default_font_color, 20%) 2px 1px 0px;
+		@include tabpc {
+			font-size: 90%;
+		}
+		@include sp {
+			font-size: 85%;
+		}
+	}
+	&__img {
+		margin-top: $PageTop_img_margint-top;
+		display: inline-block;
+		width: 100%;
+	}
+}
+
+@keyframes buruburu {
+	0%{
+		transform: translate(0,0) rotateZ(0deg);
+	}
+	25%{
+		transform: translate(2px, 2px) rotateZ(1deg);
+	}
+	50%{
+		transform: translate(0,0) rotateZ(0deg);
+	}
+	75%{
+		transform: translate(2px, 2px) rotateZ(1deg);
+	}
+	100%{
+		transform: translate(0,0) rotateZ(0deg);
+	}
+}

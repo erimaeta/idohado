@@ -271,7 +271,7 @@ template {
   @media screen and (max-width: 640px) {
     .header {
       width: 100%;
-      padding: 15% 15%;
+      padding: 15vw 15vw;
       text-align: center; } }
   .header::after {
     content: "";
@@ -301,45 +301,30 @@ template {
       font-size: 2em; } }
   @media screen and (max-width: 640px) {
     .header__ttl {
-      margin-top: 30px;
-      font-size: 1.5em; } }
+      margin-top: 7.5vw;
+      font-size: 1.55em; } }
 
-footer {
+.footer {
   margin-left: auto;
   margin-right: auto;
   background: #8d6449;
   color: #FFEECE;
-  position: relative;
   position: relative; }
-  footer * {
-    color: #FFEECE; }
   @media screen and (min-width: 641px) {
-    footer {
-      margin-top: 30px;
+    .footer {
+      margin-top: 120px;
       width: 100%;
       padding: 30px calc(((100% - 1024px) / 2) + 60px);
       text-align: center; } }
   @media screen and (max-width: 640px) {
-    footer {
-      margin-top: 7.5%;
+    .footer {
+      margin-top: 20vw;
       width: 100%;
-      padding: 7.5% 5%;
+      padding: 7.5vw 5vw;
       text-align: center; } }
-  footer::before {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    background: transparent;
-    background-image: url(../images/line.png);
-    background-repeat-y: no-repeat;
-    background-size: contain; }
-    @media screen and (max-width: 640px) {
-      footer::before {
-        height: 3vw;
-        top: -.5vw;
-        width: 100%; } }
-  footer::before {
+  .footer * {
+    color: #FFEECE; }
+  .footer::before {
     content: "";
     display: block;
     position: absolute;
@@ -349,15 +334,24 @@ footer {
     background-repeat-y: no-repeat;
     background-size: contain; }
     @media screen and (min-width: 641px) {
-      footer::before {
+      .footer::before {
         height: 9px;
         top: -2px;
         width: 100%; } }
     @media screen and (max-width: 640px) {
-      footer::before {
+      .footer::before {
         height: 3vw;
-        top: -1.8vw;
+        top: -.5vw;
         width: 100%; } }
+  @media screen and (min-width: 641px) {
+    .footer__cnt {
+      margin-top: 48px; } }
+  @media screen and (min-width: 641px) {
+    .footer__auth {
+      margin-top: 36px; } }
+  @media screen and (max-width: 640px) {
+    .footer__auth {
+      margin-top: 7.5vw; } }
 
 @media screen and (min-width: 641px) {
   .pc {
@@ -383,10 +377,10 @@ main {
       text-align: center; } }
   @media screen and (max-width: 640px) {
     main {
-      margin-top: 15vw;
+      margin-top: 20vw;
       width: 100%;
-      padding-left: 5%;
-      padding-right: 5%;
+      padding-left: 5vw;
+      padding-right: 5vw;
       text-align: center; } }
 
 /* ========================================================= */
@@ -398,10 +392,16 @@ main {
 
 @media screen and (max-width: 640px) {
   .section {
-    margin-top: 15vw; } }
+    margin-top: 20vw; } }
+
+@media screen and (min-width: 641px) {
+  .section.is-Lead {
+    margin-left: -1.5em;
+    width: calc(100% + 1.5em); } }
 
 .section__ttl {
-  line-height: 2; }
+  line-height: 2;
+  letter-spacing: 0.06em; }
   @media screen and (min-width: 641px) {
     .section__ttl {
       font-size: 1.5em;
@@ -409,7 +409,7 @@ main {
       position: relative; } }
   @media screen and (max-width: 640px) {
     .section__ttl {
-      font-size: 1.25em; } }
+      font-size: 1.35em; } }
   @media screen and (min-width: 641px) {
     .section__ttl::before {
       content: "";
@@ -438,7 +438,19 @@ main {
 
 @media screen and (max-width: 640px) {
   .section__cnt {
-    margin-top: 7.5vw; } }
+    margin-top: 10vw; } }
+
+@media screen and (min-width: 641px) {
+  .section__cnt.Flow {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end; } }
 
 .item__ttl {
   text-align: left;

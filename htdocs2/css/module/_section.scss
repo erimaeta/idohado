@@ -10,11 +10,21 @@
     margin-top: $section_y-margin_sp;
   }
 
+  //Lead文の外周の線を、タイトルの左端に合わせたいわけよ
+  &.is-Lead {
+    @include tabpc {
+      margin-left: -$sec_ttl_font-size_pc;
+      width: calc(100% + #{$sec_ttl_font-size_pc});
+    }
+  }
+
+  //
+  // section__ttl
+  //
+  //  PCは左揃え
+  //  SPは中央揃え
+  //
   &__ttl {
-
-    //PCは左揃え
-    //SPは中央揃え
-
     @include tabpc {
       font-size: $sec_ttl_font-size_pc;
       text-align: left;
@@ -25,6 +35,7 @@
     }
 
     line-height: $sec_ttl_line-height;
+    letter-spacing: $section_ttl_letter-spacing;
 
     //アクセントの棒（縦）
     &::before {
@@ -52,12 +63,24 @@
       }
     }
   }
+
+  //
+  // section__cnt
+  //
   &__cnt {
     @include tabpc {
       margin-top: $section_cnt_y-margin_pc;
     }
     @include sp {
       margin-top: $section_cnt_y-margin_sp;
+    }
+
+    &.Flow {
+      @include tabpc {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
     }
   }
 }

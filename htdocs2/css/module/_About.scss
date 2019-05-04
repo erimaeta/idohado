@@ -11,12 +11,14 @@
 		@include tabpc {
 			font-size: $sec_ttl_font-size_pc;
 			line-height: $About_ttl_line-height_pc;
+			text-align: left;
 		}
 		@include sp {
 			font-size: $sec_ttl_font-size_sp;
 			line-height: $About_ttl_line-height_sp;
+			text-align: center;
 		}
-		text-align: left;
+		letter-spacing: $section_ttl_letter-spacing;
 	}
 
 	//
@@ -24,30 +26,51 @@
 	//
 	&__tbl {
 		width: 100%;
+		//@include tegakiBorder($soft_color, $About_tbl_border-radius, $About_tbl_border_width);
+		//↑はいつかの日に使うことにしよう。今回は普通に線を引こう。
+		//でもtableだと角丸められないから、擬似要素で引きますね。
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 100%;
+			border: $About_tbl_border_style;
+			border-radius: $About_tbl_border-radius;
+		}
 		@include tabpc {
-			@include tegakiBorder($soft_color, 10px, 2px);
-			$_my_border_style_pc: 1px solid rgba($soft_color, .1);
 			tr {
 				&:not(:first-child){
-					border-top: $_my_border_style_pc;
+					border-top: $About_tbl_border_style2;
 				}
 			}
 			td {
 				&:nth-child(odd){
-					border-right: $_my_border_style_pc;
+					border-right: $About_tbl_border_style2;
 				}
+			}
+		}
+		@include sp {
+			td {
+				border-bottom: $About_tbl_border_style2;//一番下も引いちゃって良いっす
 			}
 		}
 	}
 	&__cnt {
+		background: linear-gradient(
+			to right,
+			rgba($soft_color, .1),
+			transparent 20%
+		);
 		@include tabpc {
-			background: linear-gradient(
-				to right,
-				rgba($soft_color, .1),
-				transparent 20%
-				);
+
 		}
 		@include sp {
+			display: block; //目から鱗
+			width: 100%;
 		}
 
 		//アイコンとテキストを包括してるアンカーっす
@@ -56,11 +79,13 @@
 			z-index: 2;
 			display: block;
 			width: 100%;
+			transition: opacity .5s ease;
 			&:hover{
 				text-decoration: none;//htmlで改行の分がスペースで反応すんねん
+				opacity: .5;
 			}
 			.cnt__data {
-				text-decoration: underline;
+				text-decoration: none;
 				&:hover{
 					color: $soft_color;
 					text-decoration: none;
@@ -74,8 +99,11 @@
 			text-align: center;
 
 			@include tabpc {
-				font-size: $About_tbl_font-size_pc;
-				line-height: $About_tbl_lineheight_pc;
+				font-size: $About_tbl_cnt_font-size_pc;
+				line-height: $About_tbl_line-height_pc;
+			}
+			@include sp {
+				line-height: $About_tbl_line-height_sp;
 			}
 		}
 
@@ -85,10 +113,14 @@
 			text-align: left;
 
 			@include tabpc {
-				font-size: $About_tbl_font-size_pc;
-				line-height: $About_tbl_lineheight_pc;
+				font-size: $About_tbl_cnt_font-size_pc;
+				line-height: $About_tbl_line-height_pc;
 			}
-			letter-spacing: .1rem;
+			@include sp {
+				font-size: $About_tbl_cnt_font-size_sp;
+				line-height: $About_tbl_line-height_sp;
+			}
+			letter-spacing: $About_tbl_cnt_letter-spacing;
 		}
 	}
 
@@ -104,18 +136,21 @@
 			margin-top: $item_between_y-margin_sp;
 		}
 
+		text-align: left;
+
 		.map__link {
-			display: block;
+			display: inline-block;
 			@include tabpc {
-				font-size: $About_tbl_font-size_pc;
-				line-height: $About_tbl_lineheight_pc;
+				font-size: $About_tbl_cnt_font-size_pc;
+				line-height: $About_tbl_line-height_pc;
 			}
-			@include tabpc {
-				font-size: $About_tbl_font-size_pc;
-				line-height: $About_tbl_lineheight_pc;
+			@include sp {
+				font-size: $About_tbl_cnt_font-size_sp;
+				line-height: $About_tbl_line-height_sp;
 			}
+			letter-spacing: $About_tbl_cnt_letter-spacing;
 			text-align: left;
-			text-decoration: underline;
+
 			&:hover{
 				color: $soft_color;
 				text-decoration: none;
@@ -127,35 +162,20 @@
 			}
 		}
 		.map__txt {
-			background: rgba($soft_color, .6);
-			color: $default_font_color;
+			text-align: center;
 			@include tabpc {
-				line-height: $About_map-txt_line-height_pc;
-			}
-			@include sp {
-				line-height: $About_map-txt_line-height_sp;
+				line-height: $About_map-txt_line-height_pc;//PCのみでおｋ
 			}
 		}
 
 		.map__map {
 			width: 100%;
 			@include tabpc {
-				height: 300px;
+				height: $About_map_height_pc;
 			}
 			@include sp {
+				height: $About_map_height_sp;
 			}
-		}
-	}
-
-	//
-	// 著作権
-	//
-	&__auth {
-		@include tabpc {
-			margin-top: $item_y-margin_pc;
-		}
-		@include sp {
-			margin-top: $item_y-margin_sp;
 		}
 	}
 

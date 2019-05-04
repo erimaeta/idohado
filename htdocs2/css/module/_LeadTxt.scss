@@ -4,17 +4,23 @@
 
 .LeadTxt {
 	@include tabpc {
-		padding: $leadText_padding_pc;
+    width: 100%;
+		padding: $leadText_y-padding_pc $leadText_x-padding_pc;
     font-size: $LeadTxt_font-size_pc;
     line-height: $LeadTxt_line-height_pc;
 	}
 	@include sp {
-		padding: $leadText_padding_sp;
+		padding: $leadText_y-padding_sp $leadText_x-padding_sp;
     font-size: $LeadTxt_font-size_sp;
     line-height: $LeadTxt_line-height_sp;
 	}
-  outline: dotted rgba($dark_color,.2) $leadText_outline_width_pc;
-  outline-offset: $leadText_outline_offset_pc;
+  //outline: dotted rgba($dark_color,.2) $leadText_outline_width_pc;
+  //outline-offset: $leadText_outline_offset_pc;
+
+  @include tegakiBorder(rgba($dark_color, .5), #{$LeadTxt_border-radius}, .2rem);
+  background: rgba($dark_color, .05);
+  border-radius: $LeadTxt_border-radius;
+
   text-align: left;
 
   &__by {

@@ -1,0 +1,95 @@
+// =========================================================
+// 営業日カレンダー
+// =========================================================
+
+.EigyoCalendar {
+	border: $EigyoCalendar_border_style;
+	border-radius: $EigyoCalendar_border-radius;
+	&__tbl {
+		width: 100%;
+	}
+	&__th {
+		@include tabpc {
+			width: calc(100% / 7);
+		}
+	}
+	&__th,
+	&__td {
+		@include tabpc {
+			padding: $EigyoCalender_td_y-padding_pc 0;
+			font-size: $EigyoCalendar_font-size_pc;
+		}
+		@include sp {
+			padding: $EigyoCalender_td_y-padding_sp 0;
+			font-size: $EigyoCalendar_font-size_sp;
+		}
+	}
+	&__td {
+		position: relative;
+		z-index: 2;
+
+		&::after {
+			content: "";
+			display: block;
+			@include tabpc {
+				width: $EigyoCalendar_td_circle_size_pc;
+				height: $EigyoCalendar_td_circle_size_pc;
+			}
+			@include sp {
+				width: $EigyoCalendar_td_circle_size_sp;
+				height: $EigyoCalendar_td_circle_size_sp;
+			}
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: -1;
+			border-radius: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		&.is-eigyo {
+			&::after{
+				background: transparent;
+				border: $EigyoCalendar_border_style2;
+//				ぼやけさせるのは雰囲気が合わなかったのでコメントアウト
+//				background-image: radial-gradient(
+//					closest-side, //最も近い辺を終了位置
+//					$light_color,
+//					transparent
+//				);
+			}
+		}
+		&.is-oyasumi {
+			&::after{
+				background: rgba($dark_color, .4);
+			}
+		}
+	}
+
+	tfoot {
+		td {
+			@include tabpc {
+				padding-bottom: $EigyoCalender_td_y-padding_pc;
+			}
+			@include sp {
+				padding-bottom: $EigyoCalender_td_y-padding_sp;
+			}
+		}
+	}
+
+	&__txt {
+		@include tabpc {
+			margin-top: $item_between_y-margin_pc;
+			font-size: $EigyoCalendar_font-size_pc;
+		}
+		@include sp {
+			margin-top: $item_between_y-margin_sp;
+			font-size: $EigyoCalendar_font-size_sp;
+		}
+		.eigyo,
+		.oyasumi {
+			color: rgba($dark_color, .4);
+			font-size: 110%;
+		}
+	}
+}

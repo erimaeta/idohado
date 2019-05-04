@@ -43,26 +43,20 @@ $pc: 1399;
 $inner_pc: 1024px;
 
 // ページ自体
-$y-padding_pc: 60px; //後で修正
-$x-padding_pc: 60px; //後で修正
-$y-padding_sp: 15%;
-$x-padding_sp: 5%;
+$y-padding_pc: 60px;
+$x-padding_pc: 60px;
+$y-padding_sp: 15vw;
+$x-padding_sp: 5vw;
 
 // header
-$header_x-padding_pc: 20px; //後で修正
-$header_x-padding_sp: 15%;
+$header_x-padding_pc: 20px;
+$header_x-padding_sp: 15vw;
 $header_y-padding_pc: $y-padding_pc / 2;
 $header_y-padding_sp: $y-padding_sp / 2;
 
-// footer
-$footer_y-margin_pc: $y-padding_pc / 2;
-$footer_vertical_margin_sp: $y-padding_sp / 2;
-$footer_y-padding_pc: $y-padding_pc / 2;
-$footer_y-padding_sp: $y-padding_sp / 2;
-
 // section
 $section_y-margin_pc: 120px;
-$section_y-margin_sp: 15vw;
+$section_y-margin_sp: 20vw;//見た目で決めたよ
 $section_padding_top_pc: $y-padding_pc / 2;
 $section_padding_top_sp: $y-padding_sp / 2;
 
@@ -72,19 +66,13 @@ $section_ttl_before_width_pc: .4em;
 $section_ttl_after_height_sp: .2em;
 $section_ttl_after_width_sp: 2em;
 
-// leadText
-$leadText_outline_width_pc: $section_ttl_before_width_pc;
-$leadText_outline_offset_pc: -$section_ttl_before_x-margin_pc;
-$leadText_padding_pc: 1em;
-$leadText_padding_sp: 1em;//後で修正
-
 // section__cnt
 $section_cnt_y-margin_pc: $section_y-margin_pc / 2.5;
 $section_cnt_y-margin_sp: $section_y-margin_sp / 2;
 
 // page_ttlのmargin-top
 $header_ttl_margin_top_pc: $y-padding_pc / 2;
-$header_ttl_margin_top_sp: $y-padding_pc / 2;
+$header_ttl_margin_top_sp: $y-padding_sp / 2;
 
 // content内 item
 $item_y-margin_pc: $section_cnt_y-margin_pc / 4 * 3;
@@ -94,20 +82,156 @@ $item_y-margin_sp: $section_cnt_y-margin_sp / 4 * 3;
 $item_between_y-margin_pc: $item_y-margin_pc / 2;
 $item_between_y-margin_sp: $item_y-margin_sp / 2;
 
+// footer
+$footer_y-margin_pc: $section_y-margin_pc;
+$footer_y_margin_sp: $section_y-margin_sp;
+$footer_y-padding_pc: $y-padding_pc / 2;
+$footer_y-padding_sp: $y-padding_sp / 2;
+
 // dl
 $dl_x_x-padding: .6em;
 $dl_x_y-padding: .2em;
-
-// Eigyo
-$Eigyo_border_style_pc: 2px dashed $default_font_color;
-$Eigyo_border_style_sp: 2px dashed $default_font_color; //後で変更
 
 // conten内 itemのスタイル（Order）
 $Order_item_y-padding_pc: 1.2em;
 $Order_item_y-padding_sp: 1em;
 
+$Flow_list_padding-bottom_pc: $item_y-margin_pc * 3;//PCのみ（シゲラーと左右に並べるため）
+
+// キャラクター
+$CharImg_sigera_margin-top_sp: $item_y-margin_sp * 1.3;//SPのみ（縦積みのため）
+$CharImg_sigera_width_pc: 350px;
+$CharImg_sigera_width_sp: 65vw;
+
+$CharImg_izumon_margin-top_pc: $item_y-margin_pc * 1.5;
+$CharImg_izumon_margin-top_sp: $item_y-margin_sp * 1.5;
+$CharImg_izumon_width_pc: 350px;
+$CharImg_izumon_width_sp: 60vw;
+$CharImg_izumon_txt_line-height_pc: 5;
+$CharImg_izumon_txt_margin-top_pc: 1em;//見た目で決めたよ
+$CharImg_izumon_txt_height_pc: 1em * $CharImg_izumon_txt_line-height_pc;
+$CharImg_izumon_txt_x-padding_pc: 1em * ($CharImg_izumon_txt_line-height_pc / 2);
+$CharImg_izumon_txt_padding_sp: 1em;
+
+$EigyoCalender_td_y-padding_pc: .6em;
+$EigyoCalender_td_y-padding_sp: .6em;//良さげ
+
+$EigyoCalendar_td_circle_size_pc: 2.5em;
+$EigyoCalendar_td_circle_size_sp: 1.8em;//幅に余裕ないねん
+
+$About_map_height_pc: 300px;
+$About_map_height_sp: 70vw;
+
+//pagetop（不安定ボーイ）
+$PageTop_width_pc: 100px;
+$PageTop_width_sp: 20vw;
+$PageTop_img_margint-top: .5em;
+
+//dl_x用
+$dl_x_dt_width_pc: 30%;
+$dl_x_dt_width_sp: 40%;
+
 //
-// Reboot
+// font-size
+//
+//  bodyのfont-sizeに対してemで指定する
+//
+$header_ttl_font-size_pc: 2em; //後で調整
+$header_ttl_font-size_sp: 1.55em;
+
+$sec_ttl_font-size_pc: 1.5em; //後で調整
+$sec_ttl_font-size_sp: 1.35em;
+
+$item_ttl_font-size_pc: 1.25em;
+$item_ttl_font-size_sp: 1.15em;//後で調整
+
+$About_tbl_cnt_font-size_pc: 1.25em;
+$About_tbl_cnt_font-size_sp: 1.2em;//後で調整
+
+$LeadTxt_font-size_pc: 1.05em; //大きくても変だったねん
+$LeadTxt_font-size_sp: 1em;
+
+$EigyoCalendar_font-size_pc: 1.25em;
+$EigyoCalendar_font-size_sp: 1.15em;//後で調整
+
+//dl用
+$dl_ttl_font-size_pc: 1.2em;
+$dl_ttl_font-size_sp: 1.1em;//気持ち小さくね
+
+$Order_item_font-size_pc: 1.25em;
+$Order_item_font-size_sp: 1.25em;
+
+// leadText
+$leadText_outline_width_pc: $section_ttl_before_width_pc;
+$leadText_outline_offset_pc: -$section_ttl_before_x-margin_pc;
+$leadText_y-padding_pc: 2em;
+$leadText_y-padding_sp: 2em;//後で修正
+$leadText_x-padding_pc: 1em + $sec_ttl_font-size_pc;//セクションタイトルのフォントサイズを足し込むのはPCだけね
+$leadText_x-padding_sp: 2em;
+
+//
+//line-height
+//
+$sec_ttl_line-height: 2;
+$item_ttl_line-height: 2;
+
+$dl_line-height: 1.5;
+$dl_y_dt_line-height: 2;
+
+$LeadTxt_line-height_pc: 2;
+$LeadTxt_line-height_sp: 2;//後で調整
+
+$About_ttl_line-height_pc: 2.5;
+$About_ttl_line-height_sp: 2.5;//後で調整
+
+$About_tbl_line-height_pc: 2.5;
+$About_tbl_line-height_sp: 3;//高めに
+
+$About_map-txt_line-height_pc: 2;
+//$About_map-txt_line-height_sp: 2;//SPでは不要そうですわ
+
+$PageTop_txt_line-height: 1.1;//狭め
+
+//
+//letter-spacing
+//
+$section_ttl_letter-spacing: .06em;
+$PageTop_txt_letter-spacing: .1em;
+$About_tbl_cnt_letter-spacing: .1rem;
+
+//
+//border-radius
+//
+$About_tbl_border-radius: 1rem;
+$Order_item_border-radius: 1rem;
+$EigyoCalendar_border-radius: 1rem;
+$LeadTxt_border-radius: 6rem;
+
+//
+//border-style
+//
+$Eigyo_border_style_pc: .3rem dashed $default_font_color;
+$Eigyo_border_style_sp: .3rem dashed $default_font_color; //後で変更
+
+$Order_item_border_style: .3rem solid rgba($default_font_color, .6);
+
+$EigyoCalendar_border_style: .3rem solid rgba($default_font_color, .8);
+$EigyoCalendar_border_style2: .3rem solid rgba($dark_color, .4);
+
+$About_tbl_border_style: .3rem solid rgba($soft_color, .9);
+$About_tbl_border_style2: .2rem solid rgba($soft_color, .1);
+$About_tbl_border_width: .2rem;
+
+$CharImg_izumon_txt_border_style: .2rem dashed rgba($default_font_color, .6);
+
+//
+//box-shadow
+//
+$Order_item_box-shadow_pc: 4px 4px 20px -6px rgba($dark_color, .4);
+$Order_item_box-shadow_sp: .4rem .4rem 2rem -.6rem rgba($dark_color, .4);
+
+//
+// Rebootのフォント設定
 //
 $font-size-sp: 3rem;
 $font-size-pc: 2rem;
@@ -121,55 +245,3 @@ Meiryo,
 Verdana,
 "MS Pゴシック",
 sans-serif;
-
-//
-// font-size !!!
-//
-//  bodyのfont-sizeに対してemで指定する
-//
-$header_ttl_font-size_pc: 2em; //後で調整
-$header_ttl_font-size_sp: 1.5em;
-
-$sec_ttl_font-size_pc: 1.5em; //後で調整
-$sec_ttl_font-size_sp: 1.25em;
-
-$item_ttl_font-size_pc: 1.25em;
-$item_ttl_font-size_sp: 1.15em;
-
-$About_tbl_font-size_pc: 1.25em;
-$About_tbl_font-size_sp: 1.12em;
-
-$LeadTxt_font-size_pc: 1.05em; //大きくても変だったねん
-$LeadTxt_font-size_sp: 1.05em;
-
-
-//dl用
-$dl_ttl_font-size_pc: 1.2em;
-$dl_ttl_font-size_sp: 1.2em;
-
-$Order_item_font-size_pc: 1.25em;
-$Order_item_font-size_sp: 1.25em;
-
-
-// その他スタイル
-$sec_ttl_line-height: 2;
-$item_ttl_line-height: 2;
-
-$dl_line-height: 1.5;
-$dl_y_dt_line-height: 2;
-
-$LeadTxt_line-height_pc: 2;
-$LeadTxt_line-height_sp: 2;//後で調整
-
-$About_ttl_line-height_pc: 2.5;
-$About_ttl_line-height_sp: 2.5;//後で調整
-
-$About_tbl_lineheight_pc: 2.5;
-$About_tbl_lineheight_sp: 2.5;//後で調整
-
-$About_map-txt_line-height_pc: 2;
-$About_map-txt_line-height_sp: 2;//後で調整
-
-//dl_x用
-$dl_x_dt_width_pc: 30%;
-$dl_x_dt_width_sp: 40%;

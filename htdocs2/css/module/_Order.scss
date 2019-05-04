@@ -26,8 +26,6 @@
     a {
       $_link_color: rgba($dark_color, .8);
       $_link_text_color: rgba($light_font_color, .8);
-      $_border_width_pc: .1em;
-      $_border_width_sp: .1em;//後で変更
 
       display: block;
       width: 100%;
@@ -59,13 +57,8 @@
         position: absolute; top: 0; left: 0; z-index: -1;
         width: 100%;
         height: 100%;
-        @include tabpc {
-          border: $_border_width_pc solid $_link_color;
-        }
-        @include sp {
-          border: $_border_width_sp solid $_link_color;
-        }
-        border-radius: 1rem; //remにしとこ
+        border: $Order_item_border_style;
+        border-radius: $Order_item_border-radius;
         transition: opacity .5s ease;
       }
 
@@ -76,6 +69,7 @@
           rgba($_link_color, .1),
           rgba($_link_color, .2)
         );
+        box-shadow: $Order_item_box-shadow_pc;
       }
       &::after {
         content: "";
@@ -85,6 +79,7 @@
           rgba($_link_color, .8)
         );
         opacity: 0;
+        box-shadow: $Order_item_box-shadow_pc;
       }
       ////////////////////////////////////////////////////////////////////////////////////
 
