@@ -1,0 +1,287 @@
+// =========================================================
+// メニュー Menu と、 メニューリスト MenuList
+// =========================================================
+
+.Menu {
+	@include tabpc {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	&__Item {
+		@include tabpc {
+			margin-bottom: $item_y-margin_pc;
+			width: 48%;
+		}
+		@include sp {
+			margin-bottom: $item_y-margin_sp;
+		}
+		text-align: left;
+
+		//
+		//ラッパー
+		//
+		.Item__wrapper {
+
+			//画像、タイトルと値段
+			&.is-img {
+				position: relative;
+			}
+
+			//説明、原材料
+			&.is-txt {
+				padding: 1em .5em;
+			}
+		}
+
+
+		//
+		//商品画像
+		//
+		.Item__img {
+			img {
+				width: 100%;
+			}
+		}
+
+		//
+		//商品名
+		//
+		.Item__ttl {
+			position: absolute;
+			top: 0;
+
+			@include tabpc {
+				padding: $MenuItem_ttl_y-padding $MenuItem_ttl_x-padding_pc;
+				font-size: $Menu_Item_ttl_font-size_pc;
+			}
+			@include sp {
+				padding: $MenuItem_ttl_y-padding $MenuItem_ttl_x-padding_sp;
+				font-size: $Menu_Item_ttl_font-size_sp;
+			}
+
+			line-height: $MenuItem_ttl_line-height;
+			background: transparent;
+			background-image: linear-gradient(
+				140deg,
+				rgba($soft_color, .6),
+				rgba($soft_color, .2) 100%,
+				transparent 100%
+			);
+
+			text-shadow: $soft_color 0 0 0.2em;
+		}
+
+		//
+		//値段
+		//
+		.Item__price {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+
+			@include tabpc {
+				padding: $MenuItem_price_y-padding $MenuItem_price_x-padding_pc;
+			}
+			@include sp {
+				padding: $MenuItem_price_y-padding $MenuItem_price_x-padding_sp;
+			}
+
+			line-height: $MenuItem_price_line-height;
+			letter-spacing: $MenuItem_price_letter-spacing;
+			color: rgba($light_font_color, 1);
+			text-shadow: $default_font_color 0.1em 0.1em 0.1em;
+
+			//数字は大きくする
+			span {
+				margin-right: $MenuItem_price_letter-spacing;
+				display: inline-block;
+				@include tabpc {
+					font-size: $Menu_Item_price_font-size_pc;
+				}
+				@include sp {
+					font-size: $Menu_Item_price_font-size_sp;
+				}
+			}
+		}
+
+		//
+		//説明
+		//
+		.Item__txt {
+			line-height: $MenuItem_txt_line-height;
+		}
+
+		//
+		//原材料
+		//
+		.Item__zairyo {
+			margin-top: $MenuItem_zairyo_margin-top;
+
+			position: relative;
+			&::before {
+				content: "---";
+				position: absolute;
+				top: -$MenuItem_zairyo_margin-top + .5em;
+				display: inline-block;
+			}
+
+			@include tabpc {
+				font-size: $Menu_Item_zairyo_font-size_pc;
+			}
+			@include sp {
+				font-size: $Menu_Item_zairyo_font-size_sp;
+			}
+
+			summary {
+				@include tabpc {
+					font-size: 1em;
+				}
+				@include sp {
+					font-size: 1em;
+				}
+			}
+		}
+	}
+}
+
+//
+//
+// メニューリスト
+//
+//
+.MenuList {
+	summary {
+		line-height: $MenuList_summary_line-height;
+
+		//以下トップページ Order のスタイルを拝借
+		$_link_color: rgba($dark_color, .8);
+    background: linear-gradient(
+      rgba($_link_color, .1),
+      rgba($_link_color, .2)
+    );
+		border: $Order_item_border_style;
+		border-radius: $Order_item_border-radius;
+    color: $_link_color;
+    //拝借ここまで
+
+		@include tabpc {
+			font-size: $Menu_Item_summary_font-size_pc;
+		}
+		@include sp {
+			font-size: $Menu_Item_summary_font-size_sp;
+		}
+	}
+
+	&__cnt {
+		@include tabpc {
+			padding-top: $MenuList_cnt_padding-top_pc;
+		}
+		@include sp {
+			padding-top: $MenuList_cnt_padding-top_sp;
+		}
+	}
+
+	//
+	//リード文
+	//
+	&__lead {
+
+	}
+
+	//
+	//メニュー分類
+	//
+	&__ttl {
+		&:first-of-type {
+			@include tabpc {
+				margin-top: $item_between_y-margin_pc;
+			}
+			@include sp {
+				margin-top: $item_between_y-margin_sp;
+			}
+		}
+		@include tabpc {
+			font-size: $MenuList_ttl_font-size_pc;
+		}
+		@include sp {
+			font-size: $MenuList_ttl_font-size_sp;
+		}
+		font-weight: bold;
+		line-height: $MenuList_ttl_line-height;
+	}
+
+	//
+	//メニューリストここから
+	//
+	&__list {
+		@include tabpc {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		@include sp {
+			border: $MenuList_border_style;
+		}
+	}
+
+	&__item {
+		padding: $MenuList_item_padding;
+		background: rgba($dark_color, .1);
+
+		@include tabpc {
+			width: 50%;
+
+			&:nth-child(-n+2){
+				border-top: $MenuList_border_style;
+			}
+			&:nth-child(odd){
+				border-left: $MenuList_border_style;
+			}
+			border-right: $MenuList_border_style;
+			border-bottom: $MenuList_border_style;
+		}
+		@include sp {
+			&:not(:last-child) {
+				border-bottom: $MenuList_border_style;
+			}
+		}
+
+		.Item__link {
+			display: flex;
+			transition: opacity .5s ease;
+			&:hover {
+				text-decoration: none;
+				opacity: .5;
+			}
+		}
+
+		$_price_width: 3em;//3桁数字+全角1文字
+
+		//flex用
+		.Item__wrappar {
+			width: calc(100% - #{$_price_width});
+			display: flex;
+		}
+
+		.Item__icon {
+			margin-right: $MenuList_item_icon_margin-right;
+			height: $MenuList_item_height;
+
+			img {
+				height: 100%;
+			}
+		}
+		.Item__ttl {
+			margin-right: $MenuList_item_icon_margin-right;
+			line-height: $MenuList_item_ttl_line-height;
+			font-weight: normal;
+		}
+
+		.Item__price {
+			width: $_price_width;
+			line-height: $MenuList_item_ttl_line-height;
+			text-align: right;
+		}
+	}
+}

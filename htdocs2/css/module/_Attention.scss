@@ -1,0 +1,28 @@
+// =========================================================
+// ド－ナッツに関する
+// =========================================================
+
+.Attention{
+	&__list {
+		>li {
+			text-align: left;
+
+			padding-left: 1em;
+			position: relative;
+			&::before {
+				content: "";
+				display: block;
+				position: absolute;
+				top: (1em * $dl_line-height) / 2;
+				left: 0;
+				width: .4em;
+				height: .1em	;
+				background: $default_font_color;
+			}
+
+			&:not(:first-child) {
+					margin-top: .5em;
+			}
+		}
+	}
+}

@@ -131,19 +131,37 @@ $PageTop_img_margint-top: .5em;
 $dl_x_dt_width_pc: 30%;
 $dl_x_dt_width_sp: 40%;
 
+//商品
+$MenuItem_ttl_x-padding_pc: 1em;
+$MenuItem_ttl_x-padding_sp: .6em;
+$MenuItem_ttl_y-padding: .8em;
+$MenuItem_price_x-padding_pc: 1em;
+$MenuItem_price_x-padding_sp: .6em;
+$MenuItem_price_y-padding: .8em;
+$MenuItem_zairyo_margin-top: 2em;
+
+//商品一覧
+$MenuList_x-padding: .6em;
+$MenuList_item_padding: .8em;
+$MenuList_item_height: 2.5em;
+$MenuList_item_icon_margin-right: .8em;
+$MenuList_cnt_padding-top_pc: 1.5em;
+$MenuList_cnt_padding-top_sp: 1.5em;
+
+
 //
 // font-size
 //
 //  bodyのfont-sizeに対してemで指定する
 //
-$header_ttl_font-size_pc: 2em; //後で調整
+$header_ttl_font-size_pc: 2em; //	後で調整
 $header_ttl_font-size_sp: 1.55em;
 
 $sec_ttl_font-size_pc: 1.5em; //後で調整
 $sec_ttl_font-size_sp: 1.35em;
 
 $item_ttl_font-size_pc: 1.25em;
-$item_ttl_font-size_sp: 1.15em;//後で調整
+$item_ttl_font-size_sp: 1.1em;//後で調整
 
 $About_tbl_cnt_font-size_pc: 1.25em;
 $About_tbl_cnt_font-size_sp: 1.2em;//後で調整
@@ -161,13 +179,27 @@ $dl_ttl_font-size_sp: 1.1em;//気持ち小さくね
 $Order_item_font-size_pc: 1.25em;
 $Order_item_font-size_sp: 1.25em;
 
-// leadText
+//leadText
 $leadText_outline_width_pc: $section_ttl_before_width_pc;
 $leadText_outline_offset_pc: -$section_ttl_before_x-margin_pc;
 $leadText_y-padding_pc: 2em;
 $leadText_y-padding_sp: 2em;//後で修正
 $leadText_x-padding_pc: 1em + $sec_ttl_font-size_pc;//セクションタイトルのフォントサイズを足し込むのはPCだけね
 $leadText_x-padding_sp: 2em;
+
+//Menu
+$Menu_Item_summary_font-size_pc: 1.3em;
+$Menu_Item_summary_font-size_sp: 1.3em;
+$Menu_Item_ttl_font-size_pc: 1.2em;
+$Menu_Item_ttl_font-size_sp: 1.1em;
+$Menu_Item_price_font-size_pc: 2em;
+$Menu_Item_price_font-size_sp: 2em;
+$Menu_Item_zairyo_font-size_pc: 0.9em;
+$Menu_Item_zairyo_font-size_sp: 0.9em;
+
+//MenuList
+$MenuList_ttl_font-size_pc: 1.2em;
+$MenuList_ttl_font-size_sp: 1.1em;
 
 //
 //line-height
@@ -192,12 +224,21 @@ $About_map-txt_line-height_pc: 2;
 
 $PageTop_txt_line-height: 1.1;//狭め
 
+$MenuItem_ttl_line-height: 1;//paddingでやる
+$MenuItem_price_line-height: 1;//paddingでやる
+$MenuItem_txt_line-height: 1.6;
+
+$MenuList_summary_line-height: 2.5;
+$MenuList_ttl_line-height: 3.5;
+$MenuList_item_ttl_line-height: 2.5;
+
 //
 //letter-spacing
 //
 $section_ttl_letter-spacing: .06em;
 $PageTop_txt_letter-spacing: .1em;
 $About_tbl_cnt_letter-spacing: .1rem;
+$MenuItem_price_letter-spacing: .05em;
 
 //
 //border-radius
@@ -224,11 +265,14 @@ $About_tbl_border_width: .2rem;
 
 $CharImg_izumon_txt_border_style: .2rem dashed rgba($default_font_color, .6);
 
+$MenuList_border_style: .2rem solid rgba($default_font_color, .1);
+
 //
 //box-shadow
 //
 $Order_item_box-shadow_pc: 4px 4px 20px -6px rgba($dark_color, .4);
 $Order_item_box-shadow_sp: .4rem .4rem 2rem -.6rem rgba($dark_color, .4);
+
 
 //
 // Rebootのフォント設定

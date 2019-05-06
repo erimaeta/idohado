@@ -12,7 +12,7 @@
 </head>
 <body>
   <header class="header">
-    <img class="header__logo" src="images/logo.png" alt="いどはどのロゴ">
+    <a href="index.html"><img class="header__logo" src="images/logo.png" alt="いどはどのロゴ"></a>
     <h1 class="header__ttl">取り置き注文ページ</h1>
   </header>
   <main>
@@ -44,7 +44,7 @@
           <dd class="Flow__cnt">ドーナッツをお渡しします</dd>
         </dl>
         <div class="CharImg is-sigera">
-          <p class="CharImg__txt">お気軽にーー</p>
+          <p class="CharImg__txt">お気軽にねー</p>
           <div class="CharImg__img">
             <img src="images/character/shigera.png">
           </div>
@@ -55,7 +55,7 @@
       <h2 class="section__ttl">ご注文</h2>
       <div class="section__cnt Order">
         <ul class="Order__list">
-          <li class="Order__item"><a href="#">メニューを見る</a></li>
+          <li class="Order__item"><a href="menu.html">メニューを見る</a></li>
           <li class="Order__item"><a href="#">注文する</a></li>
         </ul>
       </div>
@@ -108,49 +108,19 @@
       </div>
     </section>
   </main>
-  <footer class="footer">
-    <div class="footer__cnt About">
-      <h3 class="About__ttl">いどはどドーナッツin函館</h3>
-      <table class="About__tbl">
-        <tr>
-          <td class="About__cnt">
-            <a href="tel:09050755026">
-              <i class="cnt__icon fas fa-fw fa-phone"></i>
-              <p class="cnt__data">090-5075-5026</p>
-            </a>
-          </td>
-          <td class="About__cnt">
-            <a href="mailto:810keikaku@gmail.com">
-              <i class="cnt__icon fas fa-envelope"></i>
-              <p class="cnt__data">810keikaku@gmail.com</p>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td class="About__cnt">
-            <a href="https://www.instagram.com/idohado/?hl=ja">
-              <i class="cnt__icon fab fa-instagram"></i>
-              <p class="cnt__data">InstagramID:idohado</p>
-            </a>
-          </td>
-          <td class="About__cnt">
-            <a href="https://idohado.exblog.jp/">
-              <i class="cnt__icon fas fa-pencil-alt"></i>
-              <p class="cnt__data">BLOG</p>
-            </a>
-          </td>
-        </tr>
-      </table>
-      <div class="About__map">
-        <a href="https://goo.gl/maps/mk16N9E4hM82" class="map__link"><i class="fas fa-fw fa-map-marker-alt"></i>函館市弥生町19-20</a></p>
-        <iframe class="map__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2975.7585924703308!2d140.70510381583554!3d41.76886237923105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f9ef3a6528629c7%3A0x8c30405a640324b3!2z44GE44Gp44Gv44Gp44OJ44O844OK44OD44OE!5e0!3m2!1sja!2sjp!4v1546501874143" frameborder="0" style="border:0" allowfullscreen></iframe>
-        <p class="map__txt">大町電停から弥生坂を登り、一つ目の信号を過ぎ、すぐ右横の路地奥左です。</p>
-      </div>
-    </div>
-    <p class="footer__auth">© 2018 いどはど〜移動して波動を送る〜</p>
-  </footer>
+  <footer class="footer" id="footer"></footer>
 
 <script type="text/javascript" src="js/common.js"></script>
 <script type="text/javascript" src="js/calendar.js"></script>
+<script type="text/javascript" src="js/footer.js"></script>
+
+<script type="text/javascript">
+  window.onload = function() {
+
+    show_calendar();
+    show_footer();
+
+  };
+</script>
 </body>
 </html>
