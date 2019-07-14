@@ -216,34 +216,106 @@
 	//メニューリストここから
 	//
 	&__list {
-		@include tabpc {
-			display: flex;
-			flex-wrap: wrap;
+
+		&.is-menu {
+			@include tabpc {
+				display: flex;
+				flex-wrap: wrap;
+			}
 		}
+
+		&.is-order {
+			@include tabpc {
+				display: flex;
+				flex-wrap: wrap;
+			}
+		}
+
+		//
+		//枠線の定義（縦積み）
+		//
 		@include sp {
 			border: $MenuList_border_style;
 		}
+		&.is-order {
+			@include sp {
+				border: $MenuList_border_style;
+				.MenuList__item {
+					&:not(:last-child) {
+						border-bottom: $MenuList_border_style;
+					}
+				}
+			}
+		}
+		.MenuList__item {
+			@include sp {
+				&:not(:last-child) {
+					border-bottom: $MenuList_border_style;
+				}
+			}
+		}
+
+		//
+		//枠線の定義（横並び）
+		//
+		&.is-menu,
+		&.is-order {
+			.MenuList__item {
+				@include tabpc {
+					&:nth-child(-n+2){
+						border-top: $MenuList_border_style;
+					}
+					&:nth-child(odd){
+						border-left: $MenuList_border_style;
+					}
+					border-right: $MenuList_border_style;
+					border-bottom: $MenuList_border_style;
+				}
+			}
+		}
+
 	}
 
+
+	//
+	// ul MenuList__list
+	// -> li MenuList__item
+	//
 	&__item {
 		padding: $MenuList_item_padding;
 		background: rgba($dark_color, .1);
 
 		@include tabpc {
 			width: 50%;
-
-			&:nth-child(-n+2){
-				border-top: $MenuList_border_style;
-			}
-			&:nth-child(odd){
-				border-left: $MenuList_border_style;
-			}
-			border-right: $MenuList_border_style;
-			border-bottom: $MenuList_border_style;
 		}
 		@include sp {
-			&:not(:last-child) {
-				border-bottom: $MenuList_border_style;
+		}
+
+		&.is-order {
+			@include tabpc {
+				width: 50%;
+			}
+			@include sp {
+				width: 100%;
+			}
+			display: flex;
+		}
+
+		.Item {
+			display: flex;
+			flex-wrap: wrap;
+
+			&.is-left {
+				width: 30%;
+			}
+			&.is-right {
+				width: 70%;
+			}
+
+			@include tabpc {
+			}
+			@include sp {
+
 			}
 		}
 
@@ -260,17 +332,39 @@
 
 		//flex用
 		.Item__wrappar {
-			width: calc(100% - #{$_price_width});
 			display: flex;
+			&.is-menu {
+				width: calc(100% - #{$_price_width});
+			}
+			&.is-orderMenu {
+				justify-content: space-between;
+				width: 100%;
+			}
+			&.is-price {
+				justify-content: flex-end;
+				align-items: flex-end;
+				width: 100%;
+
+			}
 		}
 
 		.Item__icon {
 			margin-right: $MenuList_item_icon_margin-right;
-			height: $MenuList_item_height;
 
-			img {
-				height: 100%;
+			&.is-menu {
+				height: $MenuList_item_height;
+				img {
+					height: 100%;
+				}
 			}
+
+			&.is-orderMenu {
+				width: 100%;
+				img {
+					width: 100%;
+				}
+			}
+
 		}
 		.Item__ttl {
 			margin-right: $MenuList_item_icon_margin-right;
@@ -280,8 +374,18 @@
 
 		.Item__price {
 			width: $_price_width;
-			line-height: $MenuList_item_ttl_line-height;
 			text-align: right;
+
+			&.is-menu {
+				line-height: $MenuList_item_ttl_line-height;
+			}
+		}
+
+		input {
+			margin-left: .5em;
+		}
+		.Item__tani {
+			margin-left: .5em;
 		}
 	}
 }

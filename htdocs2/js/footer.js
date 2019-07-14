@@ -25,13 +25,13 @@ function show_footer() {
 	footerinsert += '</tr>';
 	footerinsert += '<tr>';
 	footerinsert += '<td class="About__cnt">';
-	footerinsert += '<a href="https://www.instagram.com/idohado/?hl=ja">';
+	footerinsert += '<a href="https://www.instagram.com/idohado/?hl=ja" target="_blank">';
 	footerinsert += '<i class="cnt__icon fab fa-instagram"></i>';
 	footerinsert += '<p class="cnt__data">InstagramID:idohado</p>';
 	footerinsert += '</a>';
 	footerinsert += '</td>';
 	footerinsert += '<td class="About__cnt">';
-	footerinsert += '<a href="https://idohado.exblog.jp/">';
+	footerinsert += '<a href="https://idohado.exblog.jp/"  target="_blank">';
 	footerinsert += '<i class="cnt__icon fas fa-pencil-alt"></i>';
 	footerinsert += '<p class="cnt__data">BLOG</p>';
 	footerinsert += '</a>';

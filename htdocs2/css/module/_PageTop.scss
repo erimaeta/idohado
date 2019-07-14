@@ -4,8 +4,8 @@
 
 .PageTop {
 	position: fixed;
-	bottom: 5%;
-	right: 2.5%;
+	bottom: $PageTop_bottom;
+	right: $PageTop_right;
 	z-index: 99;
 	cursor: pointer;
 

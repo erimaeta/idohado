@@ -19,13 +19,13 @@ var tempate_list =
 	'{{#item}}'+
     '<li class="MenuList__item">'+
       '<a class="Item__link" href="#{{id}}">'+
-      	'<div class="Item__wrappar">'+
-	        '<div class="Item__icon">'+
+      	'<div class="Item__wrappar is-menu">'+
+	        '<div class="Item__icon is-menu">'+
 	          '<img src="{{imgdir}}thumb/{{img}}">'+
 	        '</div>'+
 	        '<h4 class="Item__ttl">{{ttl}}</h4>'+
 	      '</div>'+
-        '<p class="Item__price">{{price}}円</p>'+
+        '<p class="Item__price is-menu">{{price}}円</p>'+
       '</a>'+
     '</li>'+
   '{{/item}}';

@@ -123,6 +123,8 @@ $About_map_height_pc: 300px;
 $About_map_height_sp: 70vw;
 
 //pagetop（不安定ボーイ）
+$PageTop_bottom: 5%;
+$PageTop_right: 2.5%;
 $PageTop_width_pc: 100px;
 $PageTop_width_sp: 20vw;
 $PageTop_img_margint-top: .5em;
@@ -148,6 +150,10 @@ $MenuList_item_icon_margin-right: .8em;
 $MenuList_cnt_padding-top_pc: 1.5em;
 $MenuList_cnt_padding-top_sp: 1.5em;
 
+//PriceSum（注文金額合計）
+$PriceSum_bottom: $PageTop_bottom;
+$PriceSum_right_pc: calc(#{$PageTop_right} + #{$PageTop_width_pc});
+$PriceSum_right_sp: 50%;
 
 //
 // font-size
