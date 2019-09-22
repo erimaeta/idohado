@@ -1,0 +1,41 @@
+/*
+ * project: attention
+ */
+
+.p-attention {
+	&__list {
+		>li {
+			&:not(:first-child) {
+				margin-top: map-get($margin, sm);
+			}
+		}
+	}
+
+	&__image {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+
+		@include sp {
+			margin-top: map-get($margin, sm);
+			justify-content: flex-end;
+		}
+
+		.image-serif {
+			@include tabpc {
+				font-size: map-get($font-size, sm);
+			}
+		}
+
+		.image-char {
+			@include sp {
+				height: 55vw;
+				max-height: 281px;
+
+				img {
+					height: 100%;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,34 @@
+/*
+ * project base
+ */
+
+html {
+	@include tabpc {
+		font-size: map-get($font, pc);
+	}
+	@include sp {
+		font-size: map-get($font, sp);
+	}
+	@include smallsp {
+		font-size: map-get($font, smallsp);
+	}
+}
+
+body {
+	font-family: map-get($font, family);
+	color: map-get($color, default_color);
+	line-height: map-get($line-height, body);
+}
+
+ul {
+	padding-left: 0;
+	list-style: none;
+}
+
+p {
+	margin-bottom: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 0;
+}

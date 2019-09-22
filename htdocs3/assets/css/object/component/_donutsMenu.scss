@@ -1,0 +1,57 @@
+/*
+ * component: donutsMenu
+ */
+
+ //ドーナッツメニュー一覧のアイテム
+
+.c-donutsMenu {//アンカーの想定でございます
+	$_background: map-get($color, bg_dark_a01);
+	$_font_size: map-get($font-size, md);
+	$_padding: map-get($padding, xs);
+
+	$_color: map-get($color, default_color_a09);
+	$_du: map-get($transition, duration);
+	$_tf: map-get($transition, timingFunction);
+
+	///
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: $_padding;
+
+	background: $_background;
+
+	color: $_color;
+	text-decoration: none;
+	transition: opacity $_du $_tf;
+
+	&:hover {
+		opacity: 0.5;
+		color: $_color;
+		text-decoration: none;
+	}
+
+	&__left {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+
+		.menu-image {
+			width: 50px;
+			img {
+				width: 100%;
+			}
+		}
+		.menu-title {
+			margin-left: map-get($margin, xs);
+			font-size: $_font_size;
+		}
+
+	}
+	&__right {
+		.menu-price {
+			font-size: $_font_size;
+		}
+	}
+}

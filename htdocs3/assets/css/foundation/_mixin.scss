@@ -1,0 +1,136 @@
+/*
+ * mixin
+ */
+
+@mixin largepc {
+	@include media-breakpoint-up(xl) {
+		@content;
+	}
+}
+
+@mixin tab_smallpc {
+ 	@include media-breakpoint-between(md, lg) {
+ 		@content;
+ 	}
+}
+
+@mixin pc {
+ 	@include media-breakpoint-up(lg) {
+ 		@content;
+ 	}
+}
+
+@mixin tab {
+ 	@include media-breakpoint-only(md) {
+ 		@content;
+ 	}
+}
+
+ @mixin tabpc {
+ 	@include media-breakpoint-up(md) {
+ 		@content;
+ 	}
+ }
+
+@mixin sptab {
+	@include media-breakpoint-down(md) {
+		@content;
+	}
+}
+
+@mixin sp {
+	@include media-breakpoint-down(sm) {
+		@content;
+	}
+}
+
+@mixin smallsp {
+	@media screen and (max-width: 350px) {
+		@content;
+	}
+}
+
+//
+// innerを作る
+//
+// 想定使用箇所：
+// -section
+// -header
+// -footer
+//
+@mixin create_inner() {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+
+	@include tabpc {
+		$_padding-x: map-get($padding, sm);
+		max-width: $inner;
+		padding-left: $_padding-x;
+		padding-right: $_padding-x;
+	}
+
+	@include sp {
+		$_padding-x: map-get($padding, sm);
+		padding-left: $_padding-x;
+		padding-right: $_padding-x;
+	}
+}
+
+//
+// block要素をセンタリング
+//
+@mixin block_centering() {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+//
+// 瓦みたいな背景にする
+//
+// $bgc: 色
+//
+@mixin bg_KAWARA($bgc) {
+	$bgc2: lighten($bgc, 3%);
+
+	background-color:$bgc;
+	background-image:
+	radial-gradient(circle at 100% 150%, $bgc 24%, $bgc2 25%, $bgc2 28%, $bgc 29%, $bgc 36%, $bgc2 36%, $bgc2 40%, transparent 40%, transparent),
+	radial-gradient(circle at 0    150%, $bgc 24%, $bgc2 25%, $bgc2 28%, $bgc 29%, $bgc 36%, $bgc2 36%, $bgc2 40%, transparent 40%, transparent),
+	radial-gradient(circle at 50%  100%, $bgc2 10%, $bgc 11%, $bgc 23%, $bgc2 24%, $bgc2 30%, $bgc 31%, $bgc 43%, $bgc2 44%, $bgc2 50%, $bgc 51%, $bgc 63%, $bgc2 64%, $bgc2 71%, transparent 71%, transparent),
+	radial-gradient(circle at 100% 50%, $bgc2 5%, $bgc 6%, $bgc 15%, $bgc2 16%, $bgc2 20%, $bgc 21%, $bgc 30%, $bgc2 31%, $bgc2 35%, $bgc 36%, $bgc 45%, $bgc2 46%, $bgc2 49%, transparent 50%, transparent),
+	radial-gradient(circle at 0    50%, $bgc2 5%, $bgc 6%, $bgc 15%, $bgc2 16%, $bgc2 20%, $bgc 21%, $bgc 30%, $bgc2 31%, $bgc2 35%, $bgc 36%, $bgc 45%, $bgc2 46%, $bgc2 49%, transparent 50%, transparent);
+	background-size: 100px 50px;
+}
+
+//
+// 手書き風の線にする
+//
+// ※呼び出す要素で position:relative すること
+// $before_flg: beforeならTRUE, afterならfalse
+//
+@mixin tegaki_line($before) {
+	$bg_img_height: 14px;
+
+	content: "";
+  position: absolute;
+  z-index: map-get($z-index, tegaki_line);
+  left: 0;
+
+  display: block;
+  height: $bg_img_height; //画像の高さ
+  width: 100%;
+
+  background: map-get($color, transparent);
+  background-image: url("../img/bg_line.png");
+	background-repeat-x: repeat;
+  background-repeat-y: no-repeat;
+
+	transform: translateY(-50%);
+
+  @if $before == true {
+		bottom: -($bg_img_height);
+	} @else {
+		top: 0;
+	}
+}

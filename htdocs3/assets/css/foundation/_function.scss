@@ -1,0 +1,14 @@
+/*
+ * function
+ */
+
+//
+// フォントサイズと文字数から、テキストの幅を算出する
+//
+// $fz フォントサイズ（rem）
+// $len 文字数（半角の文字数）
+//
+@function get_textWidth($fz, $len) {
+	$rem: $fz * ($len / 2);
+	@return $rem;
+}

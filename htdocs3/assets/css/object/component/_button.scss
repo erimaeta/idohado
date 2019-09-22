@@ -1,0 +1,92 @@
+/*
+ * component: button
+ */
+
+// フォントサイズは各projectで指定します。
+// 余白も必要に応じて各projectで上書きします。
+
+.c-button {
+	$_color: map-get($color, default_color_a07);
+	$_hover_color: map-get($color, light_color_a07);
+
+	$_bg_color: map-get($color, bg_dark_a01);
+	$_bg_color_dark: map-get($color, bg_dark_a02);
+	$_hover_bg_color: map-get($color, bg_dark_a07);
+	$_hover_bg_color_dark: map-get($color, bg_dark_a08);
+
+	$_border_color: map-get($color, bg_dark_a08);
+	$_shadow_color: map-get($color, bg_dark_a03);//ぼかすので気持ち濃いめ
+
+	$_border_radius: map-get($border-radius, md);
+
+	$_du: map-get($transition, duration);
+	$_tf: map-get($transition, timingFunction);
+
+	///
+
+	position: relative;
+	display: block;
+	padding: map-get($padding, md);
+
+	color: $_color;
+	text-align: center;
+
+//	box-shadow:
+//		.4rem		// offset-x
+//		.4rem		// offset-y
+//		2rem		// blur-radius（広めにぼかし）
+//		-.6rem	// spread-radius（面積を減らす）
+//		$_shadow_color;
+
+	transition: color $_du $_tf;
+
+
+	// 以下、ボタンのグラデーション
+	// background-imageに transition 効かせるため
+	// before, afterをopacityで制御するかたち
+
+	&::before, &::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+
+		display: block;
+		width: 100%;
+		height: 100%;
+		border: 3px solid $_border_color;
+		background: map-get($color, transparent);
+
+		border-radius: $_border_radius;
+		transition: opacity $_du $_tf;
+	}
+
+	&::before {
+		background-image: linear-gradient(
+			to bottom,
+			$_bg_color,
+			$_bg_color_dark
+		);
+	}
+
+	&::after {
+		opacity: 0;
+		background-image: linear-gradient(
+			to bottom,
+			$_hover_bg_color,
+			$_hover_bg_color_dark
+		);
+	}
+
+	&:hover {
+    &::before {
+      opacity: 0;
+    }
+    &::after {
+      opacity: 1;
+    }
+		color: $_hover_color;
+		text-decoration: none;
+	}
+}

@@ -1,0 +1,26 @@
+/*
+ * project: header
+ */
+
+.p-header {
+	position: relative;
+	padding: map-get($padding-y, header) 0;
+	background: map-get($color, bg_header);
+
+	text-align: center;
+
+	&::after {
+		@include tegaki_line(true);
+	}
+
+	&__title {
+		font-weight: bold;
+
+		@include tabpc {
+			font-size: map-get($title-font-size, lll);
+		}
+		@include sp {
+			font-size: map-get($title-font-size, xl);
+		}
+	}
+}

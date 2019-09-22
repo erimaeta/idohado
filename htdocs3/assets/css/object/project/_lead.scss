@@ -1,0 +1,44 @@
+/*
+ * project: lead
+ */
+
+.p-lead {
+	$_pc_padding-x: map-get($padding, md);
+	$_pc_padding-y: map-get($padding, lg);
+	$_sp_padding-x: map-get($padding, xs);
+	$_sp_padding-y: map-get($padding, sm);
+
+	@include tabpc {
+		padding: $_pc_padding-y $_pc_padding-x;
+	}
+	@include sp {
+		padding: $_sp_padding-y $_sp_padding-x;
+	}
+//	@include smallsp {
+//		padding: 0;
+//	}
+
+	border: 20px solid map-get($color, transparent);
+	border-image-source: url("../img/bg_box.png");
+	border-image-slice: 20;
+	border-image-outset: 3px;
+
+	text-align: center;
+	line-height: map-get($line-height, lg);
+	background: map-get($color, bg_dark_a01);
+
+	&__text {
+		font-size: map-get($font-size, md);
+		&:not(:first-child) {
+			margin-top: map-get($margin, md);
+		}
+
+		.em {
+			background: map-get($color, bg_dark_a02);
+		}
+	}
+	&__by {
+		margin-top: map-get($margin, md);
+		font-size: map-get($font-size, sm);
+	}
+}

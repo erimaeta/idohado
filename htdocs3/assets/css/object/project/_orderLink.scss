@@ -1,0 +1,132 @@
+/*
+ * project: orderLink
+ */
+
+// メニューとオーダーページへのリンク
+
+.p-orderLink {
+	$_button_fontsize: map-get($font-size, lg);
+
+	&__list {
+	}
+	&__item {
+		@include pc {
+			@include block_centering;
+			width: 70%;
+		}
+		@include sptab {
+			width: 100%;
+		}
+		&:not(:first-child) {
+			margin-top: map-get($margin, sm);
+		}
+
+		>a {
+			position: relative;
+			font-size: $_button_fontsize;
+			font-weight: bold;
+		}
+	}
+
+	&__image {
+		position: relative;
+		display: flex;
+		align-items: center;
+
+		@include tabpc {
+			margin-top: map-get($margin, md);
+		}
+		@include sp {
+			margin-top: map-get($margin, sm);
+		}
+
+		.image-char {
+			@include sp {
+				width: 70%;
+			}
+		}
+		.image-serif {
+
+		}
+	}
+
+	&__info {
+		$_border_outside_color: map-get($color, bg_dark_a08);
+		$_border_outside_style: 3px solid $_border_outside_color;
+		$_border_outside_radius: map-get($border-radius, md);
+
+		$_border_inside_color: map-get($color, bg_dark_a08);
+		$_border_inside_style: 1px solid $_border_inside_color;
+
+		$_padding-y: map-get($padding, sm);
+		$_padding-left: map-get($padding, md);
+
+		$_color: map-get($color, bg_dark_a08);
+		$_link_fontsize: map-get($font-size, lg);
+		$_text_fontsize: map-get($font-size, md);
+		$_sp_author_fontsize: map-get($font-size, sm);
+		$_bg_color: map-get($color, light_color_a01);
+		$_transparent: map-get($color, transparent);
+
+		$_icon_width: $_link_fontsize * 1.5;
+
+		$_du: map-get($transition, duration);
+		$_tf: map-get($transition, timingFunction);
+
+		@mixin _text_style($text_flag:false) {
+			color: $_color;
+			@if $text_flag == true {
+				font-size: $_text_fontsize;
+			}@else {
+				font-size: $_link_fontsize;
+			}
+		}
+
+		@mixin _anchor_style {
+			transition: all $_du $_tf;
+			&:hover {
+				opacity: 0.5;
+				text-decoration: none;
+			}
+		}
+
+		@mixin _icon_style {
+			width: $_icon_width;
+			text-align: center;
+		}
+
+		@include tabpc {
+			width: 70%;
+			@include block_centering;
+		}
+		@include sp {
+			width: 100%;
+		}
+
+		border: $_border_outside_style;
+		border-radius: $_border_outside_radius;
+
+		.infoLink {//<a>です
+			display: block;
+			width: 100%;
+			padding: $_padding-y 0;
+			padding-left: $_padding-left;
+			border-bottom: $_border_inside_style;
+
+			background: $_transparent;
+			background-image: linear-gradient(
+				to right,
+				$_bg_color,
+				$_transparent 40%
+			);
+
+			@include _text_style;
+			@include _anchor_style;
+
+			&__icon {
+				display: inline-block;
+				@include _icon_style;
+			}
+		}
+	}
+}

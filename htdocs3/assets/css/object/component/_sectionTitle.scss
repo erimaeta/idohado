@@ -1,0 +1,32 @@
+/*
+ * component: sectionTitle
+ */
+
+.c-sectionTitle {
+	$_before_width: 0.8rem;
+
+	position: relative;
+	padding-left: $_before_width * 2;
+
+	font-weight: bold;
+
+	@include tabpc {
+		margin-left: -($_before_width * 2);
+	}
+
+	&::before {
+		content: "";
+
+		position: absolute;
+		left: 0;
+		top: 0;
+
+		display: block;
+		width: $_before_width;
+		height: 100%;
+
+		background-color: map-get($color, default_color);
+
+		border-radius: map-get($border-radius, xs);
+	}
+}

@@ -1,0 +1,9 @@
+/*
+ * component: sectionTitleNest
+ */
+
+.c-sectionTitleNest {
+	display: inline-block;
+	font-weight: bold;
+	line-height: map-get($line-height, md);
+}

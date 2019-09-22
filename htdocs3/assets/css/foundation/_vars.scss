@@ -1,0 +1,116 @@
+/*
+ * variables
+ */
+
+$inner: 1200px;
+
+$z-index: (
+	order_link_arrow: 2,
+	tegaki_line: 3,
+	page_top: 4,
+);
+
+$font: (
+	family: 'Kosugi Maru',
+	smallsp: 13px,
+	sp: 15px,
+	tab: 16px,
+	pc: 16px,
+);
+
+$padding-y: (
+	header: 5rem,
+	footer: 5rem,
+	main: 2.5rem,
+	section: 2.5rem,
+);
+
+$padding: (
+	xs: 0.5rem,
+	sm: 1rem,
+	md: 1.5rem,
+	lg: 2rem,
+	xl: 2.5rem,
+);
+
+$line-height: (
+	xs: 1.25,
+	sm: 1.5,
+	md: 1.7,
+	lg: 1.9,
+	xl: 2.1,
+	body: 1.5,
+);
+
+$color: (
+	transparent: rgba(0,0,0,0),
+	default_color: #664032,
+	default_color_a05: rgba(#664032, .5),
+	default_color_a06: rgba(#664032, .6),
+	default_color_a07: rgba(#664032, .7),
+	default_color_a08: rgba(#664032, .8),
+	default_color_a09: rgba(#664032, .9),
+	light_color: #FFEECE,
+	light_color_a01: rgba(#FFEECE, .1),
+	light_color_a02: rgba(#FFEECE, .2),
+	light_color_a03: rgba(#FFEECE, .3),
+	light_color_a04: rgba(#FFEECE, .4),
+	light_color_a05: rgba(#FFEECE, .5),
+	light_color_a06: rgba(#FFEECE, .6),
+	light_color_a07: rgba(#FFEECE, .7),
+	light_color_a08: rgba(#FFEECE, .8),
+	light_color_a09: rgba(#FFEECE, .9),
+	bg_header: #fddea5,
+	bg_footer: #8d6449,
+	bg_dark: #8d6449,
+	bg_dark_a01: rgba(#8d6449, .1),
+	bg_dark_a02: rgba(#8d6449, .2),
+	bg_dark_a03: rgba(#8d6449, .3),
+	bg_dark_a04: rgba(#8d6449, .4),
+	bg_dark_a05: rgba(#8d6449, .5),
+	bg_dark_a06: rgba(#8d6449, .6),
+	bg_dark_a07: rgba(#8d6449, .7),
+	bg_dark_a08: rgba(#8d6449, .8),
+	bg_dark_a09: rgba(#8d6449, .9),
+	bg_white_a05: rgba(#fff, .5),
+);
+
+$transition: (
+	duration: 500ms, //duration
+	timingFunction: ease, //timingFunction
+);
+
+$border-radius: (
+	xs: 0.1rem,
+	sm: 0.25rem,
+	md: 0.5rem,
+	lg: 0.75rem,
+	xl: 1rem,
+);
+
+$margin: (
+	xs: 0.5rem,
+	sm: 1rem,
+	md: 1.5rem,
+	lg: 2rem,
+	xl: 2.5rem,
+	lll: 3rem,
+);
+
+$font-size: (
+	xs: 0.8rem,
+	sm: 1rem,
+	md: 1.2rem,
+	lg: 1.4rem,
+	xl: 1.6rem,
+	lll: 2.0rem,
+);
+
+$title-font-size: (
+	xs: 1.2rem,
+	sm: 1.4rem,
+	md: 1.6rem,
+	lg: 1.8rem,
+	xl: 2.0rem,
+	lll: 2.5rem,
+);

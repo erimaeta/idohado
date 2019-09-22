@@ -1,0 +1,91 @@
+/*
+ * project: donutsDetail
+ */
+
+.p-donutsDetails {
+	@include tabpc {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		@include block_centering;
+		width: 80%;
+	}
+
+	.detail {
+		$_margin-bottom: map-get($margin, lg);
+
+		$_title_fz: map-get($font-size, xl);
+		$_title_color: map-get($color, default_color);
+		$_title_bg: map-get($color, light_color_a05);
+		$_title_shadow: map-get($color, light_color_a08);
+
+		$_price_fz: map-get($font-size, lll);
+		$_price_color: map-get($color, light_color_a09);
+		$_price_shadow: map-get($color, default_color);
+
+		$_text_margin-top: map-get($margin, sm);
+		$_description_fz: map-get($font-size, md);
+
+		$_material_margin-top: map-get($margin, xs);
+		$_material_fz: map-get($font-size, sm);
+
+		margin-bottom: $_margin-bottom;
+
+		@include tabpc {
+			width: 48%;
+		}
+
+		&__wrapper {
+			position: relative;
+
+			&.is-text {
+				margin-top: $_text_margin-top;
+			}
+		}
+
+		&__img {
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		&__title {
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding: 0.5em;
+
+			color: $_title_color;
+			font-size: $_title_fz;
+			font-weight: bold;
+
+			background: $_title_bg;
+			text-shadow: $_title_shadow 0 0 0.2em;
+		}
+
+		&__price {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			padding: 0.25em;
+
+			color: $_price_color;
+			font-size: $_price_fz;
+			font-weight: bold;
+			letter-spacing: 0.05em;
+
+			text-shadow: $_price_shadow 0.1em 0.1em 0.1em;
+		}
+
+		&__description {
+			font-size: $_description_fz;
+		}
+
+		&__material {
+			margin-top: $_material_margin-top;
+			font-size: $_material_fz;
+		}
+	}
+}

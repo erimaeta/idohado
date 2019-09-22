@@ -1,0 +1,27 @@
+/*
+ * project: footer
+ */
+
+.p-footer {
+	$_pc_fontsize: map-get($title-font-size, lg);
+	$_sp_fontsize: map-get($title-font-size, md);
+
+	position: relative;
+	padding: map-get($padding-y, footer) 0 0;
+	background: map-get($color, bg_footer);
+
+	&__title {
+		color: map-get($color, light_color);
+		font-weight: bold;
+		@include tabpc {
+			font-size: $_pc_fontsize;
+		}
+		@include sp {
+			font-size: $_sp_fontsize;
+		}
+	}
+
+	&::before {
+		@include tegaki_line(false);
+	}
+}

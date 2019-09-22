@@ -1,0 +1,97 @@
+/*
+ * project: donutsMenu
+ */
+
+$_font_size: map-get($font-size, md);
+$_margin-top: map-get($margin, md);
+$_border_color: map-get($color, bg_dark_a04);
+$_border_style: 2px solid $_border_color;
+
+.p-donutsMenu {
+	&__text {
+		font-size: $_font_size;
+	}
+
+	&__category {
+		margin-top: $_margin-top;
+	}
+}
+
+/*
+ * project: donutsCategory
+ */
+
+.p-donutsCategory {
+	$_button_fontsize: map-get($font-size, lg);
+
+	&:not(:first-child) {
+		margin-top: map-get($margin, sm);
+	}
+
+	//ボタン
+	&__title {
+		@include tabpc {
+			@include block_centering;
+			width: 80%;
+		}
+		@include sp {
+			width: 100%;
+		}
+
+		>button {
+			width: 100%;
+			border: none;
+			font-size: $_button_fontsize;
+			background: map-get($color, transparent);
+		}
+	}
+	//メニュー
+	&__menu {
+		@include tabpc {
+			@include block_centering;
+			width: 80%;
+		}
+		@include sp {
+			width: 100%;
+		}
+
+		.donutsMenu {
+			display: flex;
+			flex-wrap: wrap;
+
+			>li {
+				border: $_border_style;
+
+				@include sp {
+					width: 100%;
+					&:not(:first-child) {
+						border-top: none;
+					}
+				}
+
+				@include tabpc {
+					width: calc(100% / 2);
+					&:nth-child(n+3) {
+						border-top: none;
+					}
+					&:nth-child(even) {
+						border-left: none;
+					}
+				}
+
+//				@include largepc {
+//					width: calc(100% / 3);
+//					&:not(:first-child) {
+//						border-left: none
+//					}
+//					&:nth-child(n+4) {
+//						border-top: none;
+//					}
+//					&:nth-child(3n+1) {
+//						border-left: $_border_style;
+//					}
+//				}
+			}
+		}
+	}
+}

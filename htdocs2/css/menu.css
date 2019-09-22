@@ -59,6 +59,7 @@
 
 .Menu__Item .Item__img img {
   width: 100%;
+  height: auto;
 }
 
 .Menu__Item .Item__ttl {

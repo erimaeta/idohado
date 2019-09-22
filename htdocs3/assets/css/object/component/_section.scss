@@ -1,0 +1,52 @@
+/*
+ * component: section
+ */
+
+.c-section {
+	$_padding-y: map-get($padding-y, section);
+	$_pc_fontsize: map-get($title-font-size, xl);
+	$_sp_fontsize: map-get($title-font-size, lg);
+	$_content_margin-top: map-get($margin, xl);
+
+	///
+
+	padding: $_padding-y 0;
+
+	&__inner {
+		@include create_inner;
+	}
+
+	&__title {
+		@include tabpc {
+			font-size: $_pc_fontsize;
+		}
+		@include sp {
+			font-size: $_sp_fontsize;
+		}
+	}
+
+	&__content {
+		margin-top: $_content_margin-top;
+	}
+}
+
+// 子section
+.c-sectionNest {
+	$_pc_fontsize: map-get($title-font-size, md);
+	$_sp_fontsize: map-get($title-font-size, md);
+	$_content_margin-top: map-get($margin, md);
+
+	padding: 0;//いらないよな
+
+	&__title {
+		@include tabpc {
+			font-size: $_pc_fontsize;
+		}
+		@include sp {
+			font-size: $_sp_fontsize;
+		}
+	}
+	&__content {
+		margin-top: $_content_margin-top;
+	}
+}

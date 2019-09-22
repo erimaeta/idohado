@@ -1,0 +1,7 @@
+/*
+ * utility: inner
+ */
+
+.u-inner {
+	@include create_inner;
+}

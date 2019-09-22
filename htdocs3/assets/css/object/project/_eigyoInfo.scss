@@ -1,0 +1,127 @@
+/*
+ * project: eigyoInfo
+ */
+
+// 営業日時案内
+
+.p-eigyoInfo {
+	$_border_color: map-get($color, bg_dark_a08);
+	$_border_style: 3px solid $_border_color;
+	$_border_radius: map-get($border-radius, md);
+	$_padding-y: map-get($padding, sm);
+
+	$_circle_size: 3.5rem;
+	$_circle_color: map-get($color, bg_dark_a04);
+
+	///
+
+	&__calendar {
+		border: $_border_style;
+		border-radius: $_border_radius;
+
+		@include tabpc {
+			padding: $_padding-y;
+		}
+		@include pc {
+			@include block_centering;
+			width: 70%;
+		}
+		@include sptab {
+			width: 100%;
+		}
+
+
+		.calendar {
+			width: 100%;
+			text-align: center;
+
+			@include tabpc {
+				font-size: map-get($font-size, xl);
+			}
+			@include sp {
+				font-size: map-get($font-size, md);
+			}
+
+			/// 余白定義
+			&__th,
+			&__td {
+				padding: $_padding-y 0;
+			}
+			&__ft {
+				td {
+					padding-bottom: $_padding-y;
+				}
+			}
+			///
+
+			&__th {
+				width: calc(100% / 7);
+			}
+
+			&__td {
+				position: relative;
+
+				/// 背景（circle）のスタイル
+				&::after {
+					content: "";
+
+					position: absolute;
+					z-index: -1;
+					top: 50%;
+					left: 50%;
+
+					display: block;
+
+					@include tabpc {
+						width: $_circle_size;
+						height: $_circle_size;
+					}
+					@include sp {
+						width: $_circle_size * 0.7; //幅が狭くなるので減らす
+						height: $_circle_size * 0.7;
+					}
+
+					border-radius: 50%;
+					transform: translate(-50%, -50%);
+				}
+				&.is-eigyo {
+					&::after {
+						border: 3px solid $_circle_color;
+						@include sp {
+							border-width: 2px;
+						}
+					}
+				}
+				&.is-kyugyo {
+					&::after {
+						background-color: $_circle_color;
+					}
+				}
+				///
+			}
+		}
+	}
+
+	&__text {
+		margin-top: map-get($margin, sm);
+		text-align: center;
+
+		@include tabpc {
+			@include block_centering;
+			font-size: map-get($font-size, lg);
+		}
+		@include sp {
+			font-size: map-get($font-size, md);
+		}
+
+		.eigyo,
+		.kyugyo {
+			color: $_circle_color;
+		}
+	}
+
+	//イベント
+	&__event {
+		margin-top: map-get($margin, lg);
+	}
+}

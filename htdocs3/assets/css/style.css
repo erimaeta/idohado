@@ -1,0 +1,742 @@
+/*
+ * foundation
+ */
+/*
+ * variables
+ */
+/*
+ * mixin
+ */
+/*
+ * function
+ */
+/*
+ * project base
+ */
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+body {
+  font-family: "Kosugi Maru";
+  color: #664032;
+  line-height: 1.5;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0;
+}
+
+/*
+ * layout
+ */
+/*
+ * layout: header
+ */
+/*
+ * layout: section
+ */
+/*
+ * layout: footer
+ */
+/*
+ * component
+ */
+/*
+ * component: section
+ */
+.c-section {
+  padding: 2.5rem 0;
+}
+
+.c-section__inner {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .c-section__inner {
+    max-width: 1200px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .c-section__inner {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .c-section__title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .c-section__title {
+    font-size: 1.8rem;
+  }
+}
+
+.c-section__content {
+  margin-top: 2.5rem;
+}
+
+.c-sectionNest {
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .c-sectionNest__title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .c-sectionNest__title {
+    font-size: 1.6rem;
+  }
+}
+
+.c-sectionNest__content {
+  margin-top: 1.5rem;
+}
+
+/*
+ * component: sectionTitle
+ */
+.c-sectionTitle {
+  position: relative;
+  padding-left: 1.6rem;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .c-sectionTitle {
+    margin-left: -1.6rem;
+  }
+}
+
+.c-sectionTitle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 0.8rem;
+  height: 100%;
+  background-color: #664032;
+  border-radius: 0.1rem;
+}
+
+/*
+ * component: sectionTitleNest
+ */
+.c-sectionTitleNest {
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.7;
+}
+
+/*
+ * component: button
+ */
+.c-button {
+  position: relative;
+  display: block;
+  padding: 1.5rem;
+  color: rgba(102, 64, 50, 0.7);
+  text-align: center;
+  -webkit-transition: color 500ms ease;
+  -o-transition: color 500ms ease;
+  transition: color 500ms ease;
+}
+
+.c-button::before, .c-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 3px solid rgba(141, 100, 73, 0.8);
+  background: rgba(0, 0, 0, 0);
+  border-radius: 0.5rem;
+  -webkit-transition: opacity 500ms ease;
+  -o-transition: opacity 500ms ease;
+  transition: opacity 500ms ease;
+}
+
+.c-button::before {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(141, 100, 73, 0.1)), to(rgba(141, 100, 73, 0.2)));
+  background-image: -webkit-linear-gradient(top, rgba(141, 100, 73, 0.1), rgba(141, 100, 73, 0.2));
+  background-image: -o-linear-gradient(top, rgba(141, 100, 73, 0.1), rgba(141, 100, 73, 0.2));
+  background-image: linear-gradient(to bottom, rgba(141, 100, 73, 0.1), rgba(141, 100, 73, 0.2));
+}
+
+.c-button::after {
+  opacity: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(141, 100, 73, 0.7)), to(rgba(141, 100, 73, 0.8)));
+  background-image: -webkit-linear-gradient(top, rgba(141, 100, 73, 0.7), rgba(141, 100, 73, 0.8));
+  background-image: -o-linear-gradient(top, rgba(141, 100, 73, 0.7), rgba(141, 100, 73, 0.8));
+  background-image: linear-gradient(to bottom, rgba(141, 100, 73, 0.7), rgba(141, 100, 73, 0.8));
+}
+
+.c-button:hover {
+  color: rgba(255, 238, 206, 0.7);
+  text-decoration: none;
+}
+
+.c-button:hover::before {
+  opacity: 0;
+}
+
+.c-button:hover::after {
+  opacity: 1;
+}
+
+/*
+ * component: buttonLink
+ */
+.c-buttonLink {
+  position: relative;
+  display: block;
+  padding: 2rem;
+  color: rgba(102, 64, 50, 0.7);
+  text-align: center;
+  -webkit-box-shadow: 0.4rem 0.4rem 2rem -0.6rem rgba(141, 100, 73, 0.3);
+  box-shadow: 0.4rem 0.4rem 2rem -0.6rem rgba(141, 100, 73, 0.3);
+  -webkit-transition: color 500ms ease;
+  -o-transition: color 500ms ease;
+  transition: color 500ms ease;
+}
+
+.c-buttonLink::before, .c-buttonLink::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 3px solid rgba(141, 100, 73, 0.8);
+  background: rgba(0, 0, 0, 0);
+  border-radius: 0.5rem;
+  -webkit-transition: opacity 500ms ease;
+  -o-transition: opacity 500ms ease;
+  transition: opacity 500ms ease;
+}
+
+.c-buttonLink::before {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(141, 100, 73, 0.1)), to(rgba(141, 100, 73, 0.2)));
+  background-image: -webkit-linear-gradient(top, rgba(141, 100, 73, 0.1), rgba(141, 100, 73, 0.2));
+  background-image: -o-linear-gradient(top, rgba(141, 100, 73, 0.1), rgba(141, 100, 73, 0.2));
+  background-image: linear-gradient(to bottom, rgba(141, 100, 73, 0.1), rgba(141, 100, 73, 0.2));
+}
+
+.c-buttonLink::after {
+  opacity: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(141, 100, 73, 0.7)), to(rgba(141, 100, 73, 0.8)));
+  background-image: -webkit-linear-gradient(top, rgba(141, 100, 73, 0.7), rgba(141, 100, 73, 0.8));
+  background-image: -o-linear-gradient(top, rgba(141, 100, 73, 0.7), rgba(141, 100, 73, 0.8));
+  background-image: linear-gradient(to bottom, rgba(141, 100, 73, 0.7), rgba(141, 100, 73, 0.8));
+}
+
+.c-buttonLink:hover {
+  color: rgba(255, 238, 206, 0.7);
+  text-decoration: none;
+}
+
+.c-buttonLink:hover::before {
+  opacity: 0;
+}
+
+.c-buttonLink:hover::after {
+  opacity: 1;
+}
+
+.c-buttonLink > span::after {
+  content: "";
+  position: absolute;
+  right: 0.8em;
+  top: 50%;
+  z-index: 2;
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  border-right: 4px solid rgba(102, 64, 50, 0.7);
+  border-bottom: 4px solid rgba(102, 64, 50, 0.7);
+  -webkit-transition: border-color 500ms ease;
+  -o-transition: border-color 500ms ease;
+  transition: border-color 500ms ease;
+}
+
+.c-buttonLink:hover > span::after {
+  border-right-color: rgba(255, 238, 206, 0.7);
+  border-bottom-color: rgba(255, 238, 206, 0.7);
+}
+
+.c-buttonLink.is-arowRight > span::after {
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+  -ms-transform: translateY(-50%) rotate(-45deg);
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.c-buttonLink.is-arrowBottom > span::after {
+  -webkit-transform: translateY(-50%) rotate(45deg);
+  -ms-transform: translateY(-50%) rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.c-buttonLink.is-arrowTop > span::after {
+  -webkit-transform: translateY(-50%) rotate(225deg);
+  -ms-transform: translateY(-50%) rotate(225deg);
+  transform: translateY(-50%) rotate(225deg);
+}
+
+/*
+ * component: markerList
+ */
+.c-markerList {
+  position: relative;
+  padding-left: 1.2rem;
+  font-size: 1.2rem;
+}
+
+.c-markerList::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.8325rem;
+  display: block;
+  height: 0.135rem;
+  width: 0.84rem;
+  background: #664032;
+  border-radius: 0.5rem;
+}
+
+/*
+ * project
+ */
+/*
+ * project: header
+ */
+.p-header {
+  position: relative;
+  padding: 5rem 0;
+  background: #fddea5;
+  text-align: center;
+}
+
+.p-header::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  display: block;
+  height: 14px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0);
+  background-image: url("../img/bg_line.png");
+  background-repeat-x: repeat;
+  background-repeat-y: no-repeat;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  bottom: -14px;
+}
+
+.p-header__title {
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .p-header__title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .p-header__title {
+    font-size: 2rem;
+  }
+}
+
+/*
+ * project: main
+ */
+.p-main {
+  padding: 2.5rem 0;
+}
+
+/*
+ * project: footer
+ */
+.p-footer {
+  position: relative;
+  padding: 5rem 0 0;
+  background: #8d6449;
+}
+
+.p-footer__title {
+  color: #FFEECE;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .p-footer__title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .p-footer__title {
+    font-size: 1.6rem;
+  }
+}
+
+.p-footer::before {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  display: block;
+  height: 14px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0);
+  background-image: url("../img/bg_line.png");
+  background-repeat-x: repeat;
+  background-repeat-y: no-repeat;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  top: 0;
+}
+
+/*
+ * project: aboutIdohado
+ */
+.p-aboutIdohado__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  border: 3px solid rgba(255, 238, 206, 0.8);
+  border-radius: 0.5rem;
+}
+
+.p-aboutIdohado__info .infoLink {
+  display: block;
+  padding: 1rem 0;
+  padding-left: 1.5rem;
+  border-bottom: 1px solid rgba(255, 238, 206, 0.1);
+  background: rgba(0, 0, 0, 0);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 238, 206, 0.1)), color-stop(40%, rgba(0, 0, 0, 0)));
+  background-image: -webkit-linear-gradient(left, rgba(255, 238, 206, 0.1), rgba(0, 0, 0, 0) 40%);
+  background-image: -o-linear-gradient(left, rgba(255, 238, 206, 0.1), rgba(0, 0, 0, 0) 40%);
+  background-image: linear-gradient(to right, rgba(255, 238, 206, 0.1), rgba(0, 0, 0, 0) 40%);
+  color: #FFEECE;
+  font-size: 1.4rem;
+  -webkit-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+@media (min-width: 768px) {
+  .p-aboutIdohado__info .infoLink {
+    width: 50%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .p-aboutIdohado__info .infoLink {
+    width: 100%;
+  }
+}
+
+.p-aboutIdohado__info .infoLink:hover {
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+.p-aboutIdohado__info .infoLink__icon {
+  display: inline-block;
+  width: 2.1rem;
+  text-align: center;
+}
+
+.p-aboutIdohado__map {
+  margin-top: 1.5rem;
+}
+
+.p-aboutIdohado__map .mapLink {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #FFEECE;
+  font-size: 1.4rem;
+  -webkit-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+.p-aboutIdohado__map .mapLink:hover {
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+.p-aboutIdohado__map .mapLink__icon {
+  display: block;
+  width: 2.1rem;
+  text-align: center;
+}
+
+.p-aboutIdohado__map .mapLink__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.p-aboutIdohado__map iframe {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .p-aboutIdohado__map iframe {
+    height: 300px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .p-aboutIdohado__map iframe {
+    height: 50vw;
+  }
+}
+
+.p-aboutIdohado__map .map-text {
+  margin-top: 0.5rem;
+  color: #FFEECE;
+  font-size: 1.2rem;
+}
+
+.p-aboutIdohado__author {
+  padding: 1rem 0;
+  color: #FFEECE;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .p-aboutIdohado__author {
+    margin-top: 5rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .p-aboutIdohado__author {
+    margin-top: 3rem;
+    font-size: 1rem;
+  }
+}
+
+/*
+ * project: pageTop
+ */
+.p-pageTop {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 4;
+  opacity: 1;
+  -webkit-transition: opacity 500ms ease;
+  -o-transition: opacity 500ms ease;
+  transition: opacity 500ms ease;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .p-pageTop {
+    width: 130px;
+  }
+  .p-pageTop:hover {
+    -webkit-animation: buruburu .1s infinite;
+    animation: buruburu .1s infinite;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .p-pageTop {
+    width: 20vw;
+  }
+}
+
+.p-pageTop.is-none {
+  opacity: 0;
+}
+
+.p-pageTop__text {
+  position: relative;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 768px) {
+  .p-pageTop__text::before, .p-pageTop__text::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 1px;
+    height: 1em;
+    background: #664032;
+  }
+  .p-pageTop__text::before {
+    left: 1em;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  .p-pageTop__text::after {
+    right: 1em;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .p-pageTop__text {
+    position: relative;
+    padding: 0.5rem 0;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+  }
+  .p-pageTop__text::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -0.9rem;
+    display: block;
+    border: 0.4rem solid rgba(0, 0, 0, 0);
+    border-top: 0.5rem solid rgba(255, 255, 255, 0.5);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+
+.p-pageTop__image {
+  margin-top: 0.5rem;
+}
+
+@-webkit-keyframes buruburu {
+  0% {
+    -webkit-transform: translate(0, 0) rotateZ(0deg);
+    transform: translate(0, 0) rotateZ(0deg);
+  }
+  25% {
+    -webkit-transform: translate(2px, 2px) rotateZ(1deg);
+    transform: translate(2px, 2px) rotateZ(1deg);
+  }
+  50% {
+    -webkit-transform: translate(0, 0) rotateZ(0deg);
+    transform: translate(0, 0) rotateZ(0deg);
+  }
+  75% {
+    -webkit-transform: translate(2px, 2px) rotateZ(1deg);
+    transform: translate(2px, 2px) rotateZ(1deg);
+  }
+  100% {
+    -webkit-transform: translate(0, 0) rotateZ(0deg);
+    transform: translate(0, 0) rotateZ(0deg);
+  }
+}
+
+@keyframes buruburu {
+  0% {
+    -webkit-transform: translate(0, 0) rotateZ(0deg);
+    transform: translate(0, 0) rotateZ(0deg);
+  }
+  25% {
+    -webkit-transform: translate(2px, 2px) rotateZ(1deg);
+    transform: translate(2px, 2px) rotateZ(1deg);
+  }
+  50% {
+    -webkit-transform: translate(0, 0) rotateZ(0deg);
+    transform: translate(0, 0) rotateZ(0deg);
+  }
+  75% {
+    -webkit-transform: translate(2px, 2px) rotateZ(1deg);
+    transform: translate(2px, 2px) rotateZ(1deg);
+  }
+  100% {
+    -webkit-transform: translate(0, 0) rotateZ(0deg);
+    transform: translate(0, 0) rotateZ(0deg);
+  }
+}
+
+/*
+ * utility
+ */
+/*
+ * utility: inner
+ */
+.u-inner {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .u-inner {
+    max-width: 1200px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .u-inner {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

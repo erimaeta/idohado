@@ -1,0 +1,109 @@
+/*
+ * project: pageTop
+ */
+
+.p-pageTop {
+	$_du: map-get($transition, duration);
+	$_tf: map-get($transition, timingFunction);
+	$_transition: opacity $_du $_tf;
+	$_image_margin_top: map-get($margin, xs);
+
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: map-get($z-index, page_top);
+
+	opacity: 1;
+	transition: $_transition;
+	cursor: pointer;
+
+	@include tabpc {
+		width: 130px;
+
+		&:hover {
+			animation: buruburu .1s infinite;
+		}
+	}
+	@include sp {
+		width: 20vw;
+	}
+
+	&.is-none {
+		opacity: 0;
+	}
+
+	&__text {
+		position: relative;
+
+		text-align: center;
+		line-height: 1.3;//決め打ち
+		letter-spacing: -0.025em;//決め打ち
+
+		@include tabpc {
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				display: block;
+				width: 1px;
+				height: 1em;
+				background: map-get($color, default_color);
+			}
+			&::before {
+				left: 1em;
+				transform: rotate(-45deg);
+			}
+			&::after {
+				right: 1em;
+				transform: rotate(45deg);
+			}
+		}
+		@include sp {
+			$_bgc: map-get($color, bg_white_a05);
+			$_transparent: map-get($color, transparent);
+
+			position: relative;
+			padding: map-get($padding, xs) 0;
+			background: $_bgc;
+			border-radius: 50%;
+
+			&::after {
+				$_border_x: 0.5rem;
+				$_border_y: 0.4rem;
+
+				content: "";
+				position: absolute;
+				left: 50%;
+				bottom: -($_border_x + $_border_y);
+				display: block;
+			  border: $_border_y solid $_transparent;
+			  border-top: $_border_x solid $_bgc;
+				transform: translateX(-50%);
+			}
+		}
+	}
+
+	&__image {
+		margin-top: $_image_margin_top;
+	}
+}
+
+
+@keyframes buruburu {
+	0%{
+		transform: translate(0,0) rotateZ(0deg);
+	}
+	25%{
+		transform: translate(2px, 2px) rotateZ(1deg);
+	}
+	50%{
+		transform: translate(0,0) rotateZ(0deg);
+	}
+	75%{
+		transform: translate(2px, 2px) rotateZ(1deg);
+	}
+	100%{
+		transform: translate(0,0) rotateZ(0deg);
+	}
+}

@@ -1,0 +1,157 @@
+/*
+ * project: toriokiFlow
+ */
+
+// 取り置きフロー
+
+.p-toriokiFlow {
+	$_pc_list_mt: map-get($margin, md);
+	$_sp_list_mt: map-get($margin, sm);
+	$_pc_list_last_mb: 15rem; //決め打ち
+	$_tab_list_last_mb: map-get($margin, lg);
+
+	$_pc_list_padding: map-get($padding, md);
+	$_pc_list_padding-x: map-get($padding, xl);
+	$_sp_list_padding: map-get($padding, sm);
+
+	$_list_border_color: map-get($color, bg_dark_a02);
+	$_list_border_style: 3px solid $_list_border_color;
+	$_list_bg_color: $_list_border_color;
+	$_list_border_radius: map-get($border-radius, md);
+
+	$_pc_dt_width: 25%;
+	$_pc_dd_width: calc(100% - #{$_pc_dt_width});
+
+	$_dt_fontsize: map-get($font-size, lg);
+
+	$_dt_before_bg_color: map-get($color, transparent);
+	$_dt_before_border_color: map-get($color, default_color);
+	$_dt_before_border_style: 2px solid $_dt_before_border_color;
+
+	$_dt_before_length: 1;
+	$_dt_before_textWidth: get_textWidth($_dt_fontsize, $_dt_before_length);
+	$_dt_before_size: $_dt_before_textWidth * 2;
+	$_dt_before_fontsize: map-get($font-size, md);
+
+	///
+
+	counter-reset: flow;
+
+	&__list {
+		margin-bottom: 0;
+		border-radius: $_list_border_radius;
+
+		@include tabpc {
+			padding: $_pc_list_padding;
+		}
+		@include sp {
+			padding: $_sp_list_padding;
+		}
+		@include pc {
+			@include block_centering;
+			width: 80%;
+			padding-left: $_pc_list_padding-x;
+			padding-right: $_pc_list_padding-x;
+		}
+
+		&:nth-child(odd) {
+			border: $_list_border_style;
+		}
+		&:nth-child(even) {
+			background: $_list_bg_color;
+		}
+
+		&:not(:first-child) {
+			@include tabpc {
+				margin-top: $_pc_list_mt;
+			}
+			@include sp {
+				margin-top: $_sp_list_mt;
+			}
+		}
+
+		&:last-child {
+			@include pc {
+				margin-bottom: $_pc_list_last_mb;
+			}
+			@include tab {
+				margin-bottom: $_tab_list_last_mb;
+			}
+			//spはいらないからね
+		}
+
+		@include tabpc {
+			display: flex;
+			align-items: center;
+		}
+
+		.list-title {
+			display: flex;
+			align-items: center;
+			font-size: $_dt_fontsize;
+
+			@include tabpc {
+				width: $_pc_dt_width;
+			}
+
+			counter-increment: flow;
+			&::before {
+				content: counter(flow);
+				margin-right: 0.25em;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: $_dt_before_size;
+				height: $_dt_before_size;
+				border: $_dt_before_border_style;
+				font-size: $_dt_before_fontsize;
+				text-align: center;
+				background: $_dt_before_bg_color;
+				border-radius: 50%;
+			}
+		}
+
+		.list-data {
+			font-size: map-get($font-size, md);
+
+			@include tabpc {
+				margin-top: 0;
+				margin-bottom: 0;
+				width: $_pc_dd_width;
+			}
+			@include sp {
+				margin-top: map-get($margin, xs);
+			}
+		}
+	}
+
+	&__image {
+		position: relative;
+
+		@include tabpc {
+			margin-top: map-get($margin, md);
+		}
+
+		@include sp {
+			margin-top: map-get($margin, sm);
+			margin-left: auto;
+			width: 70%;
+		}
+
+		.image-serif {
+			position: absolute;
+
+			@include tabpc {
+				right: 185px;
+			}
+			@include sp {
+				right: 35%; //決め打ち 右寄せなので右からです
+			}
+			top: 25%; //決め打ち
+			transform: translateX(-50%);//決め打ち
+		}
+		.image-char {
+			text-align: right;
+		}
+	}
+}

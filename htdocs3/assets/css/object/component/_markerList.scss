@@ -1,0 +1,43 @@
+/*
+ * component: markerList
+ */
+
+ //ハイフンがマーカーのリスト
+
+@mixin _marker_style($fz) {
+	$_body_line_height: map-get($line-height, body);
+	$_this_line_height: $fz * $_body_line_height;
+
+	$_marker_height_percent: 0.075; //1行の高さにおけるマーカーの割合
+	$_marker_pos_percent: (1 - $_marker_height_percent) / 2;
+
+	$_marker_height: $_this_line_height * $_marker_height_percent;
+	$_marker_pos: $_this_line_height * $_marker_pos_percent;
+
+	$_marker_width: $fz * 0.7; //このくらいで
+
+	position: absolute;
+	left: 0;
+	top: $_marker_pos;
+
+	display: block;
+	height: $_marker_height;
+	width: $_marker_width;
+
+	background: map-get($color, default_color);
+	border-radius: map-get($border-radius, md);
+}
+
+.c-markerList {
+	$_font_size: map-get($font-size, md);
+
+	position: relative;
+	padding-left: $_font_size;
+	font-size: $_font_size;
+
+	&::before {
+		content: "";
+		@include _marker_style($_font_size);
+	}
+
+}
