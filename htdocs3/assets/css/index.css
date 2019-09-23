@@ -331,52 +331,22 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.p-orderLink__info {
-  border: 3px solid rgba(141, 100, 73, 0.8);
-  border-radius: 0.5rem;
-}
-
-@media (min-width: 768px) {
-  .p-orderLink__info {
-    width: 70%;
+@media (min-width: 992px) {
+  .p-orderLink .c-contactInfo {
     margin-left: auto;
     margin-right: auto;
+    width: 70%;
   }
 }
 
-@media (max-width: 767.98px) {
-  .p-orderLink__info {
+@media (max-width: 991.98px) {
+  .p-orderLink .c-contactInfo {
     width: 100%;
   }
 }
 
-.p-orderLink__info .infoLink {
-  display: block;
-  width: 100%;
-  padding: 1rem 0;
-  padding-left: 1.5rem;
-  border-bottom: 1px solid rgba(141, 100, 73, 0.8);
-  background: rgba(0, 0, 0, 0);
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 238, 206, 0.1)), color-stop(40%, rgba(0, 0, 0, 0)));
-  background-image: -webkit-linear-gradient(left, rgba(255, 238, 206, 0.1), rgba(0, 0, 0, 0) 40%);
-  background-image: -o-linear-gradient(left, rgba(255, 238, 206, 0.1), rgba(0, 0, 0, 0) 40%);
-  background-image: linear-gradient(to right, rgba(255, 238, 206, 0.1), rgba(0, 0, 0, 0) 40%);
-  color: rgba(141, 100, 73, 0.8);
-  font-size: 1.4rem;
-  -webkit-transition: all 500ms ease;
-  -o-transition: all 500ms ease;
-  transition: all 500ms ease;
-}
-
-.p-orderLink__info .infoLink:hover {
-  opacity: 0.5;
-  text-decoration: none;
-}
-
-.p-orderLink__info .infoLink__icon {
-  display: inline-block;
-  width: 2.1rem;
-  text-align: center;
+.p-orderLink .c-contactInfo__link {
+  font-size: 1.2rem;
 }
 
 /*

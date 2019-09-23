@@ -1,0 +1,99 @@
+/*
+ * component: contactInfo
+ *
+ * 各リンクの幅は 100% がデフォルト。
+ * 半分にする際は is-pc-w50 を指定する。
+ *
+ * 明るい背景表示用（線の色が暗い）がデフォルト。
+ * 暗い背景表示用（線の色が明るい）は is-light を指定する。
+ *
+ */
+
+.c-contactInfo {
+	$_outside_border_color: map-get($color, bg_dark_a08);
+	$_outside_border_light_color: map-get($color, light_color_a08);
+	$_outside_border_style: 3px solid $_outside_border_color;
+	$_outside_border_radius: map-get($border-radius, md);
+
+	$_padding-x: 1.5em;
+	$_padding-y: 1em;
+
+	$_inside_border_color: map-get($color, bg_dark_a08);
+	$_inside_border_light_color: map-get($color, light_color_a02);
+	$_inside_border_style: 1px solid $_inside_border_color;
+	$_inside_light_bg_color: map-get($color, light_color_a01);
+	$_inside_color: map-get($color, bg_dark_a08);
+	$_inside_light_color: map-get($color, light_color);
+
+	$_transparent: map-get($color, transparent);
+	
+	display: flex;
+	flex-wrap: wrap;
+	border: $_outside_border_style;
+	border-radius: $_outside_border_radius;
+
+	&__link {//<a>
+		display: block;
+		width: 100%;
+		padding: $_padding-y $_padding-x;
+		border-bottom: $_inside_border_style;
+		color: $_inside_color;
+
+		@include ancher_hover_opacity;
+
+		&:hover {
+			color: $_inside_color;
+		}
+
+		.link-icon {
+			@include fontAwesome_style;
+		}
+		.link-text {}
+	}
+
+	//
+	//以下、リンクの幅ハーフサイズ
+	//
+	&.is-pc-w50 {
+		.c-contactInfo__link {
+			@include pc {
+				width: 50%;
+			}
+		}
+	}
+	&.is-tab-w50 {
+		.c-contactInfo__link {
+			@include tab {
+				width: 50%;
+			}
+		}
+	}
+	&.is-tabpc-w50 {
+		.c-contactInfo__link {
+			@include tabpc {
+				width: 50%;
+			}
+		}
+	}
+
+	//
+	//以下、暗い背景表示用
+	//
+	&.is-light {
+		border-color: $_outside_border_light_color;
+
+		.c-contactInfo__link {
+			border-bottom-color: $_inside_border_light_color;
+			color: $_inside_light_color;
+			&:hover {
+				color: $_inside_light_color;
+			}
+			background: $_transparent;
+			background-image: linear-gradient(
+				to right,
+				$_inside_light_bg_color,
+				$_transparent 50%
+			);
+		}
+	}
+}

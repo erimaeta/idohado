@@ -8,31 +8,15 @@
 	$_pc_author_margin-top: map-get($padding-y, footer);
 	$_sp_author_margin-top: map-get($margin, lll);
 
-	$_border_outside_color: map-get($color, light_color_a08);
-	$_border_outside_style: 3px solid $_border_outside_color;
-	$_border_outside_radius: map-get($border-radius, md);
-
-	$_border_inside_color: map-get($color, light_color_a01);
-	$_border_inside_style: 1px solid $_border_inside_color;
-
 	$_padding-y: map-get($padding, sm);
-	$_padding-left: map-get($padding, md);
 
 	$_color: map-get($color, light_color);
 	$_link_fontsize: map-get($font-size, lg);
 	$_text_fontsize: map-get($font-size, md);
 	$_sp_author_fontsize: map-get($font-size, sm);
-	$_bg_color: map-get($color, light_color_a01);
-	$_transparent: map-get($color, transparent);
-
-	$_icon_width: $_link_fontsize * 1.5;
-
-	$_du: map-get($transition, duration);
-	$_tf: map-get($transition, timingFunction);
 
 	$_pc_map_height: 300px;
 	$_sp_map_height: 50vw;
-
 
 	@mixin _text_style($text_flag:false) {
 		color: $_color;
@@ -43,56 +27,10 @@
 		}
 	}
 
-	@mixin _anchor_style {
-		transition: all $_du $_tf;
-		&:hover {
-			opacity: 0.5;
-			text-decoration: none;
-		}
-	}
-
-	@mixin _icon_style {
-		width: $_icon_width;
-		text-align: center;
-	}
-
 	///
 
-	&__info {
-		display: flex;
-		flex-wrap: wrap;
-
-		border: $_border_outside_style;
-		border-radius: $_border_outside_radius;
-
-		.infoLink {//<a>です
-			display: block;
-			padding: $_padding-y 0;
-			padding-left: $_padding-left;
-			border-bottom: $_border_inside_style;
-
-			@include tabpc {
-				width: 50%;
-			}
-			@include sp {
-				width: 100%;
-			}
-
-			background: $_transparent;
-			background-image: linear-gradient(
-				to right,
-				$_bg_color,
-				$_transparent 40%
-			);
-
-			@include _text_style;
-			@include _anchor_style;
-
-			&__icon {
-				display: inline-block;
-				@include _icon_style;
-			}
-		}
+	.c-contactInfo__link {
+		@include _text_style;
 	}
 
 	&__map {
@@ -104,11 +42,11 @@
 			align-items: center;
 
 			@include _text_style;
-			@include _anchor_style;
+			@include ancher_hover_opacity;
 
 			&__icon {
 				display: block;
-				@include _icon_style;
+				@include fontAwesome_style;
 			}
 			&__text {
 				display: flex;

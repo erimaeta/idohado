@@ -134,3 +134,22 @@
 		top: 0;
 	}
 }
+
+// font awesome icon style
+@mixin fontAwesome_style {
+	display: inline-block;
+	width: 1.5em;
+	text-align: center;
+}
+
+// anchor hover style opacity
+@mixin ancher_hover_opacity {
+	$_du: map-get($transition, duration);
+	$_tf: map-get($transition, timingFunction);
+	
+	transition: all $_du $_tf;
+	&:hover {
+		opacity: 0.5;
+		text-decoration: none;
+	}
+}

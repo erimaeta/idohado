@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
  * foundation
  */
@@ -346,6 +347,88 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*
+ * component: contactInfo
+ *
+ * 各リンクの幅は 100% がデフォルト。
+ * 半分にする際は is-pc-w50 を指定する。
+ *
+ * 明るい背景表示用（線の色が暗い）がデフォルト。
+ * 暗い背景表示用（線の色が明るい）は is-light を指定する。
+ *
+ */
+.c-contactInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  border: 3px solid rgba(141, 100, 73, 0.8);
+  border-radius: 0.5rem;
+}
+
+.c-contactInfo__link {
+  display: block;
+  width: 100%;
+  padding: 1em 1.5em;
+  border-bottom: 1px solid rgba(141, 100, 73, 0.8);
+  color: rgba(141, 100, 73, 0.8);
+  -webkit-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+.c-contactInfo__link:hover {
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+.c-contactInfo__link:hover {
+  color: rgba(141, 100, 73, 0.8);
+}
+
+.c-contactInfo__link .link-icon {
+  display: inline-block;
+  width: 1.5em;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .c-contactInfo.is-pc-w50 .c-contactInfo__link {
+    width: 50%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .c-contactInfo.is-tab-w50 .c-contactInfo__link {
+    width: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .c-contactInfo.is-tabpc-w50 .c-contactInfo__link {
+    width: 50%;
+  }
+}
+
+.c-contactInfo.is-light {
+  border-color: rgba(255, 238, 206, 0.8);
+}
+
+.c-contactInfo.is-light .c-contactInfo__link {
+  border-bottom-color: rgba(255, 238, 206, 0.2);
+  color: #FFEECE;
+  background: rgba(0, 0, 0, 0);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 238, 206, 0.1)), color-stop(50%, rgba(0, 0, 0, 0)));
+  background-image: -webkit-linear-gradient(left, rgba(255, 238, 206, 0.1), rgba(0, 0, 0, 0) 50%);
+  background-image: -o-linear-gradient(left, rgba(255, 238, 206, 0.1), rgba(0, 0, 0, 0) 50%);
+  background-image: linear-gradient(to right, rgba(255, 238, 206, 0.1), rgba(0, 0, 0, 0) 50%);
+}
+
+.c-contactInfo.is-light .c-contactInfo__link:hover {
+  color: #FFEECE;
+}
+
+/*
  * project
  */
 /*
@@ -446,54 +529,9 @@ h1, h2, h3, h4, h5, h6 {
 /*
  * project: aboutIdohado
  */
-.p-aboutIdohado__info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  border: 3px solid rgba(255, 238, 206, 0.8);
-  border-radius: 0.5rem;
-}
-
-.p-aboutIdohado__info .infoLink {
-  display: block;
-  padding: 1rem 0;
-  padding-left: 1.5rem;
-  border-bottom: 1px solid rgba(255, 238, 206, 0.1);
-  background: rgba(0, 0, 0, 0);
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 238, 206, 0.1)), color-stop(40%, rgba(0, 0, 0, 0)));
-  background-image: -webkit-linear-gradient(left, rgba(255, 238, 206, 0.1), rgba(0, 0, 0, 0) 40%);
-  background-image: -o-linear-gradient(left, rgba(255, 238, 206, 0.1), rgba(0, 0, 0, 0) 40%);
-  background-image: linear-gradient(to right, rgba(255, 238, 206, 0.1), rgba(0, 0, 0, 0) 40%);
+.p-aboutIdohado .c-contactInfo__link {
   color: #FFEECE;
   font-size: 1.4rem;
-  -webkit-transition: all 500ms ease;
-  -o-transition: all 500ms ease;
-  transition: all 500ms ease;
-}
-
-@media (min-width: 768px) {
-  .p-aboutIdohado__info .infoLink {
-    width: 50%;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .p-aboutIdohado__info .infoLink {
-    width: 100%;
-  }
-}
-
-.p-aboutIdohado__info .infoLink:hover {
-  opacity: 0.5;
-  text-decoration: none;
-}
-
-.p-aboutIdohado__info .infoLink__icon {
-  display: inline-block;
-  width: 2.1rem;
-  text-align: center;
 }
 
 .p-aboutIdohado__map {
@@ -524,7 +562,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .p-aboutIdohado__map .mapLink__icon {
   display: block;
-  width: 2.1rem;
+  display: inline-block;
+  width: 1.5em;
   text-align: center;
 }
 
