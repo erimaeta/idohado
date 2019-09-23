@@ -619,5 +619,40 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*
+ * project: story
+ */
+@media (min-width: 992px) {
+  .p-story {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .p-story {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.p-story:not(:first-child) {
+  margin-top: 2rem;
+}
+
+.p-story__text {
+  font-size: 1.2rem;
+}
+
+.p-story__text:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.p-story__text.is-small {
+  font-size: 1rem;
+}
+
+/*
  * utility
  */

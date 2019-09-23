@@ -1,0 +1,35 @@
+/*
+ * project: story
+ */
+
+.p-story {
+	$_mt: map-get($margin, lg);
+	$_fz: map-get($font-size, md);
+	$_small_fz: map-get($font-size, sm);
+	$_text_mt: map-get($margin, sm);
+
+	@include pc {
+		width: 85%;
+		@include block_centering;
+	}
+	@include tab {
+		width: 80%;
+		@include block_centering;
+	}
+
+	&:not(:first-child) {
+		margin-top: $_mt;
+	}
+
+	&__text {
+		font-size: $_fz;
+
+		&:not(:first-child) {
+			margin-top: $_text_mt;
+		}
+
+		&.is-small {
+			font-size: $_small_fz;
+		}
+	}
+}
