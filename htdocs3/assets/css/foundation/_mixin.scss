@@ -135,6 +135,16 @@
 	}
 }
 
+//
+// 手書き風の枠線にする
+//
+@mixin tegaki_frame($border_width) {
+	border: ($border_width + px) solid map-get($color, transparent);
+	border-image-source: url("../img/bg_box.png");
+	border-image-slice: 20;
+	border-image-outset: 3px;
+}
+
 // font awesome icon style
 @mixin fontAwesome_style {
 	display: inline-block;

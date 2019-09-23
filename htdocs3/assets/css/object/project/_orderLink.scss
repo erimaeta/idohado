@@ -6,7 +6,7 @@
 
 .p-orderLink {
 	$_button_fontsize: map-get($font-size, lg);
-	$_info_fontsize: map-get($font-size, md);
+	$_info_fontsize: map-get($font-size, lg);
 
 	&__list {
 	}

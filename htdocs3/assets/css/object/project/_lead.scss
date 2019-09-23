@@ -18,10 +18,7 @@
 //		padding: 0;
 //	}
 
-	border: 20px solid map-get($color, transparent);
-	border-image-source: url("../img/bg_box.png");
-	border-image-slice: 20;
-	border-image-outset: 3px;
+	@include tegaki_frame(20);
 
 	text-align: center;
 	line-height: map-get($line-height, lg);
