@@ -157,7 +157,7 @@ var category03 = {
 {
 	image_dir: 'assets/img/donuts/noegg/',
 	image_name: '1.jpg',
-	title: 'ナイシローン (くるみ)',
+	title: 'ナイシローン (くるみ入り)',
 	price: '180',
 	description: '卵が苦手な方もそうでない方も好きになる、卵無しのおからドーナッツ',
 	material: '小麦（全粒粉）・アーモンドパウダー・きび砂糖・米油・ベーキングパウダー・くるみ',
@@ -175,7 +175,7 @@ var category03 = {
 {
 	image_dir: 'assets/img/donuts/noegg/',
 	image_name: '3.jpg',
-	title: 'ナイクローン (くるみ)',
+	title: 'ナイクローン (くるみ入り)',
 	price: '180',
 	description: '卵無しの黒い奴。別名、クローン。',
 	material: '小麦（全粒粉）・アーモンドパウダー・きび砂糖・米油・ベーキングパウダー・くるみ・ココア',
