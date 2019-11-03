@@ -4,14 +4,12 @@
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('./dom/data.js'), require('./dom/event-handler.js'), require('./dom/selector-engine.js')) :
-  typeof define === 'function' && define.amd ? define(['./dom/data.js', './dom/event-handler.js', './dom/selector-engine.js'], factory) :
-  (global = global || self, global.Button = factory(global.Data, global.EventHandler, global.SelectorEngine));
-}(this, function (Data, EventHandler, SelectorEngine) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('jquery')) :
+  typeof define === 'function' && define.amd ? define(['jquery'], factory) :
+  (global = global || self, global.Button = factory(global.jQuery));
+}(this, function ($) { 'use strict';
 
-  Data = Data && Data.hasOwnProperty('default') ? Data['default'] : Data;
-  EventHandler = EventHandler && EventHandler.hasOwnProperty('default') ? EventHandler['default'] : EventHandler;
-  SelectorEngine = SelectorEngine && SelectorEngine.hasOwnProperty('default') ? SelectorEngine['default'] : SelectorEngine;
+  $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
 
   function _defineProperties(target, props) {
     for (var i = 0; i < props.length; i++) {
@@ -30,24 +28,6 @@
   }
 
   /**
-   * --------------------------------------------------------------------------
-   * Bootstrap (v4.3.1): util/index.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-   * --------------------------------------------------------------------------
-   */
-
-  var getjQuery = function getjQuery() {
-    var _window = window,
-        jQuery = _window.jQuery;
-
-    if (jQuery && !document.body.hasAttribute('data-no-jquery')) {
-      return jQuery;
-    }
-
-    return null;
-  };
-
-  /**
    * ------------------------------------------------------------------------
    * Constants
    * ------------------------------------------------------------------------
@@ -58,6 +38,7 @@
   var DATA_KEY = 'bs.button';
   var EVENT_KEY = "." + DATA_KEY;
   var DATA_API_KEY = '.data-api';
+  var JQUERY_NO_CONFLICT = $.fn[NAME];
   var ClassName = {
     ACTIVE: 'active',
     BUTTON: 'btn',
@@ -72,21 +53,20 @@
   };
   var Event = {
     CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY,
-    FOCUS_DATA_API: "focus" + EVENT_KEY + DATA_API_KEY,
-    BLUR_DATA_API: "blur" + EVENT_KEY + DATA_API_KEY
+    FOCUS_BLUR_DATA_API: "focus" + EVENT_KEY + DATA_API_KEY + " " + ("blur" + EVENT_KEY + DATA_API_KEY)
+    /**
+     * ------------------------------------------------------------------------
+     * Class Definition
+     * ------------------------------------------------------------------------
+     */
+
   };
-  /**
-   * ------------------------------------------------------------------------
-   * Class Definition
-   * ------------------------------------------------------------------------
-   */
 
   var Button =
   /*#__PURE__*/
   function () {
     function Button(element) {
       this._element = element;
-      Data.setData(element, DATA_KEY, this);
     } // Getters
 
 
@@ -96,19 +76,21 @@
     _proto.toggle = function toggle() {
       var triggerChangeEvent = true;
       var addAriaPressed = true;
-      var rootElement = SelectorEngine.closest(this._element, Selector.DATA_TOGGLE);
+      var rootElement = $(this._element).closest(Selector.DATA_TOGGLE)[0];
 
       if (rootElement) {
-        var input = SelectorEngine.findOne(Selector.INPUT, this._element);
+        var input = this._element.querySelector(Selector.INPUT);
 
-        if (input && input.type === 'radio') {
-          if (input.checked && this._element.classList.contains(ClassName.ACTIVE)) {
-            triggerChangeEvent = false;
-          } else {
-            var activeElement = SelectorEngine.findOne(Selector.ACTIVE, rootElement);
+        if (input) {
+          if (input.type === 'radio') {
+            if (input.checked && this._element.classList.contains(ClassName.ACTIVE)) {
+              triggerChangeEvent = false;
+            } else {
+              var activeElement = rootElement.querySelector(Selector.ACTIVE);
 
-            if (activeElement) {
-              activeElement.classList.remove(ClassName.ACTIVE);
+              if (activeElement) {
+                $(activeElement).removeClass(ClassName.ACTIVE);
+              }
             }
           }
 
@@ -118,7 +100,7 @@
             }
 
             input.checked = !this._element.classList.contains(ClassName.ACTIVE);
-            EventHandler.trigger(input, 'change');
+            $(input).trigger('change');
           }
 
           input.focus();
@@ -131,32 +113,29 @@
       }
 
       if (triggerChangeEvent) {
-        this._element.classList.toggle(ClassName.ACTIVE);
+        $(this._element).toggleClass(ClassName.ACTIVE);
       }
     };
 
     _proto.dispose = function dispose() {
-      Data.removeData(this._element, DATA_KEY);
+      $.removeData(this._element, DATA_KEY);
       this._element = null;
     } // Static
     ;
 
-    Button.jQueryInterface = function jQueryInterface(config) {
+    Button._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
-        var data = Data.getData(this, DATA_KEY);
+        var data = $(this).data(DATA_KEY);
 
         if (!data) {
           data = new Button(this);
+          $(this).data(DATA_KEY, data);
         }
 
         if (config === 'toggle') {
           data[config]();
         }
       });
-    };
-
-    Button.getInstance = function getInstance(element) {
-      return Data.getData(element, DATA_KEY);
     };
 
     _createClass(Button, null, [{
@@ -175,56 +154,32 @@
    */
 
 
-  EventHandler.on(document, Event.CLICK_DATA_API, Selector.DATA_TOGGLE_CARROT, function (event) {
+  $(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE_CARROT, function (event) {
     event.preventDefault();
     var button = event.target;
 
-    if (!button.classList.contains(ClassName.BUTTON)) {
-      button = SelectorEngine.closest(button, Selector.BUTTON);
+    if (!$(button).hasClass(ClassName.BUTTON)) {
+      button = $(button).closest(Selector.BUTTON);
     }
 
-    var data = Data.getData(button, DATA_KEY);
-
-    if (!data) {
-      data = new Button(button);
-    }
-
-    data.toggle();
+    Button._jQueryInterface.call($(button), 'toggle');
+  }).on(Event.FOCUS_BLUR_DATA_API, Selector.DATA_TOGGLE_CARROT, function (event) {
+    var button = $(event.target).closest(Selector.BUTTON)[0];
+    $(button).toggleClass(ClassName.FOCUS, /^focus(in)?$/.test(event.type));
   });
-  EventHandler.on(document, Event.FOCUS_DATA_API, Selector.DATA_TOGGLE_CARROT, function (event) {
-    var button = SelectorEngine.closest(event.target, Selector.BUTTON);
-
-    if (button) {
-      button.classList.add(ClassName.FOCUS);
-    }
-  });
-  EventHandler.on(document, Event.BLUR_DATA_API, Selector.DATA_TOGGLE_CARROT, function (event) {
-    var button = SelectorEngine.closest(event.target, Selector.BUTTON);
-
-    if (button) {
-      button.classList.remove(ClassName.FOCUS);
-    }
-  });
-  var $ = getjQuery();
   /**
    * ------------------------------------------------------------------------
    * jQuery
    * ------------------------------------------------------------------------
-   * add .button to jQuery only if jQuery is present
    */
 
-  /* istanbul ignore if */
+  $.fn[NAME] = Button._jQueryInterface;
+  $.fn[NAME].Constructor = Button;
 
-  if ($) {
-    var JQUERY_NO_CONFLICT = $.fn[NAME];
-    $.fn[NAME] = Button.jQueryInterface;
-    $.fn[NAME].Constructor = Button;
-
-    $.fn[NAME].noConflict = function () {
-      $.fn[NAME] = JQUERY_NO_CONFLICT;
-      return Button.jQueryInterface;
-    };
-  }
+  $.fn[NAME].noConflict = function () {
+    $.fn[NAME] = JQUERY_NO_CONFLICT;
+    return Button._jQueryInterface;
+  };
 
   return Button;
 

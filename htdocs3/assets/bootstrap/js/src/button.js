@@ -5,10 +5,7 @@
  * --------------------------------------------------------------------------
  */
 
-import { getjQuery } from './util/index'
-import Data from './dom/data'
-import EventHandler from './dom/event-handler'
-import SelectorEngine from './dom/selector-engine'
+import $ from 'jquery'
 
 /**
  * ------------------------------------------------------------------------
@@ -16,30 +13,31 @@ import SelectorEngine from './dom/selector-engine'
  * ------------------------------------------------------------------------
  */
 
-const NAME = 'button'
-const VERSION = '4.3.1'
-const DATA_KEY = 'bs.button'
-const EVENT_KEY = `.${DATA_KEY}`
-const DATA_API_KEY = '.data-api'
+const NAME                = 'button'
+const VERSION             = '4.3.1'
+const DATA_KEY            = 'bs.button'
+const EVENT_KEY           = `.${DATA_KEY}`
+const DATA_API_KEY        = '.data-api'
+const JQUERY_NO_CONFLICT  = $.fn[NAME]
 
 const ClassName = {
-  ACTIVE: 'active',
-  BUTTON: 'btn',
-  FOCUS: 'focus'
+  ACTIVE : 'active',
+  BUTTON : 'btn',
+  FOCUS  : 'focus'
 }
 
 const Selector = {
-  DATA_TOGGLE_CARROT: '[data-toggle^="button"]',
-  DATA_TOGGLE: '[data-toggle="buttons"]',
-  INPUT: 'input:not([type="hidden"])',
-  ACTIVE: '.active',
-  BUTTON: '.btn'
+  DATA_TOGGLE_CARROT : '[data-toggle^="button"]',
+  DATA_TOGGLE        : '[data-toggle="buttons"]',
+  INPUT              : 'input:not([type="hidden"])',
+  ACTIVE             : '.active',
+  BUTTON             : '.btn'
 }
 
 const Event = {
-  CLICK_DATA_API: `click${EVENT_KEY}${DATA_API_KEY}`,
-  FOCUS_DATA_API: `focus${EVENT_KEY}${DATA_API_KEY}`,
-  BLUR_DATA_API: `blur${EVENT_KEY}${DATA_API_KEY}`
+  CLICK_DATA_API      : `click${EVENT_KEY}${DATA_API_KEY}`,
+  FOCUS_BLUR_DATA_API : `focus${EVENT_KEY}${DATA_API_KEY} ` +
+                          `blur${EVENT_KEY}${DATA_API_KEY}`
 }
 
 /**
@@ -51,7 +49,6 @@ const Event = {
 class Button {
   constructor(element) {
     this._element = element
-    Data.setData(element, DATA_KEY, this)
   }
 
   // Getters
@@ -65,24 +62,24 @@ class Button {
   toggle() {
     let triggerChangeEvent = true
     let addAriaPressed = true
-
-    const rootElement = SelectorEngine.closest(
-      this._element,
+    const rootElement = $(this._element).closest(
       Selector.DATA_TOGGLE
-    )
+    )[0]
 
     if (rootElement) {
-      const input = SelectorEngine.findOne(Selector.INPUT, this._element)
+      const input = this._element.querySelector(Selector.INPUT)
 
-      if (input && input.type === 'radio') {
-        if (input.checked &&
-          this._element.classList.contains(ClassName.ACTIVE)) {
-          triggerChangeEvent = false
-        } else {
-          const activeElement = SelectorEngine.findOne(Selector.ACTIVE, rootElement)
+      if (input) {
+        if (input.type === 'radio') {
+          if (input.checked &&
+            this._element.classList.contains(ClassName.ACTIVE)) {
+            triggerChangeEvent = false
+          } else {
+            const activeElement = rootElement.querySelector(Selector.ACTIVE)
 
-          if (activeElement) {
-            activeElement.classList.remove(ClassName.ACTIVE)
+            if (activeElement) {
+              $(activeElement).removeClass(ClassName.ACTIVE)
+            }
           }
         }
 
@@ -93,9 +90,8 @@ class Button {
             rootElement.classList.contains('disabled')) {
             return
           }
-
           input.checked = !this._element.classList.contains(ClassName.ACTIVE)
-          EventHandler.trigger(input, 'change')
+          $(input).trigger('change')
         }
 
         input.focus()
@@ -109,33 +105,30 @@ class Button {
     }
 
     if (triggerChangeEvent) {
-      this._element.classList.toggle(ClassName.ACTIVE)
+      $(this._element).toggleClass(ClassName.ACTIVE)
     }
   }
 
   dispose() {
-    Data.removeData(this._element, DATA_KEY)
+    $.removeData(this._element, DATA_KEY)
     this._element = null
   }
 
   // Static
 
-  static jQueryInterface(config) {
+  static _jQueryInterface(config) {
     return this.each(function () {
-      let data = Data.getData(this, DATA_KEY)
+      let data = $(this).data(DATA_KEY)
 
       if (!data) {
         data = new Button(this)
+        $(this).data(DATA_KEY, data)
       }
 
       if (config === 'toggle') {
         data[config]()
       }
     })
-  }
-
-  static getInstance(element) {
-    return Data.getData(element, DATA_KEY)
   }
 }
 
@@ -145,56 +138,34 @@ class Button {
  * ------------------------------------------------------------------------
  */
 
-EventHandler.on(document, Event.CLICK_DATA_API, Selector.DATA_TOGGLE_CARROT, event => {
-  event.preventDefault()
+$(document)
+  .on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE_CARROT, (event) => {
+    event.preventDefault()
 
-  let button = event.target
-  if (!button.classList.contains(ClassName.BUTTON)) {
-    button = SelectorEngine.closest(button, Selector.BUTTON)
-  }
+    let button = event.target
 
-  let data = Data.getData(button, DATA_KEY)
-  if (!data) {
-    data = new Button(button)
-  }
+    if (!$(button).hasClass(ClassName.BUTTON)) {
+      button = $(button).closest(Selector.BUTTON)
+    }
 
-  data.toggle()
-})
-
-EventHandler.on(document, Event.FOCUS_DATA_API, Selector.DATA_TOGGLE_CARROT, event => {
-  const button = SelectorEngine.closest(event.target, Selector.BUTTON)
-
-  if (button) {
-    button.classList.add(ClassName.FOCUS)
-  }
-})
-
-EventHandler.on(document, Event.BLUR_DATA_API, Selector.DATA_TOGGLE_CARROT, event => {
-  const button = SelectorEngine.closest(event.target, Selector.BUTTON)
-
-  if (button) {
-    button.classList.remove(ClassName.FOCUS)
-  }
-})
-
-const $ = getjQuery()
+    Button._jQueryInterface.call($(button), 'toggle')
+  })
+  .on(Event.FOCUS_BLUR_DATA_API, Selector.DATA_TOGGLE_CARROT, (event) => {
+    const button = $(event.target).closest(Selector.BUTTON)[0]
+    $(button).toggleClass(ClassName.FOCUS, /^focus(in)?$/.test(event.type))
+  })
 
 /**
  * ------------------------------------------------------------------------
  * jQuery
  * ------------------------------------------------------------------------
- * add .button to jQuery only if jQuery is present
  */
-/* istanbul ignore if */
-if ($) {
-  const JQUERY_NO_CONFLICT = $.fn[NAME]
-  $.fn[NAME] = Button.jQueryInterface
-  $.fn[NAME].Constructor = Button
 
-  $.fn[NAME].noConflict = () => {
-    $.fn[NAME] = JQUERY_NO_CONFLICT
-    return Button.jQueryInterface
-  }
+$.fn[NAME] = Button._jQueryInterface
+$.fn[NAME].Constructor = Button
+$.fn[NAME].noConflict = () => {
+  $.fn[NAME] = JQUERY_NO_CONFLICT
+  return Button._jQueryInterface
 }
 
 export default Button
