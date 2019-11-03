@@ -18,6 +18,9 @@ function show_calendar() {
     var year = current.getFullYear();
     var month = current.getMonth() + 1;
 
+    month =11;
+    //console.log(month);
+
     var wrapper = document.getElementById('calendar');
 
     //カレンダー表示関数呼び出し

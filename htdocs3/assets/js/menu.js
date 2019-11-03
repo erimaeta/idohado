@@ -95,7 +95,7 @@ var category01 = {
 	image_name: '11.jpg',
 	title: 'ハドウィーン',
 	price: '180',
-	description: 'かばちゃたっぷりの波動を送ります',
+	description: 'かぼちゃたっぷりの波動を送ります',
 	material: '小麦・卵・おから・豆乳・きび砂糖・米油・ベーキングパウダー・かぼちゃ',
 	id: 'okara11'
 }
