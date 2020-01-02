@@ -15,7 +15,7 @@ html {
 }
 
 body {
-	font-family: map-get($font, family);
+	//font-family: map-get($font, family);
 	color: map-get($color, default_color);
 	line-height: map-get($line-height, body);
 }

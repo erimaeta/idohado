@@ -11,7 +11,10 @@
 	$_padding-y: map-get($padding, sm);
 
 	$_circle_size: 3.5rem;
-	$_circle_color: map-get($color, bg_dark_a04);
+	$_border_color: map-get($color, bg_dark_a04);
+	$_circle_color: map-get($color, bg_dark_a02);
+
+	$_kyugyo_color: map-get($color, bg_dark_a04);
 
 	///
 
@@ -86,7 +89,7 @@
 				}
 				&.is-eigyo {
 					&::after {
-						border: 3px solid $_circle_color;
+						border: 3px solid $_border_color;
 						@include sp {
 							border-width: 2px;
 						}
@@ -96,6 +99,7 @@
 					&::after {
 						background-color: $_circle_color;
 					}
+					color: $_kyugyo_color;
 				}
 				///
 			}
@@ -116,7 +120,7 @@
 
 		.eigyo,
 		.kyugyo {
-			color: $_circle_color;
+			color: $_border_color;
 		}
 	}
 

@@ -32,7 +32,6 @@
 }
 
 body {
-  font-family: "Kosugi Maru";
   color: #664032;
   line-height: 1.5;
 }
@@ -447,8 +446,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.p-eigyoInfo__calendar .calendar__td.is-kyugyo {
+  color: rgba(141, 100, 73, 0.4);
+}
+
 .p-eigyoInfo__calendar .calendar__td.is-kyugyo::after {
-  background-color: rgba(141, 100, 73, 0.4);
+  background-color: rgba(141, 100, 73, 0.2);
 }
 
 .p-eigyoInfo__text {
