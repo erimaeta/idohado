@@ -11,15 +11,12 @@
 	<meta property="og:description" content="いどはどドーナッツは、毎日食べたいおやつドーナッツです。わくわくした波動をお届けします！" />
 	<meta property="og:image" content="https://idohado.com/ogp.jpg" />
 
-	<!-- <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap&subset=japanese" rel="stylesheet"> -->
 	<link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/index.css">
-	<script
-	src="https://code.jquery.com/jquery-3.4.1.slim.js"
-	integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
-	crossorigin="anonymous"></script>
-	<script src="https://kit.fontawesome.com/9aa7c80df0.js"></script>
+
+	<script type="text/javascript" src="assets/js/svgs.js"></script>
+	<script type="text/javascript" src="assets/js/footer.js"></script>
 </head>
 <body>
 	<header class="l-header">
@@ -60,35 +57,6 @@
 					</div>
 				</div><!-- /.u-inner -->
 			</section>
-			<!-- section class="c-section">
-				<div class="u-inner">
-					<h2 class="c-section__title c-sectionTitle">取り置き注文の流れ</h2>
-					<div class="c-section__content">
-						<div class="p-toriokiFlow">
-							<dl class="p-toriokiFlow__list">
-								<dt class="list-title">お客様</dt>
-								<dd class="list-data">このページからドーナッツを注文します</dd>
-							</dl>
-							<dl class="p-toriokiFlow__list">
-								<dt class="list-title">いどはど</dt>
-								<dd class="list-data">ご注文のドーナッツを用意します</dd>
-							</dl>
-							<dl class="p-toriokiFlow__list">
-								<dt class="list-title">お客様</dt>
-								<dd class="list-data">ご指定の時間にお店に来ます</dd>
-							</dl>
-							<dl class="p-toriokiFlow__list">
-								<dt class="list-title">いどはど</dt>
-								<dd class="list-data">ドーナッツをお渡しします</dd>
-							</dl>
-							<div class="p-toriokiFlow__image">
-								<p class="image-serif">お気軽にねー</p>
-								<div class="image-char"><img class="img-fluid" src="assets/img/shigera.png" alt="シゲラー"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section -->
 			<section class="c-section">
 				<div class="u-inner">
 					<h2 class="c-section__title c-sectionTitle">メニューと連絡先</h2>
@@ -100,15 +68,15 @@
 							</ul>
 							<div class="c-contactInfo">
 								<a class="c-contactInfo__link" href="tel:09050755026">
-									<i class="link-icon fas fa-mobile-alt"></i>
+									<div class="link-icon"><script type="text/javascript">svg_tell();</script></div>
 									<span class="link-text">090-5075-5026</span>
 								</a>
 								<a class="c-contactInfo__link" href="mailto:810keikaku@gmail.com">
-									<i class="link-icon fas fa-envelope"></i>
+									<div class="link-icon"><script type="text/javascript">svg_mail();</script></div>
 									<span class="link-text">810keikaku@gmail.com</span>
 								</a>
 								<a class="c-contactInfo__link" href="https://www.instagram.com/idohado/?hl=ja" target="_blank">
-									<i class="link-icon fab fa-instagram"></i>
+									<div class="link-icon"><script type="text/javascript">svg_insta();</script></div>
 									<span class="link-text">InstagramID:idohado</span>
 								</a>
 							</div>
@@ -181,9 +149,6 @@
 									transform: rotate(-135deg);
 								}
 							</style>
-							<!-- p class="p-story__text is-small">
-								探してもみつからなさすぎる！
-							</p -->
 						</div>
 						<ul class="p-salesStyles mt-5">
 							<!-- <li class="salesStyle">
@@ -224,49 +189,8 @@
 
 		</div>
 	</main>
-<footer class="l-footer">
-	<div class="p-footer">
-		<div class="u-inner">
-			<h2 class="p-footer__title">いどはどドーナッツin函館</h2>
-			<div class="p-footer__content mt-4">
-				<div class="p-aboutIdohado">
-					<div class="c-contactInfo is-light is-tabpc-w50">
-						<a class="c-contactInfo__link" href="tel:09050755026">
-							<i class="link-icon fas fa-mobile-alt"></i>
-							<span class="link-text">090-5075-5026</span>
-						</a>
-						<a class="c-contactInfo__link" href="mailto:810keikaku@gmail.com">
-							<i class="link-icon fas fa-envelope"></i>
-							<span class="link-text">810keikaku@gmail.com</span>
-						</a>
-						<a class="c-contactInfo__link" href="https://www.instagram.com/idohado/?hl=ja" target="_blank">
-							<i class="link-icon fab fa-instagram"></i>
-							<span class="link-text">InstagramID:idohado</span>
-						</a>
-						<a class="c-contactInfo__link" href="https://idohado.exblog.jp/" target="_blank">
-							<i class="link-icon fas fa-pencil-alt"></i>
-							<span class="link-text">BLOG</span>
-						</a>
-					</div>
-					<div class="p-aboutIdohado__map">
-						<a class="mapLink" href="https://goo.gl/maps/mk16N9E4hM82">
-							<i class="mapLink__icon fas fa-map-marker-alt"></i>
-							<span class="mapLink__text">函館市大町3-16</span>
-						</a>
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2975.7366285594!2d140.70726371543765!3d41.76933587923093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f9ef3afa40c3e31%3A0x1d4db4789ce03808!2z44CSMDQwLTAwNTIg5YyX5rW36YGT5Ye96aSo5biC5aSn55S677yT4oiS77yR77yW!5e0!3m2!1sja!2sjp!4v1576942882397!5m2!1sja!2sjp" frameborder="0" style="border:0" allowfullscreen></iframe>
-						<p class="map-text">路面電車「大町電停」前 郵便局隣の市営団地1階</p>
-					</div>
-					<p class="p-aboutIdohado__author">© 2019 いどはど〜移動して波動を送る〜</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
-
-<div class="p-pageTop is-none" id="pagetop">
-	<p class="p-pageTop__text">Let's GO<br>Page Top</p>
-	<img class="p-pageTop__image img-fluid" src="assets/img/boy.png" alt="">
-</div>
+<script type="text/javascript">footer_write();</script>
+<script type="text/javascript">pagetop_write();</script>
 
 <script type="text/javascript" src="assets/js/common.js"></script>
 <script type="text/javascript" src="assets/js/calendar.js"></script>

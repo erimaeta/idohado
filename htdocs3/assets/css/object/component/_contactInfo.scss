@@ -33,7 +33,9 @@
 	border-radius: $_outside_border_radius;
 
 	&__link {//<a>
-		display: block;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
 		width: 100%;
 		padding: $_padding-y $_padding-x;
 		border-bottom: $_inside_border_style;
@@ -46,9 +48,19 @@
 		}
 
 		.link-icon {
-			@include fontAwesome_style;
+			//@include fontAwesome_style;
+			height: 1em;
+			width: 1.5em;
+			text-align: center;
+			svg {
+				height: 100%;
+				vertical-align: top;
+			}
 		}
-		.link-text {}
+		.link-text {
+			margin-left: .5em;
+			display: block;
+		}
 	}
 
 	//
