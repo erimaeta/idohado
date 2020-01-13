@@ -31,7 +31,7 @@ function footer_write() {
   html += '</div>';
   html += '<div class="p-aboutIdohado__map">';
   html += '<a class="mapLink" href="https://goo.gl/maps/mk16N9E4hM82">';
-  html += '<i class="mapLink__icon fas fa-map-marker-alt"></i>';
+  html += '<div class="mapLink__icon"><script type="text/javascript">svg_map();</script></div>';
   html += '<span class="mapLink__text">函館市大町3-16</span>';
   html += '</a>';
   html += '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2975.7366285594!2d140.70726371543765!3d41.76933587923093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f9ef3afa40c3e31%3A0x1d4db4789ce03808!2z44CSMDQwLTAwNTIg5YyX5rW36YGT5Ye96aSo5biC5aSn55S677yT4oiS77yR77yW!5e0!3m2!1sja!2sjp!4v1576942882397!5m2!1sja!2sjp" frameborder="0" style="border:0" allowfullscreen></iframe>';

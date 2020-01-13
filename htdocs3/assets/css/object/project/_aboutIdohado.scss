@@ -45,8 +45,7 @@
 			@include ancher_hover_opacity;
 
 			&__icon {
-				display: block;
-				@include fontAwesome_style;
+        @include fontAwesome_style;
 			}
 			&__text {
 				display: flex;

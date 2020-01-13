@@ -578,10 +578,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .p-aboutIdohado__map .mapLink__icon {
-  display: block;
-  display: inline-block;
+  height: 1em;
   width: 1.5em;
   text-align: center;
+}
+
+.p-aboutIdohado__map .mapLink__icon svg {
+  height: 100%;
+  vertical-align: top;
 }
 
 .p-aboutIdohado__map .mapLink__text {

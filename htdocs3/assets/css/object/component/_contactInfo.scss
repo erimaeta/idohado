@@ -48,14 +48,7 @@
 		}
 
 		.link-icon {
-			//@include fontAwesome_style;
-			height: 1em;
-			width: 1.5em;
-			text-align: center;
-			svg {
-				height: 100%;
-				vertical-align: top;
-			}
+			@include fontAwesome_style;
 		}
 		.link-text {
 			margin-left: .5em;

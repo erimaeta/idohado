@@ -118,9 +118,19 @@
 			font-size: map-get($font-size, md);
 		}
 
-		.eigyo,
+		//.eigyo,
 		.kyugyo {
-			color: $_border_color;
+      display: inline-block;
+      background: $_border_color;
+      border-radius: 50%;
+      @include tabpc {
+        width: map-get($font-size, lg);
+        height: map-get($font-size, lg);
+      }
+      @include sp {
+        width: map-get($font-size, md);
+        height: map-get($font-size, md);
+      }
 		}
 	}
 
