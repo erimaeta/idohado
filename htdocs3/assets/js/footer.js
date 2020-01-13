@@ -30,7 +30,7 @@ function footer_write() {
   html += '</div>';
   html += '</div>';
   html += '<div class="p-aboutIdohado__map">';
-  html += '<a class="mapLink" href="https://goo.gl/maps/mk16N9E4hM82">';
+  html += '<a class="mapLink" href="https://goo.gl/maps/LRuni7JYhGNHGQXP8" target="_blank">';
   html += '<div class="mapLink__icon"><script type="text/javascript">svg_map();</script></div>';
   html += '<span class="mapLink__text">函館市大町3-16</span>';
   html += '</a>';
