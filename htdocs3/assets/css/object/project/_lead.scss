@@ -1,41 +1,106 @@
 /*
  * project: lead
  */
+$_pc_padding-x: map-get($padding, md);
+$_pc_padding-y: map-get($padding, lg);
+$_sp_padding-x: map-get($padding, xs);
+$_sp_padding-y: map-get($padding, sm);
 
-.p-lead {
-	$_pc_padding-x: map-get($padding, md);
-	$_pc_padding-y: map-get($padding, lg);
-	$_sp_padding-x: map-get($padding, xs);
-	$_sp_padding-y: map-get($padding, sm);
+$_text_fz: map-get($font-size, md);
+$_text_lh: map-get($line-height, lg);
 
+$_title_fz: map-get($font-size, xl);
+$_title_lh: map-get($line-height, xs);
+
+
+@mixin leadStyle() {
 	@include tabpc {
 		padding: $_pc_padding-y $_pc_padding-x;
 	}
 	@include sp {
 		padding: $_sp_padding-y $_sp_padding-x;
 	}
-//	@include smallsp {
-//		padding: 0;
-//	}
+	//@include smallsp {
+	//	padding: 0;
+  //}
 
 	@include tegaki_frame(20);
 
 	text-align: center;
-	line-height: map-get($line-height, lg);
+	line-height: $_text_lh;
 	background: map-get($color, bg_dark_a01);
+}
+
+.p-lead {
+  @include leadStyle();
 
 	&__text {
-		font-size: map-get($font-size, md);
+		font-size: $_text_fz;
 		&:not(:first-child) {
 			margin-top: map-get($margin, md);
 		}
-
 		.em {
 			background: map-get($color, bg_dark_a02);
 		}
 	}
-	&__by {
-		margin-top: map-get($margin, md);
-		font-size: map-get($font-size, sm);
-	}
+}
+
+.p-lead2 {
+  @include leadStyle();
+
+  $_pc_left_width: 50%;
+  $_tab_left_width: 35%;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &__left,
+  &__right {
+    @include sp {
+      width: 100%;
+    }
+  }
+
+  &__left {
+    @include pc {
+      width: $_pc_left_width;
+    }
+    @include tab {
+      width: $_tab_left_width;
+    }
+    @include sp {
+      order: 2;
+      margin-top: map-get($margin, lg);
+    }
+  }
+
+  &__right {
+    @include pc {
+      width: calc(100% - #{$_pc_left_width});
+    }
+    @include tab {
+      width: calc(100% - #{$_tab_left_width});
+    }
+  }
+
+  .lead2Image {
+    img {
+      width: auto;
+      max-width: 100%;
+    }
+  }
+
+  .lead2Title {
+    font-size: $_title_fz;
+    line-height: $_title_lh;
+    font-weight: bold;
+  }
+
+  .lead2Text {
+    font-size: $_text_fz;
+
+		&:not(:first-child) {
+			margin-top: map-get($margin, md);
+		}
+  }
 }

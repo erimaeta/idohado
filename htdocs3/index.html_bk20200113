@@ -39,37 +39,11 @@
     <div class="p-main">
       <section class="c-section">
         <div class="u-inner">
-          <div class="p-lead2">
-            <div class="p-lead2__left">
-              <div class="lead2Image">
-                <img src="assets/img/oomachi/illust.jpg" alt="大町イラスト">
-              </div>
-            </div>
-            <div class="p-lead2__right">
-              <p class="lead2Title">
-                いどはど大町店<br class="d-block d-md-none">オープン日決定！
-              </p>
-              <p class="lead2Text">
-                1月18日(土)から<br class="d-block d-md-none">
-                開店1:00pm&ensp;閉店5:00pm、<br>
-                定休日は水曜日です。
-              </p>
-              <p class="lead2Text">
-                2月からは<br class="d-block d-md-none">
-                「よるはど」もはじめますので、<br>
-                開店1:00pm&ensp;閉店9:00pm<br class="d-block d-md-none">
-                となります。
-              </p>
-              <p class="lead2Text">
-                おから焼きドーナツに加えて、<br>
-                季節限定気まぐれフードと<br class="d-block d-md-none">ゆかいな雑貨たちが、<br>
-                あなたの寄り道を待ってます♥️
-              </p>
-            </div>
-          </div>
-
-
-          <!-- div class="p-lead">
+          <div class="p-lead">
+            <!-- <p class="p-lead__text">
+							こんにちは。<br class="d-block d-md-none">いどはどドーナッツです。<br>
+							いどはどドーナッツは、<br class="d-block d-md-none">おから・豆乳・米油で作ったヘルシーな焼きドーナツで、<br>
+							わくわく波動をお届けします</p> -->
             <p class="p-lead__text" style="font-weight: bold; font-size: 1.6rem; line-height: 1.25;">
               いどはど大町店<br class="d-block d-md-none">オープン日決定！
             </p>
@@ -89,7 +63,18 @@
               季節限定気まぐれフードと<br class="d-block d-md-none">ゆかいな雑貨たちが、<br>
               あなたの寄り道を待ってます♥️
             </p>
-          </div -->
+              <!-- <p class="p-lead__text">
+							メニューページからドーナッツの種類をご確認いただき、<br>
+							<span class="em">電話</span>、<br class="d-block d-md-none">
+							<span class="em">Instagramのメッセージ</span>、<br class="d-block d-md-none">
+							<span class="em">メール</span>、<br class="d-block d-md-none">のいずれかで<br class="d-none d-md-block">ご注文を承ります。
+							</p>
+							<p class="p-lead__text">
+							プレゼントのご注文、<br class="d-block d-md-none">イベント等での数多くまとめてのご注文も受付致します。<br>
+							ご注文の受け渡しは、<br class="d-block d-md-none">営業時間外でもお客様のご都合に合わせる事も可能ですので<br>
+							お気軽にご連絡ください。
+							</p> -->
+          </div>
         </div><!-- /.u-inner -->
       </section>
       <section class="c-section">
