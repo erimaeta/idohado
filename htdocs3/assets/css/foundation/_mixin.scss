@@ -2,22 +2,22 @@
  * mixin
  */
 
-@mixin largepc {
-	@include media-breakpoint-up(xl) {
+@mixin smallsp {
+	@media screen and (max-width: 350px) {
 		@content;
 	}
 }
 
-@mixin tab_smallpc {
- 	@include media-breakpoint-between(md, lg) {
- 		@content;
- 	}
+@mixin sp {
+	@include media-breakpoint-down(sm) {
+		@content;
+	}
 }
 
-@mixin pc {
- 	@include media-breakpoint-up(lg) {
- 		@content;
- 	}
+@mixin sptab {
+	@include media-breakpoint-down(md) {
+		@content;
+	}
 }
 
 @mixin tab {
@@ -32,23 +32,23 @@
  	}
  }
 
-@mixin sptab {
-	@include media-breakpoint-down(md) {
-		@content;
-	}
+@mixin pc {
+ 	@include media-breakpoint-up(lg) {
+ 		@content;
+ 	}
 }
 
-@mixin sp {
-	@include media-breakpoint-down(sm) {
-		@content;
-	}
-}
-
-@mixin smallsp {
-	@media screen and (max-width: 350px) {
-		@content;
-	}
-}
+//不使用のためコメントアウト 2020.1.26
+//@mixin largepc {
+//	@include media-breakpoint-up(xl) {
+//		@content;
+//	}
+//}
+//@mixin tab_smallpc {
+// 	@include media-breakpoint-between(md, lg) {
+// 		@content;
+// 	}
+//}
 
 //
 // innerを作る

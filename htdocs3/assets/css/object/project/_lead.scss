@@ -20,9 +20,6 @@ $_title_lh: map-get($line-height, xs);
 	@include sp {
 		padding: $_sp_padding-y $_sp_padding-x;
 	}
-	//@include smallsp {
-	//	padding: 0;
-  //}
 
 	@include tegaki_frame(20);
 

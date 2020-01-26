@@ -78,19 +78,6 @@ $_border_style: 2px solid $_border_color;
 						border-left: none;
 					}
 				}
-
-//				@include largepc {
-//					width: calc(100% / 3);
-//					&:not(:first-child) {
-//						border-left: none
-//					}
-//					&:nth-child(n+4) {
-//						border-top: none;
-//					}
-//					&:nth-child(3n+1) {
-//						border-left: $_border_style;
-//					}
-//				}
 			}
 		}
 	}
