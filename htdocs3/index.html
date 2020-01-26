@@ -20,6 +20,11 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/index.css">
 
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.js"
+    integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+  <script src="assets/bootstrap/js/dist/util.js"></script>
+  <script src="assets/bootstrap/js/dist/carousel.js"></script>
+
   <script type="text/javascript" src="assets/js/svgs.js"></script>
   <script type="text/javascript" src="assets/js/footer.js"></script>
 </head>
@@ -47,18 +52,12 @@
             </div>
             <div class="p-lead2__right">
               <p class="lead2Title">
-                いどはど大町店<br class="d-block d-md-none">オープン日決定！
+                いどはど大町店<br class="d-block d-md-none">オープンしました！
               </p>
               <p class="lead2Text">
-                1月18日(土)から<br class="d-block d-md-none">
+                1月18日(土)にオープンしました。<br>
                 開店1:00pm&ensp;閉店5:00pm、<br>
                 定休日は水曜日です。
-              </p>
-              <p class="lead2Text">
-                2月からは<br class="d-block d-md-none">
-                「よるはど」もはじめますので、<br>
-                開店1:00pm&ensp;閉店9:00pm<br class="d-block d-md-none">
-                となります。
               </p>
               <p class="lead2Text">
                 おから焼きドーナツに加えて、<br>
@@ -140,6 +139,12 @@
                 <!-- <span class="eigyo">〇</span>が営業日、 --><span class="kyugyo"></span>が休業日です。<br>
                 1月中の営業時間は、1:00pm～5:00pmです。
               </p>
+              <p class="p-eigyoInfo__text">
+                2月からは<br class="d-block d-md-none">
+                「よるはど」も始めます。<br>
+                よるはどは不定期営業<br class="d-block d-md-none">（営業日は月初にお知らせします。）<br>
+                開店1:00pm&ensp;閉店9:00pmです。
+              </p>
               <!-- div class="p-eigyoInfo__event">
 								<section class="c-sectionNest">
 									<h3 class="c-sectionNest__title c-sectionTitleNest">今月のいどはど</h3>
@@ -159,7 +164,6 @@
           </div>
         </div><!-- /.u-inner -->
       </section>
-
 
       <section class="c-section">
         <div class="u-inner">
@@ -197,6 +201,73 @@
                   transform: rotate(-135deg);
                 }
               </style>-->
+              <div class="my-wrapper">
+                <div id="carouselOption1" class="carousel slide" data-ride="carousel">
+                  <!-- インジケータの設定 -->
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselOption1" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselOption1" data-slide-to="1"></li>
+                    <li data-target="#carouselOption1" data-slide-to="2"></li>
+                    <li data-target="#carouselOption1" data-slide-to="3"></li>
+                    <li data-target="#carouselOption1" data-slide-to="4"></li>
+                    <li data-target="#carouselOption1" data-slide-to="5"></li>
+                  </ol>
+                  <!-- スライドさせる画像の設定 -->
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img class="d-block w-100" src="assets/img/oomachi/1.jpg" alt="第1スライド">
+                      <!-- div class="carousel-caption d-none d-md-block">
+                        <h5>第1スライド見出し</h5>
+                        <p>スライドイメージの紹介</p>
+                      </div -->
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="assets/img/oomachi/3.jpg" alt="第2スライド">
+                      <!-- div class="carousel-caption d-none d-md-block">
+                        <h5>第2スライド見出し</h5>
+                        <p>スライドイメージの紹介</p>
+                      </div -->
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="assets/img/oomachi/5.jpg" alt="第3スライド">
+                      <!-- div class="carousel-caption d-none d-md-block">
+                        <h5>第3スライド見出し</h5>
+                        <p>スライドイメージの紹介</p>
+                      </div -->
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="assets/img/oomachi/6.jpg" alt="第4スライド">
+                      <!-- div class="carousel-caption d-none d-md-block">
+                        <h5>第4スライド見出し</h5>
+                        <p>スライドイメージの紹介</p>
+                      </div -->
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="assets/img/oomachi/7.jpg" alt="第5スライド">
+                      <!-- div class="carousel-caption d-none d-md-block">
+                        <h5>第5スライド見出し</h5>
+                        <p>スライドイメージの紹介</p>
+                      </div -->
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="assets/img/oomachi/8.jpg" alt="第6スライド">
+                      <!-- div class="carousel-caption d-none d-md-block">
+                        <h5>第5スライド見出し</h5>
+                        <p>スライドイメージの紹介</p>
+                      </div -->
+                    </div>
+                  </div>
+                  <!-- スライドコントロールの設定 -->
+                  <a class="carousel-control-prev" href="#carouselOption1" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">前へ</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselOption1" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">次へ</span>
+                  </a>
+                </div>
+              </div>
             </div>
             <ul class="p-salesStyles mt-5">
               <!-- <li class="salesStyle">

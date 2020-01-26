@@ -95,9 +95,18 @@ var category01 = {
 	image_name: '11.jpg',
 	title: 'ハドウィーン',
 	price: '200',
-	description: 'かぼちゃたっぷりの波動を送ります',
-	material: '小麦・卵・おから・豆乳・きび砂糖・米油・ベーキングパウダー・かぼちゃ',
+  description: '[季節限定商品] かぼちゃたっぷりの波動を送ります',
+  material: '小麦・卵・おから・豆乳・きび砂糖・米油・ベーキングパウダー・かぼちゃ',
 	id: 'okara11'
+},
+{
+  image_dir: 'assets/img/donuts/okara/',
+  image_name: '12.jpg',
+  title: '星くず',
+  price: '200',
+  description: '',
+  material: '小麦、豆乳、きび砂糖、おから、ベーキングパウダー、卵、米油、ホワイトチョコ、チョコクランチ、アラザン',
+  id: 'okara12'
 }
 	]
 };
@@ -145,11 +154,20 @@ var category02 = {
 	image_name: '5.jpg',
 	title: 'やよい',
 	price: '220',
-	description: '春限定の桜色の和風ドーナッツ',
+  description: '[季節限定商品] 春限定の桜色の和風ドーナッツ',
 	material: '小麦・卵・アーモンドパウダー・牛乳・きび砂糖・バター・ベーキングパウダー・粉糖・粒あん・桜パウダー・ピンク色',
 	id: 'butter5'
 },
-	]
+{
+  image_dir: 'assets/img/donuts/butter/',
+  image_name: '6.jpg',
+  title: '海のしずく',
+  price: '220',
+  description: '[季節限定商品] 生命の源、海。その表情を少し切り取ってドーナツに写しました。食べたら「しょっぱい！」ことはございませんよ～',
+  material: '小麦粉、アーモンドパウダー、有塩バター、牛乳、卵、きび砂糖、ベーキングパウダー、粉糖、ピンク青色、チョコチップ',
+  id: 'butter6'
+}
+]
 };
 
 var category03 = {
