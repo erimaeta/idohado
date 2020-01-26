@@ -362,7 +362,7 @@ h1, h2, h3, h4, h5, h6 {
   .p-orderLink__item {
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
+    width: 90%;
   }
 }
 
@@ -414,7 +414,7 @@ h1, h2, h3, h4, h5, h6 {
   .p-orderLink .c-contactInfo {
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
+    width: 90%;
   }
 }
 
@@ -446,7 +446,7 @@ h1, h2, h3, h4, h5, h6 {
   .p-eigyoInfo__calendar {
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
+    width: 90%;
   }
 }
 
@@ -580,22 +580,6 @@ h1, h2, h3, h4, h5, h6 {
 /*
  * project: salesStyles
  */
-@media (min-width: 992px) {
-  .p-salesStyles {
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .p-salesStyles {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
 .p-salesStyles .salesStyle {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -604,93 +588,74 @@ h1, h2, h3, h4, h5, h6 {
   flex-wrap: wrap;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .p-salesStyles .salesStyle:not(:first-child) {
     margin-top: 1rem;
   }
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 767.98px) {
   .p-salesStyles .salesStyle:not(:first-child) {
     margin-top: 2rem;
   }
 }
 
-.p-salesStyles .salesStyle__left {
+.p-salesStyles .salesStyle__wrapper {
   position: relative;
+}
+
+.p-salesStyles .salesStyle__wrapper::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 20px solid rgba(0, 0, 0, 0);
+  border-image-source: url("../img/bg_box.png");
+  border-image-slice: 20;
+  border-image-outset: 3px;
+}
+
+.p-salesStyles .salesStyle__wrapper.is-text {
   background: rgba(141, 100, 73, 0.1);
 }
 
-@media (min-width: 992px) {
-  .p-salesStyles .salesStyle__left {
+@media (min-width: 768px) {
+  .p-salesStyles .salesStyle__wrapper.is-text {
     padding: 2.5rem 2rem;
   }
 }
 
-@media (max-width: 991.98px) {
-  .p-salesStyles .salesStyle__left {
+@media (max-width: 767.98px) {
+  .p-salesStyles .salesStyle__wrapper.is-text {
     padding: 1.5rem 1rem;
     text-align: center;
   }
 }
 
-.p-salesStyles .salesStyle__left::after {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: 20px solid rgba(0, 0, 0, 0);
-  border-image-source: url("../img/bg_box.png");
-  border-image-slice: 20;
-  border-image-outset: 3px;
+@media (max-width: 767.98px) {
+  .p-salesStyles .salesStyle__wrapper.is-img, .p-salesStyles .salesStyle__wrapper.is-text {
+    width: 100%;
+  }
 }
 
-.p-salesStyles .salesStyle__right {
-  position: relative;
-}
-
-.p-salesStyles .salesStyle__right::after {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: 20px solid rgba(0, 0, 0, 0);
-  border-image-source: url("../img/bg_box.png");
-  border-image-slice: 20;
-  border-image-outset: 3px;
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .p-salesStyles .salesStyle__wrapper.is-img, .p-salesStyles .salesStyle__wrapper.is-text {
+    width: 50%;
+  }
 }
 
 @media (min-width: 992px) {
-  .p-salesStyles .salesStyle__left {
-    width: calc(100% - 500px);
-  }
-  .p-salesStyles .salesStyle__right {
+  .p-salesStyles .salesStyle__wrapper.is-img, .p-salesStyles .salesStyle__wrapper.is-text {
+    width: 50%;
     max-width: 500px;
   }
 }
 
-@media (max-width: 991.98px) {
-  .p-salesStyles .salesStyle__left {
-    -webkit-box-ordinal-group: 3;
-    -ms-flex-order: 2;
-    order: 2;
-    width: 100%;
-  }
-  .p-salesStyles .salesStyle__right {
-    -webkit-box-ordinal-group: 2;
-    -ms-flex-order: 1;
-    order: 1;
-    width: 100%;
-  }
-  .p-salesStyles .salesStyle__img img {
-    width: 100%;
-  }
+.p-salesStyles .salesStyle__img img {
+  width: 100%;
 }
 
 .p-salesStyles .salesStyle__title {
@@ -719,22 +684,6 @@ h1, h2, h3, h4, h5, h6 {
 /*
  * project: story
  */
-@media (min-width: 992px) {
-  .p-story {
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .p-story {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
 .p-story:not(:first-child) {
   margin-top: 2rem;
 }
@@ -755,15 +704,13 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 1.5rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .my-wrapper {
-    margin-left: auto;
-    margin-right: auto;
-    width: 770px;
+    width: 100%;
   }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .my-wrapper {
     width: 100%;
   }

@@ -4,15 +4,6 @@
 
 .p-salesStyles {
 
-	@include pc {
-		width: 85%;
-		@include block_centering;
-	}
-	@include tab {
-		width: 80%;
-		@include block_centering;
-	}
-
 	.salesStyle {
 		$_pc_padding-x: map-get($padding, lg);
 		$_pc_padding-y: map-get($padding, xl);
@@ -33,26 +24,16 @@
 		flex-wrap: wrap;
 
 		&:not(:first-child) {
-			@include pc {
+			@include tabpc {
 				margin-top: $_pc_margin-top;
 			}
-			@include sptab {
+			@include sp {
 				margin-top: $_sp_margin-top;
 			}
 		}
 
-		&__left {//text
-			position: relative;
-			background: $_bgc;
-
-			@include pc {
-				padding: $_pc_padding-y $_pc_padding-x;
-			}
-			@include sptab {
-				padding: $_sp_padding-y $_sp_padding-x;
-				text-align: center;
-			}
-
+    &__wrapper {
+      position: relative;
 			&::after {
 				position: absolute;
 				content: "";
@@ -62,54 +43,67 @@
 				width: 100%;
 				height: 100%;
 				@include tegaki_frame(20);
-			}
-		}
-		&__right {//img
-			position: relative;
+      }
 
-			&::after {
-				position: absolute;
-				content: "";
-				left: 0;
-				top: 0;
-				display: block;
-				width: 100%;
-				height: 100%;
-				@include tegaki_frame(20);
-			}
-		}
+      &.is-text {
+        background: $_bgc;
 
+        @include tabpc {
+          padding: $_pc_padding-y $_pc_padding-x;
+        }
+        @include sp {
+          padding: $_sp_padding-y $_sp_padding-x;
+          text-align: center;
+        }
+      }
+    }
+
+    //
+    // 並びと幅の指定
+    //
+		@include sp {
+      &__wrapper {
+        &.is-img,
+        &.is-text {
+          width: 100%;
+        }
+      }
+    }
+		@include tab {
+      &__wrapper {
+        &.is-img,
+        &.is-text {
+          width: 50%;
+        }
+      }
+		}
 		@include pc {
-			$_img_w: 500px;
-			&__left {
-				width: calc(100% - #{$_img_w});
-			}
-			&__right {
-				max-width: $_img_w;
-			}
-		}
-		@include sptab {
-			&__left {
-				order: 2;
-				width: 100%;
-			}
-			&__right {
-				order: 1;
-				width: 100%;
-			}
-			&__img {
-				img {
-					width: 100%;
-				}
-			}
-		}
+      $_img_width: 500px;
+      &__wrapper {
+        &.is-img,
+        &.is-text {
+          width: 50%;
+          max-width: $_img_width;
+        }
+      }
+    }
+
+    //
+    // その他各アイテム
+    //
+    &__img {
+      img {
+        width: 100%;
+      }
+    }
 
 		&__title {
 			display: inline-block;
 			border-bottom: .35em solid $_bbc;
 			font-size: $_title_fz;
 			font-weight: bold;
-		}
+    }
+
 		&__text {
 			font-size: $_text_fz;
 			@include pc {

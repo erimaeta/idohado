@@ -8,15 +8,6 @@
 	$_small_fz: map-get($font-size, sm);
 	$_text_mt: map-get($margin, sm);
 
-	@include pc {
-		width: 85%;
-		@include block_centering;
-	}
-	@include tab {
-		width: 80%;
-		@include block_centering;
-	}
-
 	&:not(:first-child) {
 		margin-top: $_mt;
 	}
@@ -37,12 +28,10 @@
 
 .my-wrapper {
   margin-top: map-get($margin, md);
-  @include tabpc {
-    margin-left: auto;
-    margin-right: auto;
-    width: 770px;
+  @include pc {
+    width: 100%;
   }
-  @include sp {
+  @include sptab {
     width: 100%;
   }
 }
