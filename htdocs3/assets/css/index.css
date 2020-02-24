@@ -161,6 +161,10 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.p-lead2__center {
+  width: 100%;
+}
+
 .p-lead2 .lead2Image img {
   width: auto;
   max-width: 100%;
@@ -178,6 +182,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .p-lead2 .lead2Text:not(:first-child) {
   margin-top: 1.5rem;
+}
+
+.p-lead2 .lead2Text a {
+  color: inherit;
+  text-decoration: underline;
 }
 
 /*
@@ -685,7 +694,44 @@ h1, h2, h3, h4, h5, h6 {
  * project: story
  */
 .p-story:not(:first-child) {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
+}
+
+.p-story.is-border {
+  position: relative;
+  border: 2px solid rgba(141, 100, 73, 0.2);
+  background: rgba(141, 100, 73, 0.1);
+}
+
+@media (min-width: 768px) {
+  .p-story.is-border {
+    padding: 3.5rem 2.5rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .p-story.is-border {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+.p-story.is-border::before {
+  content: "";
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+  border-bottom: 3rem solid rgba(141, 100, 73, 0.6);
+  border-right: 3rem solid #fff;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+@media (max-width: 767.98px) {
+  .p-story.is-border::before {
+    border-bottom-width: 2rem;
+    border-right-width: 2rem;
+  }
 }
 
 .p-story__text {
@@ -698,6 +744,60 @@ h1, h2, h3, h4, h5, h6 {
 
 .p-story__text.is-small {
   font-size: 1rem;
+}
+
+.p-story__text.is-hamer {
+  padding: 1rem;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.p-story__imgs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .p-story__imgs {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .p-story__imgs {
+    margin-top: 1rem;
+  }
+}
+
+.p-story__img {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .p-story__img {
+    width: 50%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .p-story__img {
+    width: 100%;
+  }
+}
+
+.p-story__img img {
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+}
+
+@media (max-width: 767.98px) {
+  .p-story__img img {
+    margin-top: 1rem;
+  }
 }
 
 .my-wrapper {

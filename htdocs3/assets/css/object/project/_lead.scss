@@ -80,6 +80,10 @@ $_title_lh: map-get($line-height, xs);
     }
   }
 
+  &__center {
+    width: 100%;
+  }
+
   .lead2Image {
     img {
       width: auto;
@@ -98,6 +102,11 @@ $_title_lh: map-get($line-height, xs);
 
 		&:not(:first-child) {
 			margin-top: map-get($margin, md);
-		}
+    }
+    
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
   }
 }

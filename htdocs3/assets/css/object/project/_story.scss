@@ -3,28 +3,106 @@
  */
 
 .p-story {
-	$_mt: map-get($margin, lg);
-	$_fz: map-get($font-size, md);
-	$_small_fz: map-get($font-size, sm);
-	$_text_mt: map-get($margin, sm);
+  $_mt: map-get($margin, xl);
+  $_fz: map-get($font-size, md);
+  $_small_fz: map-get($font-size, sm);
+  $_text_mt: map-get($margin, sm);
+  $_imgs_mt_pc: map-get($margin, lg);
+  $_imgs_mt_sp: map-get($margin, sm);
+  $_img_mt: map-get($margin, sm);
+  $_px_pc: map-get($padding, xl);
+  $_py_pc: map-get($padding, lll);
+  $_px_sp: map-get($padding, md);
+  $_py_sp: map-get($padding, xl);
 
-	&:not(:first-child) {
-		margin-top: $_mt;
-	}
+  &:not(:first-child) {
+    margin-top: $_mt;
+  }
 
-	&__text {
-		font-size: $_fz;
+  &.is-border {
+    $_bg_color: map-get($color, bg_dark_a01);
+    $_border_color: map-get($color, bg_dark_a02);
+    $_border_width: 2px;
+    $_border_style: $_border_width solid $_border_color;
+    $_border_color_back: map-get($color, bg_dark_a06);
 
-		&:not(:first-child) {
-			margin-top: $_text_mt;
-		}
+    position: relative;
+    border: $_border_style;
+    background: $_bg_color;
 
-		&.is-small {
-			font-size: $_small_fz;
-		}
-	}
+    @include tabpc {
+      padding: $_py_pc $_px_pc;
+    }
+    @include sp {
+      padding: $_py_sp $_px_sp;
+    }
+
+    &::before {
+      $_border_width_pc: 3rem;
+      $_border_width_sp: 2rem;
+
+      content: "";
+      position: absolute;
+      right: -$_border_width;
+      bottom: -$_border_width;
+      border-bottom: $_border_width_pc solid $_border_color_back;
+      border-right: $_border_width_pc solid #fff;
+      transform: rotate(90deg);
+
+      @include sp {
+        border-bottom-width: $_border_width_sp;
+        border-right-width: $_border_width_sp;
+      }
+    }
+  }
+
+  &__text {
+    font-size: $_fz;
+
+    &:not(:first-child) {
+      margin-top: $_text_mt;
+    }
+
+    &.is-small {
+      font-size: $_small_fz;
+    }
+
+    &.is-hamer {
+      padding: 1rem;
+      border-radius: 3px;
+      background: rgba(255,255,255,.5);
+    }
+  }
+
+  &__imgs {
+    display: flex;
+    flex-wrap: wrap;
+    @include tabpc {
+      margin-top: $_imgs_mt_pc;
+    }
+    @include sp {
+      margin-top: $_imgs_mt_sp;
+    }
+  }
+  &__img {
+    @include tabpc {
+      width: 50%;
+    }
+    @include sp {
+      width: 100%;
+    }
+    text-align: center;
+    img {
+      display: inline-block;
+      width: auto;
+      max-width: 100%;
+
+      @include sp {
+        margin-top: $_img_mt;
+      }
+    }
+  }
 }
-
 
 .my-wrapper {
   margin-top: map-get($margin, md);
