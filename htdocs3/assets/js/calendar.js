@@ -19,7 +19,7 @@ function show_calendar() {
     var year = current.getFullYear();
     var month = current.getMonth() + 1;
 
-    month =2;
+    month =3;
     //console.log(month);
 
     var wrapper = document.getElementById('calendar');

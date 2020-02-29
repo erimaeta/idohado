@@ -325,6 +325,70 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*
+ * component: inpageLink
+ */
+.c-inpageLink {
+  position: relative;
+  display: inline-block;
+  padding: 0.25rem 0;
+  color: inherit;
+  /*自作の下線を引いたけど、くどいのでやめ。
+    background-image: linear-gradient(
+    to bottom,
+    transparent,
+    transparent 96%,
+    $_bgc 0,
+    $_bgc
+  );*/
+  text-decoration: underline;
+}
+
+.c-inpageLink.is-before {
+  margin-left: 1.6rem;
+}
+
+.c-inpageLink.is-before::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-right: 2px solid #664032;
+  border-bottom: 2px solid #664032;
+  background: rgba(0, 0, 0, 0);
+  -webkit-transform: translateY(-50%) rotate(45deg);
+  -ms-transform: translateY(-50%) rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
+  left: -1.6rem;
+}
+
+.c-inpageLink.is-after {
+  margin-right: 1.6rem;
+}
+
+.c-inpageLink.is-after::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-right: 2px solid #664032;
+  border-bottom: 2px solid #664032;
+  background: rgba(0, 0, 0, 0);
+  -webkit-transform: translateY(-50%) rotate(45deg);
+  -ms-transform: translateY(-50%) rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
+  right: -1.6rem;
+}
+
+.c-inpageLink:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*
  * component: markerList
  */
 .c-markerList {

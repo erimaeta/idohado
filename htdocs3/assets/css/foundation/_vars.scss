@@ -26,6 +26,7 @@ $padding-y: (
 );
 
 $padding: (
+  xxs: 0.25rem,
 	xs: 0.5rem,
 	sm: 1rem,
 	md: 1.5rem,
@@ -46,6 +47,10 @@ $line-height: (
 $color: (
 	transparent: rgba(0,0,0,0),
 	default_color: #664032,
+	default_color_a01: rgba(#664032, .1),
+	default_color_a02: rgba(#664032, .2),
+	default_color_a03: rgba(#664032, .3),
+	default_color_a04: rgba(#664032, .4),
 	default_color_a05: rgba(#664032, .5),
 	default_color_a06: rgba(#664032, .6),
 	default_color_a07: rgba(#664032, .7),
@@ -90,6 +95,7 @@ $border-radius: (
 );
 
 $margin: (
+  xxs: 0.25rem,
 	xs: 0.5rem,
 	sm: 1rem,
 	md: 1.5rem,
@@ -99,6 +105,7 @@ $margin: (
 );
 
 $font-size: (
+  xxs: 0.6rem,
 	xs: 0.8rem,
 	sm: 1rem,
 	md: 1.2rem,

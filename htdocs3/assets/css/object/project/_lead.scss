@@ -103,10 +103,5 @@ $_title_lh: map-get($line-height, xs);
 		&:not(:first-child) {
 			margin-top: map-get($margin, md);
     }
-    
-    a {
-      color: inherit;
-      text-decoration: underline;
-    }
   }
 }

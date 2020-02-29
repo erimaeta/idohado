@@ -1,0 +1,68 @@
+/*
+ * component: inpageLink
+ */
+
+$_py: map-get($padding, xxs);
+$_px: map-get($padding, xxs);
+
+$_bgc: map-get($color, default_color_a01);
+//$_shadow_color1: map-get($color, light_color_a05);
+//$_shadow_color2: map-get($color, default_color_a03);
+
+$_arrow_ma: map-get($margin, sm);
+$_border_color: map-get($color, default_color);
+$_border_size: map-get($font-size, xxs);
+
+
+@mixin arrow($before: false, $after: true) {
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: $_border_size;
+  height: $_border_size;
+  border-right: 2px solid $_border_color;
+  border-bottom: 2px solid $_border_color;
+  background: map-get($color, transparent);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.c-inpageLink {
+  position: relative;
+  display: inline-block;
+  padding: $_py 0;
+
+  color: inherit;
+
+  /*自作の下線を引いたけど、くどいのでやめ。
+    background-image: linear-gradient(
+    to bottom,
+    transparent,
+    transparent 96%,
+    $_bgc 0,
+    $_bgc
+  );*/
+  text-decoration: underline;
+
+  &.is-before {
+    margin-left: $_arrow_ma + $_border_size;
+    &::before {
+      content: "";
+      @include arrow;
+      left: -($_arrow_ma + $_border_size);
+    }
+  }
+
+  &.is-after {
+    margin-right: $_arrow_ma + $_border_size;
+    &::after {
+      content: "";
+      @include arrow;
+      right: -($_arrow_ma + $_border_size);
+    }
+  }
+
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
