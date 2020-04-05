@@ -184,6 +184,23 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 1.5rem;
 }
 
+.p-lead2 .lead2Text.is-limited {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+@media (min-width: 768px) {
+  .p-lead2 .lead2Text.is-limited {
+    display: inline-block;
+    padding: 1.5rem 3.5rem 2.5rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .p-lead2 .lead2Text.is-limited {
+    padding: 2rem 1rem;
+  }
+}
+
 /*
  * project: toriokiFlow
  */

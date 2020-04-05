@@ -103,5 +103,22 @@ $_title_lh: map-get($line-height, xs);
 		&:not(:first-child) {
 			margin-top: map-get($margin, md);
     }
+
+    &.is-limited {
+      $_p_t_pc: map-get($padding, md);
+      $_p_b_pc: map-get($padding, xl);
+      $_p_x_pc: map-get($padding, lll);
+      $_p_x_sp: map-get($padding, sm);
+      $_p_y_sp: map-get($padding, lg);
+      
+      @include tabpc {
+        display: inline-block;
+        padding: $_p_t_pc $_p_x_pc $_p_b_pc;
+      }
+      @include sp {
+        padding: $_p_y_sp $_p_x_sp;
+      }
+      background: rgba(255,255,255,0.3);
+    }
   }
 }

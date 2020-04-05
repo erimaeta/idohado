@@ -18,7 +18,7 @@
 
   <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/index.css?20200405">
+  <link rel="stylesheet" href="assets/css/index.css?202002241927">
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -63,21 +63,11 @@
             <div class="p-lead2__center">
               <p class="lead2Title">お知らせ</p>
               <p class="lead2Text">
-                4月も「いどはど」「よるはど」のダブルで営業いたします😄<br>
-                貸本も継続実施中です📚<br>
+                3月は、よるはど始動！<br class="d-block d-md-none">いたします😄
               </p>
-              <p class="lead2Text is-limited">
-                <span style="font-weight:bold; display: inline-block; margin-bottom: .5em;">【期間限定企画】</span><br>
-                5月の半ば頃まで、<br>函館在住Aiさんの<br class="d-block d-md-none"><a href="https://www.instagram.com/ai._craft/" target="_blank">木のハンドメイド作品</a>の<br>展示販売を予定しています。<br>
-                （<a href="https://www.instagram.com/idohado/" target="_blank">idohadoのInstaram</a>で紹介しています✨）<br>
-                <br>
-                ぜひ、ご覧ください🙋
-              </p>
-              <p class="lead2Text">
-                4月も宜しくお願いします😊
-              <p class="lead2Text">
+              <p class="lead2Text ">
                 <a class="c-inpageLink is-after mr-md-5" href="#yoruhado">「よるはど」とは？</a>
-                <a class="c-inpageLink is-after" href="#eigyo">４月の営業日時</a>
+                <a class="c-inpageLink is-after" href="#eigyo">３月の営業日時</a>
               </p>
             </div>
           </div>
@@ -145,12 +135,12 @@
       </section>
       <section class="c-section" id="eigyo">
         <div class="u-inner">
-          <h2 class="c-section__title c-sectionTitle">４月の営業日時</h2>
+          <h2 class="c-section__title c-sectionTitle">３月の営業日時</h2>
           <div class="c-section__content">
             <div class="p-eigyoInfo">
               <div class="p-eigyoInfo__calendar" id="calendar"></div>
               <p class="p-eigyoInfo__text">
-                <span class="kyugyo"></span>が休業日です。</p>
+                <span class="kyugyo"></span>が休業日です。<br>よるはどは、3/5(木)から始めます。</p>
               <p class="p-eigyoInfo__text">
                 いどはど・よるはど共に<br class="d-block d-md-none">水曜日がお休みです。
               </p>
@@ -274,7 +264,7 @@
   <script type="text/javascript">pagetop_write();</script>
 
   <script type="text/javascript" src="assets/js/common.js?20200229"></script>
-  <script type="text/javascript" src="assets/js/calendar.js?20200405"></script>
+  <script type="text/javascript" src="assets/js/calendar.js?20200229"></script>
   <script type="text/javascript">
     window.onload = function () {
       show_calendar();
