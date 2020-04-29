@@ -1,0 +1,61 @@
+            <!-- div class="p-lead2__left">
+              <div class="lead2Image">
+                <img src="assets/img/oomachi/illust.jpg" alt="大町イラスト">
+              </div>
+            </div -->
+            <!-- div class="p-lead2__right">
+              <p class="lead2Title">2月のお知らせ</p>
+              <p class="lead2Text">1/18に大町店をオープンできて<br class="d-block d-md-none">ホットしてます😃</p>
+              <p class="lead2Text">
+                これから、ドーナツや珈琲、<br class="d-block d-md-none">
+                気まぐれフードや雑貨屋と様々増やして<br class="d-block d-md-none">
+                楽しいお店にしていきますので<br class="d-block d-md-none">
+                よろしくお願いいたします😊
+              </p>
+            </div -->
+          <!-- div class="p-lead">
+            <p class="p-lead__text" style="font-weight: bold; font-size: 1.6rem; line-height: 1.25;">
+              いどはど大町店<br class="d-block d-md-none">オープン日決定！
+            </p>
+            <p class="p-lead__text">
+              1月18日(土)から<br class="d-block d-md-none">
+              開店1:00pm&ensp;閉店5:00pm、<br>
+              定休日は水曜日です。
+            </p>
+            <p class="p-lead__text" style="font-size: 1.0rem">
+              2月からは<br class="d-block d-md-none">
+              「よるはど」もはじめますので、<br>
+              開店1:00pm&ensp;閉店9:00pm<br class="d-block d-md-none">
+              となります。
+            </p>
+            <p class="p-lead__text">
+              おから焼きドーナツに加えて、<br>
+              季節限定気まぐれフードと<br class="d-block d-md-none">ゆかいな雑貨たちが、<br>
+              あなたの寄り道を待ってます♥️
+            </p>
+          </div -->
+              <!-- div class="p-eigyoInfo__event">
+								<section class="c-sectionNest">
+									<h3 class="c-sectionNest__title c-sectionTitleNest">今月のいどはど</h3>
+									<div class="c-sectionNest__content">
+										<dl class="c-markerList">
+											<dt>23(水),24(木)</dt>
+											<dd>函館フードフェスタ「ライダーキック＆茶結」さんのブースに参加します。</dd>
+										</dl>
+										<dl class="c-markerList">
+											<dt>24(木)</dt>
+											<dd>三浦商店街フェスティバルに参加いたします。</dd>
+										</dl>
+									</div>
+								</section>
+							</div -->
+              <!-- <li class="salesStyle">
+                    <div class="salesStyle__left">
+                      <h3 class="salesStyle__title">いどはど店舗</h3>
+                      <p class="salesStyle__text">探しても見つからないとうわさの<br class="d-block d-md-none">「いどはど」</p>
+                      <p class="salesStyle__text">車の入れない路地の奥 。<br>静かにお立ち寄りください。</p>
+                    </div>
+                    <div class="salesStyle__right">
+                      <div class="salesStyle__img"><img src="assets/img/sales/store.jpg" alt="いどはど店舗"></div>
+                    </div>
+                  </li> -->

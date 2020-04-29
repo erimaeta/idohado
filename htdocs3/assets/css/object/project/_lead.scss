@@ -39,7 +39,7 @@ $_title_lh: map-get($line-height, xs);
 		.em {
 			background: map-get($color, bg_dark_a02);
 		}
-	}
+  }
 }
 
 .p-lead2 {
@@ -102,6 +102,11 @@ $_title_lh: map-get($line-height, xs);
 
 		&:not(:first-child) {
 			margin-top: map-get($margin, md);
+    }
+
+    &__link {
+      color: map-get($color, default_color);
+      text-decoration: underline;
     }
 
     &.is-limited {

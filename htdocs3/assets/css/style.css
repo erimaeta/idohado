@@ -340,7 +340,7 @@ h1, h2, h3, h4, h5, h6 {
     $_bgc 0,
     $_bgc
   );*/
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .c-inpageLink.is-before {

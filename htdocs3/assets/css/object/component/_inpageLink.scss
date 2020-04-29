@@ -41,7 +41,7 @@ $_border_size: map-get($font-size, xxs);
     $_bgc 0,
     $_bgc
   );*/
-  text-decoration: underline;
+  text-decoration: none;
 
   &.is-before {
     margin-left: $_arrow_ma + $_border_size;
