@@ -107,8 +107,26 @@ var category01 = {
   description: '',
   material: '小麦、豆乳、きび砂糖、おから、ベーキングパウダー、卵、米油、ホワイトチョコ、チョコクランチ、アラザン',
   id: 'okara12'
+},
+{
+	image_dir: 'assets/img/donuts/okara/',
+	image_name: '13.jpg',
+	title: 'チップロボット',
+	price: '190',
+  description: 'おからプレーンにクランベリー・チョコチップ',
+  material: '小麦・卵・おから・豆乳・きび砂糖・米油・ベーキングパウダー・ラズベリーチップ・チョコチップ',
+	id: 'okara13'
+},
+{
+  image_dir: 'assets/img/donuts/okara/',
+  image_name: '14.jpg',
+  title: 'あんの利休',
+  price: '220',
+  description: '抹茶おからプレーンに自家製あんこ入り',
+  material: '小麦・卵・おから・豆乳・きび砂糖・米油・ベーキングパウダー・抹茶・小豆',
+  id: 'okara14'
 }
-	]
+]
 };
 
 var category02 = {
@@ -166,6 +184,15 @@ var category02 = {
   description: '[季節限定商品] 生命の源、海。その表情を少し切り取ってドーナツに写しました。食べたら「しょっぱい！」ことはございませんよ～',
   material: '小麦粉、アーモンドパウダー、有塩バター、牛乳、卵、きび砂糖、ベーキングパウダー、粉糖、ピンク青色、チョコチップ',
   id: 'butter6'
+},
+{
+  image_dir: 'assets/img/donuts/butter/',
+  image_name: '7.jpg',
+  title: 'バナナロック',
+  price: '250',
+  description: '',
+  material: '小麦・卵・アーモンドプードル・ココナッツミルク・きび砂糖・ベーキングパウダー・バナナ・くるみ・マカデミアナッツ・アーモンド・シナモン',
+  id: 'butter7'
 }
 ]
 };
