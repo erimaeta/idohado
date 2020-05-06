@@ -96,11 +96,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .c-donutsMenu__left .menu-image {
+  position: relative;
   width: 50px;
 }
 
 .c-donutsMenu__left .menu-image img {
   width: 100%;
+}
+
+.c-donutsMenu__left .menu-image .new-item {
+  position: absolute;
+  top: 0;
+  left: 3px;
+  color: #d9333f;
+  font-size: 0.8rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.c-donutsMenu__left .menu-image .new-item::before {
+  content: "New";
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-shadow: 0px 0px 4px white;
 }
 
 .c-donutsMenu__left .menu-title {
@@ -291,12 +311,44 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   top: 0;
   left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 0.5em;
   color: #664032;
   font-size: 1.6rem;
   font-weight: bold;
   background: rgba(255, 238, 206, 0.5);
   text-shadow: rgba(255, 238, 206, 0.8) 0 0 0.2em;
+}
+
+.p-donutsDetails .detail__title .new-item {
+  position: relative;
+  display: block;
+  height: calc(1.4rem + 4px + 4px);
+}
+
+.p-donutsDetails .detail__title .new-item::before {
+  content: "New";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 1em;
+  padding: 4px 6px;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 1;
+  background: #d9333f;
+  border-radius: 3px;
+  text-shadow: none;
+  opacity: .8;
 }
 
 .p-donutsDetails .detail__price {

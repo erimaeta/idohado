@@ -38,10 +38,28 @@
 		justify-content: flex-start;
 
 		.menu-image {
+      position: relative;
 			width: 50px;
 			img {
 				width: 100%;
-			}
+      }
+      .new-item {
+        &::before {
+          content: "New";
+          color: inherit;
+          font-size: inherit;
+          font-weight: inherit;
+          line-height: inherit;
+          text-shadow: 0px 0px 4px white;
+        }
+        position: absolute;
+        top: 0;
+        left: 3px;
+        color: map-get($color, new_red);
+        font-size: map-get($font-size, xs);
+        font-weight: bold;
+        line-height: 1;
+      }
 		}
 		.menu-title {
 			margin-left: map-get($margin, xs);

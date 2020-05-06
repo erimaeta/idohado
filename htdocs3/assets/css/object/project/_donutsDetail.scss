@@ -15,7 +15,7 @@
 	.detail {
 		$_margin-bottom: map-get($margin, lg);
 
-		$_title_fz: map-get($font-size, xl);
+    $_title_fz: map-get($font-size, xl);
 		$_title_color: map-get($color, default_color);
 		$_title_bg: map-get($color, light_color_a05);
 		$_title_shadow: map-get($color, light_color_a08);
@@ -23,13 +23,15 @@
 		$_price_fz: map-get($font-size, lll);
 		$_price_color: map-get($color, light_color_a09);
 		$_price_shadow: map-get($color, default_color);
-
+    
 		$_text_margin-top: map-get($margin, sm);
 		$_description_fz: map-get($font-size, md);
-
+    
 		$_material_margin-top: map-get($margin, xs);
 		$_material_fz: map-get($font-size, sm);
-
+    
+    $_new_fz: map-get($font-size, lg);
+    
 		margin-bottom: $_margin-bottom;
 
 		@include tabpc {
@@ -52,10 +54,15 @@
 		}
 
 		&__title {
+      $_title_pd: 0.5em;
+
 			position: absolute;
 			top: 0;
-			left: 0;
-			padding: 0.5em;
+      left: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+			padding: $_title_pd;
 
 			color: $_title_color;
 			font-size: $_title_fz;
@@ -63,7 +70,31 @@
 
 			background: $_title_bg;
 			text-shadow: $_title_shadow 0 0 0.2em;
-		}
+
+      .new-item {
+        $_new_pd_y: 4px;
+        $_new_pd_x: 6px;
+        position: relative;
+        display: block;
+        height: calc(#{$_new_fz} + #{$_new_pd_y} + #{$_new_pd_y});
+        &::before {
+          content: "New";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: $_title_pd * 2;
+          padding: $_new_pd_y $_new_pd_x;
+          color: white;
+          font-size: $_new_fz;
+          font-weight: bold;
+          line-height: 1;
+          background: map-get($color, new_red);
+          border-radius: 3px;
+          text-shadow: none;
+          opacity: .8;
+        }
+      }
+    }
 
 		&__price {
 			position: absolute;
@@ -86,6 +117,6 @@
 		&__material {
 			margin-top: $_material_margin-top;
 			font-size: $_material_fz;
-		}
+    }
 	}
 }
