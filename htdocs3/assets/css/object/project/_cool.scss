@@ -1,0 +1,143 @@
+/*
+ * project: cool
+ */
+
+.p-cool {
+  $_pc_padding-x: map-get($padding, lg);
+  $_pc_padding-y: map-get($padding, xl);
+  $_sp_padding-x: map-get($padding, sm);
+  $_sp_padding-y: map-get($padding, md);
+
+  $_bgc: map-get($color, bg_dark_a01);
+  $_bbc: map-get($color, bg_dark_a02);
+  $_transparent: map-get($color, transparent);
+
+  $_pc_content_pt: map-get($padding, md);
+  $_sp_content_pt: map-get($padding, sm);
+
+  $_title_fz: map-get($title-font-size, sm);
+  $_text_fz: map-get($font-size, md);
+  $_smalltext_fz: map-get($font-size, sm);
+
+  &__wrapper {
+    text-align: center;
+    background: $_bgc;
+
+    @include tabpc {
+      padding: $_pc_padding-y $_pc_padding-x;
+    }
+    @include sp {
+      padding: $_sp_padding-y $_sp_padding-x;
+    }
+
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      @include tegaki_frame(20);
+    }
+  }
+
+  &__title {
+    display: inline-block;
+    border-bottom: .35em solid $_bbc;
+
+    font-size: $_title_fz;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  &__text {
+    @include pc {
+      padding-top: $_pc_content_pt;
+    }
+    @include sptab {
+      padding-top: $_sp_content_pt;
+    }
+    font-size: $_text_fz;
+    text-align: center;
+
+    &--small {
+      font-size: $_smalltext_fz;
+    }
+  }
+
+  &__soryoWrapper {
+    @include pc {
+      padding-top: $_pc_content_pt;
+    }
+    @include sptab {
+      padding-top: $_sp_content_pt;
+    }
+  }
+
+  &__soryo {
+    margin: 0;
+    font-size: $_smalltext_fz;
+    text-align: center;
+
+    &:not(:first-child){
+      @include pc {
+        padding-top: $_pc_content_pt / 2;
+      }
+      @include sptab {
+        padding-top: $_sp_content_pt / 2;
+      }
+    }
+
+    dt{
+      margin: 0;
+      display: inline-block;
+      font-weight: normal;
+
+      &::before {
+        content: "●";
+      }
+
+      &:not(:first-child){
+        margin-left: 0.5em;
+      }
+    }
+
+    dd{
+      margin: 0;
+      margin-left: 0.15em;
+      display: inline-block;
+    }
+  }
+
+  &__list {
+    @include pc {
+      padding-top: $_pc_content_pt;
+    }
+    @include sptab {
+      padding-top: $_sp_content_pt;
+    }
+
+    font-size: $_text_fz;
+    text-align: center;
+
+    li {
+      position: relative;
+      z-index: 2;
+      &:not(:first-child){
+        @include pc {
+          padding-top: $_pc_content_pt / 2;
+        }
+        @include sptab {
+          padding-top: $_sp_content_pt / 2;
+        }
+      }
+      a {
+        color: map-get($color, default_color);
+        text-decoration: underline;
+      }
+    }
+  }
+}

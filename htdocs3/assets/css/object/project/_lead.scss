@@ -93,6 +93,7 @@ $_title_lh: map-get($line-height, xs);
 
   .lead2Title {
     font-size: $_title_fz;
+    text-align: center;
     line-height: $_title_lh;
     font-weight: bold;
   }
@@ -115,15 +116,26 @@ $_title_lh: map-get($line-height, xs);
       $_p_x_pc: map-get($padding, lll);
       $_p_x_sp: map-get($padding, sm);
       $_p_y_sp: map-get($padding, lg);
-      
+
       @include tabpc {
         display: inline-block;
         padding: $_p_t_pc $_p_x_pc $_p_b_pc;
+        min-width: 326px;
+        width: 540px;
       }
       @include sp {
         padding: $_p_y_sp $_p_x_sp;
       }
       background: rgba(255,255,255,0.3);
     }
+  }
+}
+
+.instagram-media {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  @include sp {
+    width: 77vw !important;
+    min-width: 77vw !important;
   }
 }
