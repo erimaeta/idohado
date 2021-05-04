@@ -8,7 +8,7 @@
 //営業日と休業日を配列で指定
 var eigyoArray = [0,1,2,5,6]; //営業日: 日0 月1 火2 水3 木4 金5 土6
 //var eigyoArray = [1,2,5,6]; //営業日: 日0 月1 火2 水3 木4 金5 土6
-var kyugyoArray = [30, 31]; //休業日
+var kyugyoArray = []; //休業日
 
 //クラス名
 var table_ClassName = 'calendar';
@@ -19,7 +19,8 @@ function show_calendar() {
     var year = current.getFullYear();
     var month = current.getMonth() + 1;
 
-    month =12;
+    year =2021;
+    month =5;
     //console.log(month);
 
     var wrapper = document.getElementById('calendar');
